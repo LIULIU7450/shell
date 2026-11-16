@@ -28,3 +28,5 @@ sudo bash /tmp/collect_env_info.sh -o /tmp --allow-write-probe \
 - 建议 root：nvme fdp status、dmesg 需要权限。
 - 跑完注意看第 4 节：如果显示 GET_MAX 成功 ... max_streams=6，说明该盘 XFS 上 LMCache 只能用 3..6；如果显示 ENOTTY，说明当前启动内核不对（应切到 7.0.0-rc2+）。
 - 单台大约 1–2 分钟（--peers 的 ping 和防火墙探测会占一点时间）。
+
+mkfs.xfs -L data${i} -s size=4096 /dev/nvme${i}n1
