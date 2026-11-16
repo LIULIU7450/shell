@@ -1,0 +1,1249 @@
+
+############################################################################
+## 1. 系统基本信息
+############################################################################
+
+--- hostname / 域名 ---
+$ hostname -f
+dsksa304
+
+--- uname ---
+$ uname -a
+Linux dsksa304 7.0.0-rc2 #2 SMP PREEMPT_DYNAMIC Fri Aug 21 19:31:52 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+--- 操作系统 ---
+$ cat /etc/os-release 2>/dev/null
+PRETTY_NAME="Ubuntu 24.04.4 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.4 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+
+--- 内核版本 ---
+$ uname -r; echo; ls /boot/vmlinuz-* 2>/dev/null; echo; rpm -qa 2>/dev/null | grep -i kernel | sort; dpkg -l 2>/dev/null | grep -i linux-image
+7.0.0-rc2
+
+/boot/vmlinuz-6.8.0-149-generic
+/boot/vmlinuz-7.0.0-43-generic
+/boot/vmlinuz-7.0.0-rc2
+
+rc  linux-image-6.17.0-35-generic                    6.17.0-35.35~24.04.1                             amd64        Signed kernel image generic
+rc  linux-image-6.17.0-40-generic                    6.17.0-40.40~24.04.1                             amd64        Signed kernel image generic
+rc  linux-image-6.8.0-117-generic                    6.8.0-117.117                                    amd64        Signed kernel image generic
+rc  linux-image-6.8.0-124-generic                    6.8.0-124.124                                    amd64        Signed kernel image generic
+rc  linux-image-6.8.0-134-generic                    6.8.0-134.134                                    amd64        Signed kernel image generic
+rc  linux-image-6.8.0-136-generic                    6.8.0-136.136                                    amd64        Signed kernel image generic
+rc  linux-image-6.8.0-137-generic                    6.8.0-137.137                                    amd64        Signed kernel image generic
+rc  linux-image-6.8.0-138-generic                    6.8.0-138.138                                    amd64        Signed kernel image generic
+rc  linux-image-6.8.0-139-generic                    6.8.0-139.139                                    amd64        Signed kernel image generic
+rc  linux-image-6.8.0-142-generic                    6.8.0-142.142                                    amd64        Signed kernel image generic
+rc  linux-image-6.8.0-146-generic                    6.8.0-146.146                                    amd64        Signed kernel image generic
+rc  linux-image-6.8.0-147-generic                    6.8.0-147.147                                    amd64        Signed kernel image generic
+ii  linux-image-6.8.0-149-generic                    6.8.0-149.149                                    amd64        Signed kernel image generic
+rc  linux-image-7.0.0-28-generic                     7.0.0-28.28~24.04.1                              amd64        Signed kernel image generic
+rc  linux-image-7.0.0-29-generic                     7.0.0-29.29~24.04.2                              amd64        Signed kernel image generic
+rc  linux-image-7.0.0-30-generic                     7.0.0-30.30~24.04.1                              amd64        Signed kernel image generic
+rc  linux-image-7.0.0-31-generic                     7.0.0-31.31~24.04.1                              amd64        Signed kernel image generic
+rc  linux-image-7.0.0-34-generic                     7.0.0-34.34~24.04.1                              amd64        Signed kernel image generic
+rc  linux-image-7.0.0-38-generic                     7.0.0-38.38~24.04.4                              amd64        Signed kernel image generic
+rc  linux-image-7.0.0-42-generic                     7.0.0-42.42~24.04.1                              amd64        Signed kernel image generic
+ii  linux-image-7.0.0-43-generic                     7.0.0-43.43~24.04.1                              amd64        Signed kernel image generic
+ii  linux-image-7.0.0-rc2                            7.0.0~rc2-2                                      amd64        Linux kernel, version 7.0.0-rc2
+ii  linux-image-generic                              6.8.0-149.149                                    amd64        Generic Linux kernel image
+ii  linux-image-generic-hwe-24.04                    7.0.0-43.43~24.04.1                              amd64        Generic Linux kernel image
+
+--- 内核启动参数 ---
+$ cat /proc/cmdline
+BOOT_IMAGE=/boot/vmlinuz-7.0.0-rc2 root=UUID=f4950ff8-171a-4520-bf1f-f0abb8b769ab ro
+
+--- 内核配置中 stream/fdp 相关项 ---
+$ grep -i -E 'stream|fdp|fuse' /boot/config-$(uname -r) 2>/dev/null | head -40
+CONFIG_BPF_STREAM_PARSER=y
+CONFIG_STREAM_PARSER=y
+CONFIG_NFC_FDP=m
+CONFIG_NFC_FDP_I2C=m
+CONFIG_IR_STREAMZAP=m
+CONFIG_SND_HDA_INTEL_HDMI_SILENT_STREAM=y
+CONFIG_FUSE_FS=y
+CONFIG_FUSE_DAX=y
+CONFIG_FUSE_PASSTHROUGH=y
+CONFIG_FUSE_IO_URING=y
+
+--- glibc 版本(决定能否直接分发预编译二进制) ---
+$ ldd --version | head -1
+ldd (Ubuntu GLIBC 2.39-0ubuntu8.12) 2.39
+
+--- uptime ---
+$ uptime
+ 06:29:31 up 10 days, 22:35,  3 users,  load average: 0.00, 0.00, 0.00
+
+--- 是否虚拟机/物理机 ---
+$ systemd-detect-virt 2>/dev/null; dmidecode -s system-manufacturer 2>/dev/null; dmidecode -s system-product-name 2>/dev/null
+none
+Supermicro
+ASG-1115S-NE316R
+
+--- CPU / 架构 / NUMA ---
+$ lscpu | head -30
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           52 bits physical, 57 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  96
+On-line CPU(s) list:                     0-95
+Vendor ID:                               AuthenticAMD
+BIOS Vendor ID:                          Advanced Micro Devices, Inc.
+Model name:                              AMD EPYC 9454P 48-Core Processor
+BIOS Model name:                         AMD EPYC 9454P 48-Core Processor                Unknown CPU @ 2.7GHz
+BIOS CPU family:                         107
+CPU family:                              25
+Model:                                   17
+Thread(s) per core:                      2
+Core(s) per socket:                      48
+Socket(s):                               1
+Stepping:                                1
+Frequency boost:                         enabled
+CPU(s) scaling MHz:                      48%
+CPU max MHz:                             3812.1760
+CPU min MHz:                             1500.0000
+BogoMIPS:                                5500.34
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpuid_fault cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd amd_ppin cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid overflow_recov succor smca fsrm flush_l1d debug_swap
+Virtualization:                          AMD-V
+L1d cache:                               1.5 MiB (48 instances)
+L1i cache:                               1.5 MiB (48 instances)
+L2 cache:                                48 MiB (48 instances)
+L3 cache:                                256 MiB (8 instances)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-95
+
+--- 内存 ---
+$ free -h; echo; numactl --hardware 2>/dev/null | head -20
+               total        used        free      shared  buff/cache   available
+Mem:           1.5Ti        14Gi       1.4Ti       5.1Mi       100Gi       1.5Ti
+Swap:          8.0Gi          0B       8.0Gi
+
+available: 1 nodes (0)
+node 0 cpus: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95
+node 0 size: 1547450 MB
+node 0 free: 1438316 MB
+node distances:
+node   0 
+  0:  10 
+
+--- 时间与时区(集群要求时间同步) ---
+$ date; timedatectl 2>/dev/null | head -10; chronyc tracking 2>/dev/null | head -5
+Mon Nov 16 06:29:31 AM UTC 2026
+               Local time: Mon 2026-11-16 06:29:31 UTC
+           Universal time: Mon 2026-11-16 06:29:31 UTC
+                 RTC time: Mon 2026-11-16 06:29:31
+                Time zone: Etc/UTC (UTC, +0000)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+Reference ID    : AFC3A7C2 (mail.innotab.com)
+Stratum         : 3
+Ref time (UTC)  : Mon Nov 16 06:14:09 2026
+System time     : 0.000020743 seconds fast of NTP time
+Last offset     : -0.000067995 seconds
+
+############################################################################
+## 2. 网络与 RDMA (3FS 全链路走 RDMA/RoCE, 必须收集)
+############################################################################
+
+--- 网卡与 IP ---
+$ ip -o addr show
+1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+1: lo    inet6 ::1/128 scope host noprefixroute \       valid_lft forever preferred_lft forever
+4: enp9s0f0    inet 172.16.18.64/24 brd 172.16.18.255 scope global enp9s0f0\       valid_lft forever preferred_lft forever
+4: enp9s0f0    inet6 fe80::7ec2:55ff:fea0:902c/64 scope link \       valid_lft forever preferred_lft forever
+6: enxbe3af2b6059f    inet 169.254.3.1/24 metric 100 brd 169.254.3.255 scope global dynamic enxbe3af2b6059f\       valid_lft 690139sec preferred_lft 690139sec
+6: enxbe3af2b6059f    inet6 fe80::bc3a:f2ff:feb6:59f/64 scope link \       valid_lft forever preferred_lft forever
+7: ibp137s0f0    inet 10.10.44.64/21 brd 10.10.47.255 scope global ibp137s0f0\       valid_lft forever preferred_lft forever
+7: ibp137s0f0    inet6 fe80::966d:ae03:db:c59e/64 scope link \       valid_lft forever preferred_lft forever
+
+--- 路由 ---
+$ ip route show
+default via 172.16.18.1 dev enp9s0f0 proto static 
+10.10.40.0/21 dev ibp137s0f0 proto kernel scope link src 10.10.44.64 
+169.254.3.0/24 dev enxbe3af2b6059f proto kernel scope link src 169.254.3.1 metric 100 
+172.16.18.0/24 dev enp9s0f0 proto kernel scope link src 172.16.18.64 
+
+--- 网卡详情/速率/MTU ---
+$ for i in $(ls /sys/class/net/); do echo "== $i =="; ethtool $i 2>/dev/null | grep -E 'Speed|Duplex|Link'; cat /sys/class/net/$i/mtu 2>/dev/null; done
+== enp201s0f0 ==
+	Speed: Unknown!
+	Duplex: Unknown! (255)
+	Link detected: no
+1500
+== enp201s0f1 ==
+	Speed: Unknown!
+	Duplex: Unknown! (255)
+	Link detected: no
+1500
+== enp9s0f0 ==
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+1500
+== enp9s0f1 ==
+	Speed: Unknown!
+	Duplex: Unknown! (255)
+	Link detected: no
+1500
+== enxbe3af2b6059f ==
+	Speed: Unknown!
+	Duplex: Unknown! (255)
+	Link detected: yes
+1500
+== ibp137s0f0 ==
+	Speed: 200000Mb/s
+	Duplex: Full
+	Link detected: yes
+4092
+== ibp137s0f1 ==
+	Speed: Unknown!
+	Duplex: Unknown! (255)
+	Link detected: no
+4092
+== lo ==
+	Link detected: yes
+65536
+
+--- RDMA 设备 (ibv_devinfo) ---
+$ ibv_devinfo -v 2>/dev/null || echo '未安装 libibverbs/ibv_devinfo'
+hca_id:	ibp137s0f0
+	transport:			InfiniBand (0)
+	fw_ver:				20.41.1000
+	node_guid:			946d:ae03:00db:c59e
+	sys_image_guid:			946d:ae03:00db:c59e
+	vendor_id:			0x02c9
+	vendor_part_id:			4123
+	hw_ver:				0x0
+	board_id:			MT_0000000225
+	phys_port_cnt:			1
+	max_mr_size:			0xffffffffffffffff
+	page_size_cap:			0xfffffffffffff000
+	max_qp:				131072
+	max_qp_wr:			8192
+	device_cap_flags:		0x21361c36
+					BAD_PKEY_CNTR
+					BAD_QKEY_CNTR
+					AUTO_PATH_MIG
+					CHANGE_PHY_PORT
+					PORT_ACTIVE_EVENT
+					SYS_IMAGE_GUID
+					RC_RNR_NAK_GEN
+					MEM_WINDOW
+					UD_IP_CSUM
+					XRC
+					MEM_MGT_EXTENSIONS
+					MEM_WINDOW_TYPE_2B
+					MANAGED_FLOW_STEERING
+	max_sge:			30
+	max_sge_rd:			30
+	max_cq:				16777216
+	max_cqe:			4194303
+	max_mr:				16777216
+	max_pd:				8388608
+	max_qp_rd_atom:			16
+	max_ee_rd_atom:			0
+	max_res_rd_atom:		2097152
+	max_qp_init_rd_atom:		16
+	max_ee_init_rd_atom:		0
+	atomic_cap:			ATOMIC_HCA (1)
+	max_ee:				0
+	max_rdd:			0
+	max_mw:				16777216
+	max_raw_ipv6_qp:		0
+	max_raw_ethy_qp:		0
+	max_mcast_grp:			2097152
+	max_mcast_qp_attach:		240
+	max_total_mcast_qp_attach:	503316480
+	max_ah:				2147483647
+	max_fmr:			0
+	max_srq:			8388608
+	max_srq_wr:			32767
+	max_srq_sge:			31
+	max_pkeys:			128
+	local_ca_ack_delay:		16
+	general_odp_caps:
+					ODP_SUPPORT
+					ODP_SUPPORT_IMPLICIT
+	rc_odp_caps:
+					SUPPORT_SEND
+					SUPPORT_RECV
+					SUPPORT_WRITE
+					SUPPORT_READ
+					SUPPORT_ATOMIC
+					SUPPORT_SRQ
+	uc_odp_caps:
+					NO SUPPORT
+	ud_odp_caps:
+					SUPPORT_SEND
+	xrc_odp_caps:
+					SUPPORT_SEND
+					SUPPORT_WRITE
+					SUPPORT_READ
+					SUPPORT_ATOMIC
+					SUPPORT_SRQ
+	completion timestamp_mask:			0x7fffffffffffffff
+	hca_core_clock:			156250kHZ
+	device_cap_flags_ex:		0x1021361C36
+					PCI_WRITE_END_PADDING
+	tso_caps:
+		max_tso:			0
+	rss_caps:
+		max_rwq_indirection_tables:			0
+		max_rwq_indirection_table_size:			0
+		rx_hash_function:				0x0
+		rx_hash_fields_mask:				0x0
+	max_wq_type_rq:			0
+	packet_pacing_caps:
+		qp_rate_limit_min:	0kbps
+		qp_rate_limit_max:	0kbps
+	max_rndv_hdr_size:		64
+	max_num_tags:			127
+	max_ops:			32768
+	max_sge:			1
+	flags:
+					IBV_TM_CAP_RC
+
+	cq moderation caps:
+		max_cq_count:	65535
+		max_cq_period:	4095 us
+
+	maximum available device memory:	131072Bytes
+
+	num_comp_vectors:		63
+		port:	1
+			state:			PORT_ACTIVE (4)
+			max_mtu:		4096 (5)
+			active_mtu:		4096 (5)
+			sm_lid:			1
+			port_lid:		145
+			port_lmc:		0x00
+			link_layer:		InfiniBand
+			max_msg_sz:		0x40000000
+			port_cap_flags:		0xa251e848
+			port_cap_flags2:	0x0032
+			max_vl_num:		4 (3)
+			bad_pkey_cntr:		0x0
+			qkey_viol_cntr:		0x0
+			sm_sl:			0
+			pkey_tbl_len:		128
+			gid_tbl_len:		8
+			subnet_timeout:		18
+			init_type_reply:	0
+			active_width:		4X (2)
+			active_speed:		50.0 Gbps (64)
+			phys_state:		LINK_UP (5)
+			GID[  0]:		fe80:0000:0000:0000:946d:ae03:00db:c59e
+
+hca_id:	ibp137s0f1
+	transport:			InfiniBand (0)
+	fw_ver:				20.41.1000
+	node_guid:			946d:ae03:00db:c59f
+	sys_image_guid:			946d:ae03:00db:c59e
+	vendor_id:			0x02c9
+	vendor_part_id:			4123
+	hw_ver:				0x0
+	board_id:			MT_0000000225
+	phys_port_cnt:			1
+	max_mr_size:			0xffffffffffffffff
+	page_size_cap:			0xfffffffffffff000
+	max_qp:				131072
+	max_qp_wr:			8192
+	device_cap_flags:		0x21361c36
+					BAD_PKEY_CNTR
+					BAD_QKEY_CNTR
+					AUTO_PATH_MIG
+					CHANGE_PHY_PORT
+					PORT_ACTIVE_EVENT
+					SYS_IMAGE_GUID
+					RC_RNR_NAK_GEN
+					MEM_WINDOW
+					UD_IP_CSUM
+					XRC
+					MEM_MGT_EXTENSIONS
+					MEM_WINDOW_TYPE_2B
+					MANAGED_FLOW_STEERING
+	max_sge:			30
+	max_sge_rd:			30
+	max_cq:				16777216
+	max_cqe:			4194303
+	max_mr:				16777216
+	max_pd:				8388608
+	max_qp_rd_atom:			16
+	max_ee_rd_atom:			0
+	max_res_rd_atom:		2097152
+	max_qp_init_rd_atom:		16
+	max_ee_init_rd_atom:		0
+	atomic_cap:			ATOMIC_HCA (1)
+	max_ee:				0
+	max_rdd:			0
+	max_mw:				16777216
+	max_raw_ipv6_qp:		0
+	max_raw_ethy_qp:		0
+	max_mcast_grp:			2097152
+	max_mcast_qp_attach:		240
+	max_total_mcast_qp_attach:	503316480
+	max_ah:				2147483647
+	max_fmr:			0
+	max_srq:			8388608
+	max_srq_wr:			32767
+	max_srq_sge:			31
+	max_pkeys:			128
+	local_ca_ack_delay:		16
+	general_odp_caps:
+					ODP_SUPPORT
+					ODP_SUPPORT_IMPLICIT
+	rc_odp_caps:
+					SUPPORT_SEND
+					SUPPORT_RECV
+					SUPPORT_WRITE
+					SUPPORT_READ
+					SUPPORT_ATOMIC
+					SUPPORT_SRQ
+	uc_odp_caps:
+					NO SUPPORT
+	ud_odp_caps:
+					SUPPORT_SEND
+	xrc_odp_caps:
+					SUPPORT_SEND
+					SUPPORT_WRITE
+					SUPPORT_READ
+					SUPPORT_ATOMIC
+					SUPPORT_SRQ
+	completion timestamp_mask:			0x7fffffffffffffff
+	hca_core_clock:			156250kHZ
+	device_cap_flags_ex:		0x1021361C36
+					PCI_WRITE_END_PADDING
+	tso_caps:
+		max_tso:			0
+	rss_caps:
+		max_rwq_indirection_tables:			0
+		max_rwq_indirection_table_size:			0
+		rx_hash_function:				0x0
+		rx_hash_fields_mask:				0x0
+	max_wq_type_rq:			0
+	packet_pacing_caps:
+		qp_rate_limit_min:	0kbps
+		qp_rate_limit_max:	0kbps
+	max_rndv_hdr_size:		64
+	max_num_tags:			127
+	max_ops:			32768
+	max_sge:			1
+	flags:
+					IBV_TM_CAP_RC
+
+	cq moderation caps:
+		max_cq_count:	65535
+		max_cq_period:	4095 us
+
+	maximum available device memory:	131072Bytes
+
+	num_comp_vectors:		63
+		port:	1
+			state:			PORT_DOWN (1)
+			max_mtu:		4096 (5)
+			active_mtu:		4096 (5)
+			sm_lid:			0
+			port_lid:		65535
+			port_lmc:		0x00
+			link_layer:		InfiniBand
+			max_msg_sz:		0x40000000
+			port_cap_flags:		0xa251e848
+			port_cap_flags2:	0x0032
+			max_vl_num:		4 (3)
+			bad_pkey_cntr:		0x0
+			qkey_viol_cntr:		0x0
+			sm_sl:			0
+			pkey_tbl_len:		128
+			gid_tbl_len:		8
+			subnet_timeout:		0
+			init_type_reply:	0
+			active_width:		4X (2)
+			active_speed:		invalid speed (0)
+			phys_state:		DISABLED (3)
+			GID[  0]:		fe80:0000:0000:0000:946d:ae03:00db:c59f
+
+
+--- RDMA 端口状态 (ibstat) ---
+$ ibstat 2>/dev/null || echo '未安装 infiniband-diags/ibstat'
+CA 'ibp137s0f0'
+	CA type: MT4123
+	Number of ports: 1
+	Firmware version: 20.41.1000
+	Hardware version: 0
+	Node GUID: 0x946dae0300dbc59e
+	System image GUID: 0x946dae0300dbc59e
+	Port 1:
+		State: Active
+		Physical state: LinkUp
+		Rate: 200
+		Base lid: 145
+		LMC: 0
+		SM lid: 1
+		Capability mask: 0xa651e848
+		Port GUID: 0x946dae0300dbc59e
+		Link layer: InfiniBand
+CA 'ibp137s0f1'
+	CA type: MT4123
+	Number of ports: 1
+	Firmware version: 20.41.1000
+	Hardware version: 0
+	Node GUID: 0x946dae0300dbc59f
+	System image GUID: 0x946dae0300dbc59e
+	Port 1:
+		State: Down
+		Physical state: Disabled
+		Rate: 10
+		Base lid: 65535
+		LMC: 0
+		SM lid: 0
+		Capability mask: 0xa651e848
+		Port GUID: 0x946dae0300dbc59f
+		Link layer: InfiniBand
+
+--- rdma link ---
+$ rdma link show 2>/dev/null
+link ibp137s0f0/1 subnet_prefix fe80:0000:0000:0000 lid 145 sm_lid 1 lmc 0 state ACTIVE physical_state LINK_UP 
+link ibp137s0f1/1 subnet_prefix fe80:0000:0000:0000 lid 65535 sm_lid 0 lmc 0 state DOWN physical_state DISABLED 
+
+--- RoCE GID 表 ---
+$ cat /proc/net/rdma/*/gids 2>/dev/null | head -40; show_gids 2>/dev/null | head -40
+
+--- 已装 RDMA 相关包 ---
+$ rpm -qa 2>/dev/null | grep -iE 'ibverbs|rdma|infiniband|roce' | sort; dpkg -l 2>/dev/null | grep -iE 'ibverbs|rdma|infiniband' | awk '{print $2}'
+ibutils
+ibverbs-providers:amd64
+ibverbs-utils
+infiniband-diags
+libibdm1
+libibmad5:amd64
+libibnetdisc5t64:amd64
+libibumad3:amd64
+libibverbs1:amd64
+libopensm9
+libosmcomp5
+libosmvendor5
+librdmacm1t64:amd64
+perftest
+rdma-core
+
+--- 防火墙状态 ---
+$ systemctl is-active firewalld 2>/dev/null; firewall-cmd --list-all 2>/dev/null; iptables -L -n 2>/dev/null | head -20; ufw status 2>/dev/null
+inactive
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+Status: inactive
+
+--- SELinux / AppArmor ---
+$ getenforce 2>/dev/null; sestatus 2>/dev/null | head -5; aa-status 2>/dev/null | head -5
+apparmor module is loaded.
+122 profiles are loaded.
+27 profiles are in enforce mode.
+   /usr/bin/man
+   /usr/lib/snapd/snap-confine
+
+--- /etc/hosts ---
+$ cat /etc/hosts
+127.0.0.1 localhost
+127.0.1.1 dsksa304
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+--- DNS ---
+$ cat /etc/resolv.conf 2>/dev/null
+# This is /run/systemd/resolve/stub-resolv.conf managed by man:systemd-resolved(8).
+# Do not edit.
+#
+# This file might be symlinked as /etc/resolv.conf. If you're looking at
+# /etc/resolv.conf and seeing this text, you have followed the symlink.
+#
+# This is a dynamic resolv.conf file for connecting local clients to the
+# internal DNS stub resolver of systemd-resolved. This file lists all
+# configured search domains.
+#
+# Run "resolvectl status" to see details about the uplink DNS servers
+# currently in use.
+#
+# Third party programs should typically not access this file directly, but only
+# through the symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a
+# different way, replace this symlink by a static file or a different symlink.
+#
+# See man:systemd-resolved.service(8) for details about the supported modes of
+# operation for /etc/resolv.conf.
+
+nameserver 127.0.0.53
+options edns0 trust-ad
+search .
+
+--- 与其他节点 ICMP 连通性 (ping) ---
+$ for p in $(echo 172.16.12.210,172.16.18.64,172.16.18.65,172.16.18.169 | tr ',' ' '); do echo "== ping $p =="; ping -c 3 -W 2 $p 2>&1 | tail -2; done
+== ping 172.16.12.210 ==
+3 packets transmitted, 3 received, 0% packet loss, time 2063ms
+rtt min/avg/max/mdev = 0.112/0.119/0.125/0.005 ms
+== ping 172.16.18.64 ==
+3 packets transmitted, 3 received, 0% packet loss, time 2045ms
+rtt min/avg/max/mdev = 0.026/0.040/0.050/0.010 ms
+== ping 172.16.18.65 ==
+3 packets transmitted, 3 received, 0% packet loss, time 2045ms
+rtt min/avg/max/mdev = 0.138/0.212/0.260/0.053 ms
+== ping 172.16.18.169 ==
+3 packets transmitted, 3 received, 0% packet loss, time 2045ms
+rtt min/avg/max/mdev = 0.240/0.248/0.258/0.007 ms
+
+--- 与其他节点 9000B 巨帧 MTU 探测 (RoCE 常用 MTU 9000, -M do 禁止分片) ---
+$ for p in $(echo 172.16.12.210,172.16.18.64,172.16.18.65,172.16.18.169 | tr ',' ' '); do echo "== MTU9000 -> $p =="; ping -M do -s 8972 -c 2 -W 2 $p 2>&1 | tail -2; done
+== MTU9000 -> 172.16.12.210 ==
+2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1014ms
+
+== MTU9000 -> 172.16.18.64 ==
+2 packets transmitted, 2 received, 0% packet loss, time 1020ms
+rtt min/avg/max/mdev = 0.041/0.054/0.067/0.013 ms
+== MTU9000 -> 172.16.18.65 ==
+2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1021ms
+
+== MTU9000 -> 172.16.18.169 ==
+2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1021ms
+
+
+说明: 真正的 RDMA 连通性/带宽需部署后用 ib_write_bw / rping 实测, 本脚本只做 L3 与 MTU 预检。
+
+############################################################################
+## 3. 块设备 / NVMe / FDP 状态 (核心!)
+############################################################################
+
+--- 块设备总览 ---
+$ lsblk -o NAME,TYPE,SIZE,ROTA,SERIAL,MODEL,FSTYPE,MOUNTPOINTS
+NAME        TYPE   SIZE ROTA SERIAL         MODEL                      FSTYPE     MOUNTPOINTS
+nvme3n1     disk    14T    0 S8YJNG0L300064 MZ3LD15THELC-00AGG                    
+nvme4n1     disk    14T    0 S8YJNG0L300073 MZ3LD15THELC-00AGG                    
+nvme2n1     disk    14T    0 S8YJNG0L300062 MZ3LD15THELC-00AGG                    
+nvme0n1     disk 894.3G    0 S665NC0W407581 SAMSUNG MZ1L2960HCJR-00A07            
+├─nvme0n1p1 part     1G    0                                           vfat       /boot/efi
+└─nvme0n1p2 part 893.2G    0                                           ext4       /
+nvme1n1     disk    14T    0 S8DNNG0Y900008 SAMSUNG MZ3L915THBLC-00AW7            
+├─nvme1n1p1 part     7T    0                                           zfs_member 
+└─nvme1n1p2 part     7T    0                                           zfs_member 
+
+--- 已挂载文件系统 ---
+$ findmnt -o TARGET,SOURCE,FSTYPE,OPTIONS
+TARGET                          SOURCE         FSTYPE      OPTIONS
+/                               /dev/nvme0n1p2 ext4        rw,relatime,stripe=32
+├─/sys                          sysfs          sysfs       rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/firmware/efi/efivars   efivarfs       efivarfs    rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/security        securityfs     securityfs  rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/cgroup              cgroup2        cgroup2     rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot
+│ ├─/sys/fs/pstore              none           pstore      rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/bpf                 bpf            bpf         rw,nosuid,nodev,noexec,relatime,mode=700
+│ ├─/sys/kernel/debug           debugfs        debugfs     rw,nosuid,nodev,noexec,relatime
+│ │ └─/sys/kernel/debug/tracing tracefs        tracefs     rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/tracing         tracefs        tracefs     rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/fuse/connections    fusectl        fusectl     rw,nosuid,nodev,noexec,relatime
+│ └─/sys/kernel/config          configfs       configfs    rw,nosuid,nodev,noexec,relatime
+├─/proc                         proc           proc        rw,nosuid,nodev,noexec,relatime
+│ └─/proc/sys/fs/binfmt_misc    systemd-1      autofs      rw,relatime,fd=32,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=82894
+│   └─/proc/sys/fs/binfmt_misc  binfmt_misc    binfmt_misc rw,nosuid,nodev,noexec,relatime
+├─/dev                          udev           devtmpfs    rw,nosuid,relatime,size=741081520k,nr_inodes=185270380,mode=755,inode64
+│ ├─/dev/pts                    devpts         devpts      rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000
+│ ├─/dev/shm                    tmpfs          tmpfs       rw,nosuid,nodev,inode64
+│ ├─/dev/hugepages              hugetlbfs      hugetlbfs   rw,nosuid,nodev,relatime,pagesize=2M
+│ └─/dev/mqueue                 mqueue         mqueue      rw,nosuid,nodev,noexec,relatime
+├─/run                          tmpfs          tmpfs       rw,nosuid,nodev,noexec,relatime,size=158458892k,mode=755,inode64
+│ ├─/run/lock                   tmpfs          tmpfs       rw,nosuid,nodev,noexec,relatime,size=5120k,inode64
+│ └─/run/user/0                 tmpfs          tmpfs       rw,nosuid,nodev,relatime,size=158458888k,nr_inodes=39614722,mode=700,inode64
+└─/boot/efi                     /dev/nvme0n1p1 vfat        rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro
+
+--- 分区表 (确认盘上现有数据, 部署时会决定是否格式化) ---
+$ for d in $(ls /dev/nvme*n1 2>/dev/null; ls /dev/sd[a-z] 2>/dev/null); do echo "== $d =="; parted -s $d print 2>/dev/null || fdisk -l $d 2>/dev/null | head -20; done
+== /dev/nvme0n1 ==
+Model: SAMSUNG MZ1L2960HCJR-00A07 (nvme)
+Disk /dev/nvme0n1: 960GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start   End     Size    File system  Name  Flags
+ 1      1049kB  1128MB  1127MB  fat32              boot, esp
+ 2      1128MB  960GB   959GB   ext4
+
+== /dev/nvme1n1 ==
+Model: SAMSUNG MZ3L915THBLC-00AW7 (nvme)
+Disk /dev/nvme1n1: 15.4TB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start   End     Size    File system  Name     Flags
+ 1      1049kB  7680GB  7680GB  zfs          primary
+ 2      7680GB  15.4TB  7680GB  zfs          primary
+
+== /dev/nvme2n1 ==
+Model: MZ3LD15THELC-00AGG (nvme)
+Disk /dev/nvme2n1: 15.4TB
+Sector size (logical/physical): 4096B/4096B
+Partition Table: unknown
+Disk Flags: 
+Disk /dev/nvme2n1: 13.97 TiB, 15360950534144 bytes, 3750232064 sectors
+Disk model: MZ3LD15THELC-00AGG                      
+Units: sectors of 1 * 4096 = 4096 bytes
+Sector size (logical/physical): 4096 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 16384 bytes
+== /dev/nvme3n1 ==
+Model: MZ3LD15THELC-00AGG (nvme)
+Disk /dev/nvme3n1: 15.4TB
+Sector size (logical/physical): 4096B/4096B
+Partition Table: unknown
+Disk Flags: 
+Disk /dev/nvme3n1: 13.97 TiB, 15360950534144 bytes, 3750232064 sectors
+Disk model: MZ3LD15THELC-00AGG                      
+Units: sectors of 1 * 4096 = 4096 bytes
+Sector size (logical/physical): 4096 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 16384 bytes
+== /dev/nvme4n1 ==
+Model: MZ3LD15THELC-00AGG (nvme)
+Disk /dev/nvme4n1: 15.4TB
+Sector size (logical/physical): 4096B/4096B
+Partition Table: unknown
+Disk Flags: 
+Disk /dev/nvme4n1: 13.97 TiB, 15360950534144 bytes, 3750232064 sectors
+Disk model: MZ3LD15THELC-00AGG                      
+Units: sectors of 1 * 4096 = 4096 bytes
+Sector size (logical/physical): 4096 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 16384 bytes
+
+--- 磁盘空间 ---
+$ df -hT
+Filesystem     Type      Size  Used Avail Use% Mounted on
+tmpfs          tmpfs     152G  2.1M  152G   1% /run
+efivarfs       efivarfs  128K   55K   69K  45% /sys/firmware/efi/efivars
+/dev/nvme0n1p2 ext4      879G  179G  655G  22% /
+tmpfs          tmpfs     756G     0  756G   0% /dev/shm
+tmpfs          tmpfs     5.0M     0  5.0M   0% /run/lock
+/dev/nvme0n1p1 vfat      1.1G  6.2M  1.1G   1% /boot/efi
+tmpfs          tmpfs     152G   16K  152G   1% /run/user/0
+
+--- nvme-cli 版本 (fdp 子命令需较新版本) ---
+$ nvme version
+nvme version 2.8 (git 2.8)
+libnvme version 1.8 (git 1.8)
+
+--- NVMe 设备列表 (型号/固件/命名空间) ---
+$ nvme list
+Node                  Generic               SN                   Model                                    Namespace  Usage                      Format           FW Rev  
+--------------------- --------------------- -------------------- ---------------------------------------- ---------- -------------------------- ---------------- --------
+/dev/nvme0n1          /dev/ng0n1            S665NC0W407581       SAMSUNG MZ1L2960HCJR-00A07               0x1        185.56  GB / 960.20  GB    512   B +  0 B   GDC7302Q
+/dev/nvme1n1          /dev/ng1n1            S8DNNG0Y900008       SAMSUNG MZ3L915THBLC-00AW7               0x1          3.51  TB /  15.36  TB    512   B +  0 B   RPSA105Q
+/dev/nvme2n1          /dev/ng2n1            S8YJNG0L300062       MZ3LD15THELC-00AGG                       0x1          0.00   B /  15.36  TB      4 KiB +  0 B   VPT92P5Q
+/dev/nvme3n1          /dev/ng3n1            S8YJNG0L300064       MZ3LD15THELC-00AGG                       0x1          0.00   B /  15.36  TB      4 KiB +  0 B   VPT92P5Q
+/dev/nvme4n1          /dev/ng4n1            S8YJNG0L300073       MZ3LD15THELC-00AGG                       0x1          0.00   B /  15.36  TB      4 KiB +  0 B   VPT92P5Q
+
+--- FDP 状态(按命名空间): /dev/nvme3n1 ---
+$ nvme fdp status /dev/nvme3n1 2>&1 | head -60
+Placement Identifier 0; Reclaim Unit Handle Identifier 0
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 1; Reclaim Unit Handle Identifier 1
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 2; Reclaim Unit Handle Identifier 2
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 3; Reclaim Unit Handle Identifier 3
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 4; Reclaim Unit Handle Identifier 4
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 5; Reclaim Unit Handle Identifier 5
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 6; Reclaim Unit Handle Identifier 6
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 7; Reclaim Unit Handle Identifier 7
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 8; Reclaim Unit Handle Identifier 8
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 9; Reclaim Unit Handle Identifier 9
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 10; Reclaim Unit Handle Identifier 10
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 11; Reclaim Unit Handle Identifier 11
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 12; Reclaim Unit Handle Identifier 12
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 13; Reclaim Unit Handle Identifier 13
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 14; Reclaim Unit Handle Identifier 14
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+
+--- FDP 状态(按命名空间): /dev/nvme4n1 ---
+$ nvme fdp status /dev/nvme4n1 2>&1 | head -60
+Placement Identifier 0; Reclaim Unit Handle Identifier 0
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 1; Reclaim Unit Handle Identifier 1
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 2; Reclaim Unit Handle Identifier 2
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 3; Reclaim Unit Handle Identifier 3
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 4; Reclaim Unit Handle Identifier 4
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 5; Reclaim Unit Handle Identifier 5
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 6; Reclaim Unit Handle Identifier 6
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 7; Reclaim Unit Handle Identifier 7
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 8; Reclaim Unit Handle Identifier 8
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 9; Reclaim Unit Handle Identifier 9
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 10; Reclaim Unit Handle Identifier 10
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 11; Reclaim Unit Handle Identifier 11
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 12; Reclaim Unit Handle Identifier 12
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 13; Reclaim Unit Handle Identifier 13
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 14; Reclaim Unit Handle Identifier 14
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+
+--- FDP 状态(按命名空间): /dev/nvme2n1 ---
+$ nvme fdp status /dev/nvme2n1 2>&1 | head -60
+Placement Identifier 0; Reclaim Unit Handle Identifier 0
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 1; Reclaim Unit Handle Identifier 1
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 2; Reclaim Unit Handle Identifier 2
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 3; Reclaim Unit Handle Identifier 3
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 4; Reclaim Unit Handle Identifier 4
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 5; Reclaim Unit Handle Identifier 5
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 6; Reclaim Unit Handle Identifier 6
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 7; Reclaim Unit Handle Identifier 7
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 8; Reclaim Unit Handle Identifier 8
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 9; Reclaim Unit Handle Identifier 9
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 10; Reclaim Unit Handle Identifier 10
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 11; Reclaim Unit Handle Identifier 11
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 12; Reclaim Unit Handle Identifier 12
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 13; Reclaim Unit Handle Identifier 13
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+Placement Identifier 14; Reclaim Unit Handle Identifier 14
+  Estimated Active Reclaim Unit Time Remaining (EARUTR): 0
+  Reclaim Unit Available Media Writes (RUAMW): 10543104
+
+
+--- FDP 状态(按命名空间): /dev/nvme0n1 ---
+$ nvme fdp status /dev/nvme0n1 2>&1 | head -60
+NVMe status: Invalid Command Opcode: A reserved coded value or an unsupported value in the command opcode field(0x1)
+
+--- FDP 状态(按命名空间): /dev/nvme1n1 ---
+$ nvme fdp status /dev/nvme1n1 2>&1 | head -60
+NVMe status: Invalid Command Opcode: A reserved coded value or an unsupported value in the command opcode field(0x1)
+
+--- NVMe 控制器标识 (每设备) ---
+$ for d in $(lsblk -dpno NAME | grep -E '/nvme[0-9]+$'); do echo "== $d =="; nvme id-ctrl $d 2>/dev/null | grep -iE 'mn|sn|fr|vwc|npss|fw' | head -15; done
+
+--- NVMe 格式/扇区大小 ---
+$ for d in $(lsblk -dpno NAME | grep nvme); do echo "== $d =="; cat /sys/block/${d#/dev/}/queue/logical_block_size 2>/dev/null; cat /sys/block/${d#/dev/}/queue/physical_block_size 2>/dev/null; done
+== /dev/nvme3n1 ==
+4096
+4096
+== /dev/nvme4n1 ==
+4096
+4096
+== /dev/nvme2n1 ==
+4096
+4096
+== /dev/nvme0n1 ==
+512
+4096
+== /dev/nvme1n1 ==
+512
+512
+
+--- write stream 能力 (sysfs, 只读; max_write_streams=硬件 FDP 流数) ---
+$ for d in $(lsblk -dpno NAME | grep nvme); do n=${d#/dev/}; echo "== $d =="; echo -n 'max_write_streams: '; cat /sys/block/$n/queue/max_write_streams 2>/dev/null || echo 'n/a(内核无此属性)'; echo -n 'write_stream_granularity: '; cat /sys/block/$n/queue/write_stream_granularity 2>/dev/null || echo 'n/a'; done
+== /dev/nvme3n1 ==
+max_write_streams: 16
+write_stream_granularity: 0
+== /dev/nvme4n1 ==
+max_write_streams: 16
+write_stream_granularity: 0
+== /dev/nvme2n1 ==
+max_write_streams: 16
+write_stream_granularity: 0
+== /dev/nvme0n1 ==
+max_write_streams: 0
+write_stream_granularity: 0
+== /dev/nvme1n1 ==
+max_write_streams: 0
+write_stream_granularity: 0
+
+--- NVMe PCI 拓扑 ---
+$ lspci | grep -i nvme; echo; lspci -vvv 2>/dev/null | grep -A 20 -i 'nvme' | grep -E 'Non-Volatile|LNKCap|LNKSta' | head -20
+ca:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd NVMe SSD Controller PM9A1/PM9A3/980PRO
+
+43:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd Device ac02 (prog-if 02 [NVM Express])
+45:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd Device ac02 (prog-if 02 [NVM Express])
+46:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd Device ac02 (prog-if 02 [NVM Express])
+ca:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd NVMe SSD Controller PM9A1/PM9A3/980PRO (prog-if 02 [NVM Express])
+
+--- dmesg 中 NVMe/FDP/stream 相关 ---
+$ dmesg 2>/dev/null | grep -iE 'nvme|fdp|write.?stream' | tail -40
+[   14.957458] nvme nvme2: pci function 0000:43:00.0
+[   14.958439] nvme nvme3: pci function 0000:45:00.0
+[   14.959175] nvme nvme4: pci function 0000:46:00.0
+[   14.959825] nvme nvme0: pci function 0000:ca:00.0
+[   14.961748] nvme nvme1: pci function 0000:41:00.0
+[   14.974813] nvme nvme2: D3 entry latency set to 35 seconds
+[   14.976650] nvme nvme4: D3 entry latency set to 35 seconds
+[   14.976893] nvme nvme3: D3 entry latency set to 35 seconds
+[   15.011951] nvme nvme2: 96/0/0 default/read/poll queues
+[   15.016805] nvme nvme4: 96/0/0 default/read/poll queues
+[   15.020764] nvme nvme3: 96/0/0 default/read/poll queues
+[   15.042764] nvme nvme0: D3 entry latency set to 8 seconds
+[   15.079807] nvme nvme0: 96/0/0 default/read/poll queues
+[   15.100756]  nvme0n1: p1 p2
+[   15.101831] nvme nvme1: D3 entry latency set to 10 seconds
+[   15.145795] nvme nvme1: 96/0/0 default/read/poll queues
+[   15.178077]  nvme1n1: p1 p2
+[   17.351839] EXT4-fs (nvme0n1p2): Supports (experimental) DIO atomic writes awu_min: 4096, awu_max: 4096
+[   17.357677] EXT4-fs (nvme0n1p2): mounted filesystem f4950ff8-171a-4520-bf1f-f0abb8b769ab ro with ordered data mode. Quota mode: none.
+[   18.021531] systemd[1]: Starting modprobe@nvme_fabrics.service - Load Kernel Module nvme_fabrics...
+[   18.040748] systemd[1]: modprobe@nvme_fabrics.service: Deactivated successfully.
+[   18.041103] systemd[1]: Finished modprobe@nvme_fabrics.service - Load Kernel Module nvme_fabrics.
+[   18.048617] EXT4-fs (nvme0n1p2): re-mounted f4950ff8-171a-4520-bf1f-f0abb8b769ab r/w.
+[   18.090696] nvme nvme0: using unchecked data buffer
+[   18.135341] systemd[1]: nvmefc-boot-connections.service - Auto-connect to subsystems on FC-NVME devices found during boot was skipped because of an unmet condition check (ConditionPathExists=/sys/class/fc/fc_udev_device/nvme_discovery).
+[   22.189865] block nvme0n1: No UUID available providing old NGUID
+[346797.041168] nvme nvme2: IO command:12 has unusual effects:00900001
+[942441.273040] nvme nvme3: rescanning namespaces.
+[942441.278089] nvme nvme4: rescanning namespaces.
+[942441.280075] nvme nvme2: rescanning namespaces.
+[942442.782447] nvme nvme3: rescanning namespaces.
+[942442.793973] nvme nvme4: rescanning namespaces.
+[942442.800810] nvme nvme2: rescanning namespaces.
+[942565.186924] nvme nvme3: rescanning namespaces.
+[942565.243656] nvme nvme4: rescanning namespaces.
+[942565.255171] nvme nvme2: rescanning namespaces.
+
+############################################################################
+## 4. XFS / FDP ioctl 内核支持探测 (核心!)
+############################################################################
+
+说明: 3FS FDP write stream 依赖内核私有 ioctl FS_IOC_WRITE_STREAM (0xC010662B,
+      struct fs_write_stream{op,stream_id,...}) 作用于 XFS 文件。
+      目标基线: 总部 FDP 内核 7.0.0-rc2+ (含该 ioctl + XFS write stream 实现)。
+      本节探测当前内核是否支持该 ioctl, 以及 XFS 文件上 GET_MAX 返回的最大流数。
+      只读模式下使用挂载点上已有文件; --allow-write-probe 时才创建临时文件。
+
+--- xfs 挂载点 ---
+$ findmnt -t xfs -o TARGET,SOURCE,OPTIONS
+
+--- xfsprogs 工具 ---
+$ which mkfs.xfs xfs_info 2>/dev/null; mkfs.xfs -V 2>/dev/null
+/usr/sbin/mkfs.xfs
+/usr/sbin/xfs_info
+mkfs.xfs version 6.6.0
+
+--- 所有 xfs 挂载点 xfs_info ---
+$ for m in $(findmnt -rn -t xfs -o TARGET); do echo "== $m =="; xfs_info $m 2>/dev/null | head -8; done
+
+--- 已安装内核是否带 FS_IOC_WRITE_STREAM (关键: 3fs storage 必需) ---
+$ echo '当前运行内核:'; k=$(uname -r); f=/lib/modules/$k/build/include/uapi/linux/fs.h; if [ -f "$f" ]; then grep -H 'FS_IOC_WRITE_STREAM' "$f" || echo "$f 中无该定义"; else echo "$f 不存在(该内核未装 headers/build 树)"; fi; echo; echo '所有已安装内核:'; found=0; for f in /lib/modules/*/build/include/uapi/linux/fs.h; do [ -f "$f" ] || continue; found=1; grep -q FS_IOC_WRITE_STREAM "$f" && echo "$f : 支持" || echo "$f : 不支持"; done; [ $found -eq 0 ] && echo '未找到任何 /lib/modules/*/build 内核头文件树'; echo; echo '内核源码树:'; ls -d /usr/src/linux* /usr/src/kernels/* 2>/dev/null
+当前运行内核:
+/lib/modules/7.0.0-rc2/build/include/uapi/linux/fs.h:#define FS_IOC_WRITE_STREAM		_IOWR('f', 43, struct fs_write_stream)
+
+所有已安装内核:
+/lib/modules/6.17.0-40-generic/build/include/uapi/linux/fs.h : 不支持
+/lib/modules/6.8.0-149-generic/build/include/uapi/linux/fs.h : 不支持
+/lib/modules/7.0.0-43-generic/build/include/uapi/linux/fs.h : 不支持
+/lib/modules/7.0.0-rc2/build/include/uapi/linux/fs.h : 支持
+
+内核源码树:
+/usr/src/linux-headers-6.17.0-40-generic
+/usr/src/linux-headers-6.8.0-149
+/usr/src/linux-headers-6.8.0-149-generic
+/usr/src/linux-headers-7.0.0-43-generic
+/usr/src/linux-headers-7.0.0-rc2
+/usr/src/linux-hwe-6.17-headers-6.17.0-40
+/usr/src/linux-hwe-7.0-headers-7.0.0-43
+
+--- 无法做 ioctl 探测: 需要 python3 且存在 XFS 挂载点 (XFS 挂载点: '') ---
+--- 若目标 NVMe 尚未格式化成 XFS, 属正常; 届时格式化后需再探测内核 ioctl 支持 ---
+
+############################################################################
+## 5. 存储节点运行环境 (3fs storage 依赖)
+############################################################################
+
+--- fs.aio-max-nr (3fs 要求调大) ---
+$ sysctl fs.aio-max-nr fs.aio-max-nr-default 2>/dev/null; sysctl fs.aio-nr
+fs.aio-max-nr = 65536
+fs.aio-nr = 0
+
+--- fd / memlock / 进程数限制 ---
+$ ulimit -n; ulimit -l; ulimit -u; cat /proc/sys/fs/nr_open
+1024
+198073612
+5789710
+1048576
+
+--- /dev/shm 大小 (USRBIO iov 共享内存) ---
+$ df -h /dev/shm
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           756G     0  756G   0% /dev/shm
+
+--- hugepages ---
+$ sysctl vm.nr_hugepages vm.nr_hugepages_meminfo 2>/dev/null; grep -i huge /proc/meminfo
+vm.nr_hugepages = 0
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+FileHugePages:     71680 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+
+--- FoundationDB (3fs 元数据后端, 客户端与服务端版本必须一致) ---
+$ which fdbserver fdbcli 2>/dev/null; fdbserver --version 2>/dev/null; fdbcli --version 2>/dev/null; rpm -qa 2>/dev/null | grep -i foundationdb; dpkg -l 2>/dev/null | grep -i foundationdb; ls /etc/foundationdb/ 2>/dev/null
+
+--- 已有的 3fs / fdb 进程与服务 ---
+$ ps aux | grep -E 'storage_main|meta_main|mgmtd_main|hf3fs_fuse|fdbserver' | grep -v grep; systemctl list-unit-files 2>/dev/null | grep -iE '3fs|fdb|foundation'
+
+--- 当前监听端口 (确认端口无冲突) ---
+$ ss -tlnp 2>/dev/null | head -40
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                                  
+LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=141621,fd=3),("systemd",pid=1,fd=89))
+LISTEN 0      128        127.0.0.1:6010       0.0.0.0:*    users:(("sshd",pid=159052,fd=7))                        
+LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=141649,fd=15))            
+LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=141649,fd=17))            
+LISTEN 0      512        127.0.0.1:42501      0.0.0.0:*    users:(("claude",pid=154751,fd=26))                     
+LISTEN 0      4096            [::]:22            [::]:*    users:(("sshd",pid=141621,fd=4),("systemd",pid=1,fd=90))
+LISTEN 0      128            [::1]:6010          [::]:*    users:(("sshd",pid=159052,fd=5))                        
+
+############################################################################
+## 6. GPU 客户端运行环境 (LMCache/vLLM, dskna004 重点)
+############################################################################
+
+--- 本机无 nvidia-smi (可能是存储节点, 正常; GPU 客户端必填) ---
+
+--- CUDA 工具链 ---
+$ nvcc --version 2>/dev/null; ls /usr/local/ | grep -i cuda
+
+--- Python 环境 ---
+$ python3 --version 2>/dev/null; which python3 pip3 pip uv conda 2>/dev/null; conda env list 2>/dev/null
+Python 3.12.3
+/usr/bin/python3
+
+--- 已装关键 Python 包 (torch/vllm/lmcache/hf3fs) ---
+$ python3 -m pip list 2>/dev/null | grep -iE '^(torch|vllm|lmcache|hf3fs|transformers|numpy) '
+
+--- FUSE 支持 (hf3fs_fuse_main 需要) ---
+$ ls -l /dev/fuse 2>/dev/null || echo '/dev/fuse 不存在'; grep fuse /proc/filesystems; which fusermount3 fusermount 2>/dev/null; pkg-config --modversion fuse3 2>/dev/null
+crw-rw-rw- 1 root root 10, 229 Nov 14 06:11 /dev/fuse
+	fuseblk
+nodev	fuse
+nodev	fusectl
+/usr/bin/fusermount3
+/usr/bin/fusermount
+
+--- NVIDIA peer memory / nvidia-fabricmanager ---
+$ systemctl is-active nvidia-fabricmanager 2>/dev/null; lsmod 2>/dev/null | grep -E 'nvidia|nv_peer' | head
+inactive
+
+############################################################################
+## 7. 构建工具链 (决定 3fs/LMCache 是现场构建还是分发二进制)
+############################################################################
+
+--- 编译器 ---
+$ gcc --version 2>/dev/null | head -1; g++ --version 2>/dev/null | head -1; clang-14 --version 2>/dev/null | head -1; clang++-14 --version 2>/dev/null | head -1; clang --version 2>/dev/null | head -1
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+
+--- cmake / make / ninja ---
+$ cmake --version 2>/dev/null | head -1; make --version 2>/dev/null | head -1; ninja --version 2>/dev/null
+GNU Make 4.3
+
+--- Rust (3fs chunk_engine 必需) ---
+$ rustc --version 2>/dev/null; cargo --version 2>/dev/null || echo 'rust 未安装'
+rust 未安装
+
+--- 3fs 依赖库 ---
+$ for p in libfuse3-dev libboost-dev libgflags-dev libglog-dev libaio-dev libunwind-dev libssl-dev; do dpkg -l $p 2>/dev/null | grep ^ii || rpm -q ${p%%-dev*}-devel 2>/dev/null; done; ldconfig -p 2>/dev/null | grep -E 'libfuse3|libaio|libglog|libgflags|libboost_system' | head
+ii  libssl-dev:amd64 3.0.13-0ubuntu3.16 amd64        Secure Sockets Layer toolkit - development files
+	libfuse3.so.3 (libc6,x86-64) => /lib/x86_64-linux-gnu/libfuse3.so.3
+	libaio.so.1t64 (libc6,x86-64) => /lib/x86_64-linux-gnu/libaio.so.1t64
+
+--- git / rsync / envsubst (部署脚本需要) ---
+$ git --version 2>/dev/null; rsync --version 2>/dev/null | head -1; which envsubst 2>/dev/null
+git version 2.43.0
+rsync  version 3.2.7  protocol version 31
+/usr/bin/envsubst
+
+--- docker / container 工具 ---
+$ docker --version 2>/dev/null; podman --version 2>/dev/null
+
+############################################################################
+## 8. 杂项
+############################################################################
+
+--- OS 盘剩余空间 (部署包/日志存放) ---
+$ df -h / /tmp /var 2>/dev/null
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p2  879G  179G  655G  22% /
+/dev/nvme0n1p2  879G  179G  655G  22% /
+/dev/nvme0n1p2  879G  179G  655G  22% /
+
+--- 系统语言/编码 ---
+$ locale 2>/dev/null | head -3
+LANG=en_US.UTF-8
+LANGUAGE=
+LC_CTYPE="en_US.UTF-8"
+
+--- 安全策略 (pam limits) ---
+$ grep -rE 'aio|max open|nofile|memlock' /etc/security/limits.conf /etc/security/limits.d/ 2>/dev/null | grep -v '^#'
+/etc/security/limits.conf:#        - memlock - max locked-in-memory address space (KB)
+/etc/security/limits.conf:#        - nofile - max number of open file descriptors
+
+############################################################################
+## 9. 部署前置条件快速判定 (根据上面收集结果自动汇总)
+############################################################################
+当前内核: 7.0.0-rc2
+[PASS] 内核带 FS_IOC_WRITE_STREAM (存储节点必需) = yes  
+[PASS] 开启 FDP 的 NVMe 数量 (max_write_streams>0) = 6  → 存储节点应 >=1 (预期每台 3 块 PM1763)
+[WARN] fs.aio-max-nr = 65536  → 存储节点需 sysctl -w fs.aio-max-nr=67108864
+[WARN] ulimit -n (当前 shell) = 1024  → 存储服务建议 >=1048576 (chunk engine 需大量 fd)
+[INFO] /dev/shm 容量(GB) = 756  → 客户端 USRBIO iov 用共享内存, 建议 >= 每线程 400MB 规模
+[PASS] RDMA 设备 = yes  
+[INFO] FoundationDB = no  → 至少 1 台(通常是元数据节点)需要 fdbserver/fdbcli >=7.1
+[INFO] GPU (nvidia-smi) = no  → 仅 GPU 客户端需要
+[INFO] FUSE (/dev/fuse) = yes  → 3FS 客户端(hf3fs_fuse_main)需要
+
+角色判定参考:
+  - 若 内核FDP=yes 且 开启FDP的NVMe>0  ->  可作 3FS 存储节点
+  - 若 GPU=yes 且 FUSE=yes            ->  可作 LMCache/vLLM 客户端
+  - 若 FDB=yes 或可安装 FDB           ->  可作 mgmtd/meta 节点(通常与某台存储节点合并)
+
+############################################################################
+## 收集完成
+############################################################################
+报告文件: .//dsksa304_envinfo_20261116_062931.txt
+请将 4 台机器的报告全部发回, 用于生成定制化部署指南。
