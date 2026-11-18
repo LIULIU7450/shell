@@ -30,3 +30,4 @@ sudo bash /tmp/collect_env_info.sh -o /tmp --allow-write-probe \
 - 单台大约 1–2 分钟（--peers 的 ping 和防火墙探测会占一点时间）。
 
 mkfs.xfs -L data${i} -s size=4096 /dev/nvme${i}n1
+mount -o noatime,nodiratime -L data${i} /storage/data${i}
