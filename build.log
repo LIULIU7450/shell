@@ -1,0 +1,1282 @@
+/usr/bin/cmake -P /home/smrc/lzh/3fs-main/build/CMakeFiles/VerifyGlobs.cmake
+/usr/bin/cmake -S/home/smrc/lzh/3fs-main -B/home/smrc/lzh/3fs-main/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/smrc/lzh/3fs-main/build/CMakeFiles /home/smrc/lzh/3fs-main/build//CMakeFiles/progress.marks
+/usr/bin/gmake  -f CMakeFiles/Makefile2 all
+gmake[1]: Entering directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f CMakeFiles/Hf3fsJemalloc_project.dir/build.make CMakeFiles/Hf3fsJemalloc_project.dir/depend
+/usr/bin/gmake  -f CMakeFiles/apache-arrow-cpp.dir/build.make CMakeFiles/apache-arrow-cpp.dir/depend
+/usr/bin/gmake  -f CMakeFiles/cargo_build_all.dir/build.make CMakeFiles/cargo_build_all.dir/depend
+/usr/bin/gmake  -f src/common/CMakeFiles/AlwaysCheckGit.dir/build.make src/common/CMakeFiles/AlwaysCheckGit.dir/depend
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/CMakeFiles/Hf3fsJemalloc_project.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/CMakeFiles/apache-arrow-cpp.dir/DependInfo.cmake --color=
+/usr/bin/gmake  -f third_party/fmt/CMakeFiles/fmt.dir/build.make third_party/fmt/CMakeFiles/fmt.dir/depend
+/usr/bin/gmake  -f third_party/zstd/build/cmake/lib/CMakeFiles/libzstd_static.dir/build.make third_party/zstd/build/cmake/lib/CMakeFiles/libzstd_static.dir/depend
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/CMakeFiles/cargo_build_all.dir/DependInfo.cmake --color=
+/usr/bin/gmake  -f third_party/folly/CMakeFiles/folly_base.dir/build.make third_party/folly/CMakeFiles/folly_base.dir/depend
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/src/common /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/src/common /home/smrc/lzh/3fs-main/build/src/common/CMakeFiles/AlwaysCheckGit.dir/DependInfo.cmake --color=
+/usr/bin/gmake  -f third_party/scnlib/CMakeFiles/scn.dir/build.make third_party/scnlib/CMakeFiles/scn.dir/depend
+/usr/bin/gmake  -f third_party/clickhouse-cpp/contrib/lz4/CMakeFiles/lz4-lib.dir/build.make third_party/clickhouse-cpp/contrib/lz4/CMakeFiles/lz4-lib.dir/depend
+/usr/bin/gmake  -f third_party/clickhouse-cpp/contrib/absl/CMakeFiles/absl-lib.dir/build.make third_party/clickhouse-cpp/contrib/absl/CMakeFiles/absl-lib.dir/depend
+/usr/bin/gmake  -f third_party/clickhouse-cpp/contrib/cityhash/CMakeFiles/cityhash-lib.dir/build.make third_party/clickhouse-cpp/contrib/cityhash/CMakeFiles/cityhash-lib.dir/depend
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f third_party/liburing-cmake/CMakeFiles/3fs_liburing.dir/build.make third_party/liburing-cmake/CMakeFiles/3fs_liburing.dir/depend
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/fmt /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/fmt /home/smrc/lzh/3fs-main/build/third_party/fmt/CMakeFiles/fmt.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/clickhouse-cpp/contrib/lz4 /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/clickhouse-cpp/contrib/lz4 /home/smrc/lzh/3fs-main/build/third_party/clickhouse-cpp/contrib/lz4/CMakeFiles/lz4-lib.dir/DependInfo.cmake --color=
+/usr/bin/gmake  -f third_party/leveldb/CMakeFiles/leveldb.dir/build.make third_party/leveldb/CMakeFiles/leveldb.dir/depend
+/usr/bin/gmake  -f third_party/rocksdb/CMakeFiles/rocksdb.dir/build.make third_party/rocksdb/CMakeFiles/rocksdb.dir/depend
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/clickhouse-cpp/contrib/absl /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/clickhouse-cpp/contrib/absl /home/smrc/lzh/3fs-main/build/third_party/clickhouse-cpp/contrib/absl/CMakeFiles/absl-lib.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/scnlib /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/scnlib /home/smrc/lzh/3fs-main/build/third_party/scnlib/CMakeFiles/scn.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/clickhouse-cpp/contrib/cityhash /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/clickhouse-cpp/contrib/cityhash /home/smrc/lzh/3fs-main/build/third_party/clickhouse-cpp/contrib/cityhash/CMakeFiles/cityhash-lib.dir/DependInfo.cmake --color=
+/usr/bin/gmake  -f third_party/googletest/googletest/CMakeFiles/gtest.dir/build.make third_party/googletest/googletest/CMakeFiles/gtest.dir/depend
+/usr/bin/gmake  -f tests/scripts/CMakeFiles/fdb_loopback.dir/build.make tests/scripts/CMakeFiles/fdb_loopback.dir/depend
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/zstd/build/cmake/lib /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/zstd/build/cmake/lib /home/smrc/lzh/3fs-main/build/third_party/zstd/build/cmake/lib/CMakeFiles/libzstd_static.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/liburing-cmake /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/liburing-cmake /home/smrc/lzh/3fs-main/build/third_party/liburing-cmake/CMakeFiles/3fs_liburing.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/tests/scripts /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/tests/scripts /home/smrc/lzh/3fs-main/build/tests/scripts/CMakeFiles/fdb_loopback.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/googletest/googletest /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/googletest/googletest /home/smrc/lzh/3fs-main/build/third_party/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake --color=
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f CMakeFiles/Hf3fsJemalloc_project.dir/build.make CMakeFiles/Hf3fsJemalloc_project.dir/build
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'CMakeFiles/Hf3fsJemalloc_project.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/leveldb /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/leveldb /home/smrc/lzh/3fs-main/build/third_party/leveldb/CMakeFiles/leveldb.dir/DependInfo.cmake --color=
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f CMakeFiles/apache-arrow-cpp.dir/build.make CMakeFiles/apache-arrow-cpp.dir/build
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f src/common/CMakeFiles/AlwaysCheckGit.dir/build.make src/common/CMakeFiles/AlwaysCheckGit.dir/build
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f CMakeFiles/cargo_build_all.dir/build.make CMakeFiles/cargo_build_all.dir/build
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build/src/common && /usr/bin/cmake -DRUN_CHECK_GIT_VERSION=1 -DPRE_CONFIGURE_DIR=/home/smrc/lzh/3fs-main/src/common/utils -DPOST_BUILD_DIR=/home/smrc/lzh/3fs-main/build -DGIT_HASH_CACHE= -DPROJECT_VERSION_MAJOR=0 -DPROJECT_VERSION_MINOR=1 -DPROJECT_VERSION_PATCH=5 -DPROJECT_VERSION=0.1.5 -DPROJECT_SOURCE_DIR=/home/smrc/lzh/3fs-main -P /home/smrc/lzh/3fs-main/cmake/GitVersion.cmake
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main && cargo build --release
+/usr/bin/gmake  -f third_party/clickhouse-cpp/contrib/lz4/CMakeFiles/lz4-lib.dir/build.make third_party/clickhouse-cpp/contrib/lz4/CMakeFiles/lz4-lib.dir/build
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f third_party/fmt/CMakeFiles/fmt.dir/build.make third_party/fmt/CMakeFiles/fmt.dir/build
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f third_party/scnlib/CMakeFiles/scn.dir/build.make third_party/scnlib/CMakeFiles/scn.dir/build
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'third_party/clickhouse-cpp/contrib/lz4/CMakeFiles/lz4-lib.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f third_party/clickhouse-cpp/contrib/absl/CMakeFiles/absl-lib.dir/build.make third_party/clickhouse-cpp/contrib/absl/CMakeFiles/absl-lib.dir/build
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f third_party/zstd/build/cmake/lib/CMakeFiles/libzstd_static.dir/build.make third_party/zstd/build/cmake/lib/CMakeFiles/libzstd_static.dir/build
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f third_party/clickhouse-cpp/contrib/cityhash/CMakeFiles/cityhash-lib.dir/build.make third_party/clickhouse-cpp/contrib/cityhash/CMakeFiles/cityhash-lib.dir/build
+/usr/bin/gmake  -f third_party/liburing-cmake/CMakeFiles/3fs_liburing.dir/build.make third_party/liburing-cmake/CMakeFiles/3fs_liburing.dir/build
+/usr/bin/gmake  -f tests/scripts/CMakeFiles/fdb_loopback.dir/build.make tests/scripts/CMakeFiles/fdb_loopback.dir/build
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'third_party/fmt/CMakeFiles/fmt.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f third_party/googletest/googletest/CMakeFiles/gtest.dir/build.make third_party/googletest/googletest/CMakeFiles/gtest.dir/build
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'third_party/clickhouse-cpp/contrib/absl/CMakeFiles/absl-lib.dir/build'.
+gmake[2]: Nothing to be done for 'third_party/clickhouse-cpp/contrib/cityhash/CMakeFiles/cityhash-lib.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'tests/scripts/CMakeFiles/fdb_loopback.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+[  0%] Built target Hf3fsJemalloc_project
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'third_party/scnlib/CMakeFiles/scn.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'third_party/liburing-cmake/CMakeFiles/3fs_liburing.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'third_party/googletest/googletest/CMakeFiles/gtest.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'third_party/zstd/build/cmake/lib/CMakeFiles/libzstd_static.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+[  0%] Performing update step for 'apache-arrow-cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp && /usr/bin/cmake -P /home/smrc/lzh/3fs-main/build/tmp/apache-arrow-cpp-gitupdate.cmake
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f third_party/leveldb/CMakeFiles/leveldb.dir/build.make third_party/leveldb/CMakeFiles/leveldb.dir/build
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  0%] Built target lz4-lib
+[  0%] Built target cityhash-lib
+[  0%] Built target fmt
+[  0%] Built target absl-lib
+[  0%] Built target 3fs_liburing
+[  0%] Built target fdb_loopback
+[  0%] Built target scn
+/usr/bin/gmake  -f third_party/clickhouse-cpp/clickhouse/CMakeFiles/clickhouse-cpp-lib-static.dir/build.make third_party/clickhouse-cpp/clickhouse/CMakeFiles/clickhouse-cpp-lib-static.dir/depend
+[  0%] Built target gtest
+[  2%] Built target libzstd_static
+/usr/bin/gmake  -f third_party/googletest/googlemock/CMakeFiles/gmock.dir/build.make third_party/googletest/googlemock/CMakeFiles/gmock.dir/depend
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'third_party/leveldb/CMakeFiles/leveldb.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/googletest/googlemock /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/googletest/googlemock /home/smrc/lzh/3fs-main/build/third_party/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/clickhouse-cpp/clickhouse /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/clickhouse-cpp/clickhouse /home/smrc/lzh/3fs-main/build/third_party/clickhouse-cpp/clickhouse/CMakeFiles/clickhouse-cpp-lib-static.dir/DependInfo.cmake --color=
+[  5%] Built target leveldb
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f third_party/googletest/googlemock/CMakeFiles/gmock.dir/build.make third_party/googletest/googlemock/CMakeFiles/gmock.dir/build
+-- Git Commit hash:  
+-- Git Commit Date & Timestamp:  
+-- Git Commit Tag & Seq Num: 250228 1
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f third_party/clickhouse-cpp/clickhouse/CMakeFiles/clickhouse-cpp-lib-static.dir/build.make third_party/clickhouse-cpp/clickhouse/CMakeFiles/clickhouse-cpp-lib-static.dir/build
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'third_party/googletest/googlemock/CMakeFiles/gmock.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+[  5%] No patch step for 'apache-arrow-cpp'
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'third_party/clickhouse-cpp/clickhouse/CMakeFiles/clickhouse-cpp-lib-static.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/cmake -E echo_append
+[  6%] Built target gmock
+[  8%] Built target clickhouse-cpp-lib-static
+/usr/bin/cmake -E touch /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp-stamp/apache-arrow-cpp-patch
+[  8%] Performing configure step for 'apache-arrow-cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && bash -x -c "    ( cd thirdparty && [[ -f export.sh ]] || ./download_dependencies.sh | tee export.sh ) &&     source thirdparty/export.sh && cmake -S . -B .         -DCMAKE_BUILD_TYPE=Release         -DARROW_USE_CCACHE=OFF         -DARROW_USE_SCCACHE=OFF         -DARROW_DEPENDENCY_SOURCE=BUNDLED         -DARROW_BUILD_STATIC=ON         -DARROW_JEMALLOC=ON         -DARROW_SIMD_LEVEL=DEFAULT         -DARROW_BUILD_EXAMPLES=OFF         -DARROW_PARQUET=ON -DARROW_CSV=ON         -DARROW_WITH_ZSTD=ON -DARROW_WITH_LZ4=ON -DARROW_WITH_ZLIB=ON"
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/rocksdb /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/rocksdb /home/smrc/lzh/3fs-main/build/third_party/rocksdb/CMakeFiles/rocksdb.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+cd /home/smrc/lzh/3fs-main/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main /home/smrc/lzh/3fs-main/third_party/folly /home/smrc/lzh/3fs-main/build /home/smrc/lzh/3fs-main/build/third_party/folly /home/smrc/lzh/3fs-main/build/third_party/folly/CMakeFiles/folly_base.dir/DependInfo.cmake --color=
+Re-run cmake no build system arguments
+-- Building using CMake version: 3.22.1
+-- Arrow version: 13.0.0 (full: '13.0.0')
+-- Arrow SO version: 1300 (full: 1300.0.0)
+-- clang-tidy found at /usr/bin/clang-tidy-14
+-- clang-format found at /usr/bin/clang-format-14
+-- infer not found
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f third_party/rocksdb/CMakeFiles/rocksdb.dir/build.make third_party/rocksdb/CMakeFiles/rocksdb.dir/build
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+/usr/bin/gmake  -f third_party/folly/CMakeFiles/folly_base.dir/build.make third_party/folly/CMakeFiles/folly_base.dir/build
+[  8%] Built target cargo_build_all
+-- Found cpplint executable at /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/build-support/cpplint.py
+-- System processor: x86_64
+-- Arrow build warning level: PRODUCTION
+-- Using ld linker
+-- Build Type: RELEASE
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'third_party/rocksdb/CMakeFiles/rocksdb.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+[ 31%] Built target rocksdb
+-- Using BUNDLED approach to find dependencies
+-- ARROW_ABSL_BUILD_VERSION: 20211102.0
+-- ARROW_ABSL_BUILD_SHA256_CHECKSUM: dcf71b9cba8dc0ca9940c4b316a0c796be8fab42b070bb6b7cab62b48f0e66c4
+-- ARROW_AWS_C_AUTH_BUILD_VERSION: v0.6.22
+-- ARROW_AWS_C_AUTH_BUILD_SHA256_CHECKSUM: 691a6b4418afcd3dc141351b6ad33fccd8e3ff84df0e9e045b42295d284ee14c
+-- ARROW_AWS_C_CAL_BUILD_VERSION: v0.5.20
+-- ARROW_AWS_C_CAL_BUILD_SHA256_CHECKSUM: acc352359bd06f8597415c366cf4ec4f00d0b0da92d637039a73323dd55b6cd0
+-- ARROW_AWS_C_COMMON_BUILD_VERSION: v0.8.9
+-- ARROW_AWS_C_COMMON_BUILD_SHA256_CHECKSUM: 2f3fbaf7c38eae5a00e2a816d09b81177f93529ae8ba1b82dc8f31407565327a
+-- ARROW_AWS_C_COMPRESSION_BUILD_VERSION: v0.2.16
+-- ARROW_AWS_C_COMPRESSION_BUILD_SHA256_CHECKSUM: 044b1dbbca431a07bde8255ef9ec443c300fc60d4c9408d4b862f65e496687f4
+-- ARROW_AWS_C_EVENT_STREAM_BUILD_VERSION: v0.2.18
+-- ARROW_AWS_C_EVENT_STREAM_BUILD_SHA256_CHECKSUM: 310ca617f713bf664e4c7485a3d42c1fb57813abd0107e49790d107def7cde4f
+-- ARROW_AWS_C_HTTP_BUILD_VERSION: v0.7.3
+-- ARROW_AWS_C_HTTP_BUILD_SHA256_CHECKSUM: 07e16c6bf5eba6f0dea96b6f55eae312a7c95b736f4d2e4a210000f45d8265ae
+-- ARROW_AWS_C_IO_BUILD_VERSION: v0.13.14
+-- ARROW_AWS_C_IO_BUILD_SHA256_CHECKSUM: 12b66510c3d9a4f7e9b714e9cfab2a5bf835f8b9ce2f909d20ae2a2128608c71
+-- ARROW_AWS_C_MQTT_BUILD_VERSION: v0.8.4
+-- ARROW_AWS_C_MQTT_BUILD_SHA256_CHECKSUM: 232eeac63e72883d460c686a09b98cdd811d24579affac47c5c3f696f956773f
+-- ARROW_AWS_C_S3_BUILD_VERSION: v0.2.3
+-- ARROW_AWS_C_S3_BUILD_SHA256_CHECKSUM: a00b3c9f319cd1c9aa2c3fa15098864df94b066dcba0deaccbb3caa952d902fe
+-- ARROW_AWS_C_SDKUTILS_BUILD_VERSION: v0.1.6
+-- ARROW_AWS_C_SDKUTILS_BUILD_SHA256_CHECKSUM: 8a2951344b2fb541eab1e9ca17c18a7fcbfd2aaff4cdd31d362d1fad96111b91
+-- ARROW_AWS_CHECKSUMS_BUILD_VERSION: v0.1.13
+-- ARROW_AWS_CHECKSUMS_BUILD_SHA256_CHECKSUM: 0f897686f1963253c5069a0e495b85c31635ba146cd3ac38cc2ea31eaf54694d
+-- ARROW_AWS_CRT_CPP_BUILD_VERSION: v0.18.16
+-- ARROW_AWS_CRT_CPP_BUILD_SHA256_CHECKSUM: 9e69bc1dc4b50871d1038aa9ff6ddeb4c9b28f7d6b5e5b1b69041ccf50a13483
+-- ARROW_AWS_LC_BUILD_VERSION: v1.3.0
+-- ARROW_AWS_LC_BUILD_SHA256_CHECKSUM: ae96a3567161552744fc0cae8b4d68ed88b1ec0f3d3c98700070115356da5a37
+-- ARROW_AWSSDK_BUILD_VERSION: 1.10.55
+-- ARROW_AWSSDK_BUILD_SHA256_CHECKSUM: 2d552fb1a84bef4a9b65e34aa7031851ed2aef5319e02cc6e4cb735c48aa30de
+-- ARROW_BOOST_BUILD_VERSION: 1.81.0
+-- ARROW_BOOST_BUILD_SHA256_CHECKSUM: 9e0ffae35528c35f90468997bc8d99500bf179cbae355415a89a600c38e13574
+-- ARROW_BROTLI_BUILD_VERSION: v1.0.9
+-- ARROW_BROTLI_BUILD_SHA256_CHECKSUM: f9e8d81d0405ba66d181529af42a3354f838c939095ff99930da6aa9cdf6fe46
+-- ARROW_BZIP2_BUILD_VERSION: 1.0.8
+-- ARROW_BZIP2_BUILD_SHA256_CHECKSUM: ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
+-- ARROW_CARES_BUILD_VERSION: 1.17.2
+-- ARROW_CARES_BUILD_SHA256_CHECKSUM: 4803c844ce20ce510ef0eb83f8ea41fa24ecaae9d280c468c582d2bb25b3913d
+-- ARROW_CRC32C_BUILD_VERSION: 1.1.2
+-- ARROW_CRC32C_BUILD_SHA256_CHECKSUM: ac07840513072b7fcebda6e821068aa04889018f24e10e46181068fb214d7e56
+-- ARROW_GBENCHMARK_BUILD_VERSION: v1.7.1
+-- ARROW_GBENCHMARK_BUILD_SHA256_CHECKSUM: 6430e4092653380d9dc4ccb45a1e2dc9259d581f4866dc0759713126056bc1d7
+-- ARROW_GFLAGS_BUILD_VERSION: v2.2.2
+-- ARROW_GFLAGS_BUILD_SHA256_CHECKSUM: 34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf
+-- ARROW_GLOG_BUILD_VERSION: v0.5.0
+-- ARROW_GLOG_BUILD_SHA256_CHECKSUM: eede71f28371bf39aa69b45de23b329d37214016e2055269b3b5e7cfd40b59f5
+-- ARROW_GOOGLE_CLOUD_CPP_BUILD_VERSION: v2.12.0
+-- ARROW_GOOGLE_CLOUD_CPP_BUILD_SHA256_CHECKSUM: 8cda870803925c62de8716a765e03eb9d34249977e5cdb7d0d20367e997a55e2
+-- ARROW_GRPC_BUILD_VERSION: v1.46.3
+-- ARROW_GRPC_BUILD_SHA256_CHECKSUM: d6cbf22cb5007af71b61c6be316a79397469c58c82a942552a62e708bce60964
+-- ARROW_GTEST_BUILD_VERSION: 1.11.0
+-- ARROW_GTEST_BUILD_SHA256_CHECKSUM: b4870bf121ff7795ba20d20bcdd8627b8e088f2d1dab299a031c1034eddc93d5
+-- ARROW_JEMALLOC_BUILD_VERSION: 5.3.0
+-- ARROW_JEMALLOC_BUILD_SHA256_CHECKSUM: 2db82d1e7119df3e71b7640219b6dfe84789bc0537983c3b7ac4f7189aecfeaa
+-- ARROW_LZ4_BUILD_VERSION: v1.9.4
+-- ARROW_LZ4_BUILD_SHA256_CHECKSUM: 0b0e3aa07c8c063ddf40b082bdf7e37a1562bda40a0ff5272957f3e987e0e54b
+-- ARROW_MIMALLOC_BUILD_VERSION: v2.0.6
+-- ARROW_MIMALLOC_BUILD_SHA256_CHECKSUM: 9f05c94cc2b017ed13698834ac2a3567b6339a8bde27640df5a1581d49d05ce5
+-- ARROW_NLOHMANN_JSON_BUILD_VERSION: v3.10.5
+-- ARROW_NLOHMANN_JSON_BUILD_SHA256_CHECKSUM: 5daca6ca216495edf89d167f808d1d03c4a4d929cef7da5e10f135ae1540c7e4
+-- ARROW_OPENTELEMETRY_BUILD_VERSION: v1.8.1
+-- ARROW_OPENTELEMETRY_BUILD_SHA256_CHECKSUM: 3d640201594b07f08dade9cd1017bd0b59674daca26223b560b9bb6bf56264c2
+-- ARROW_OPENTELEMETRY_PROTO_BUILD_VERSION: v0.17.0
+-- ARROW_OPENTELEMETRY_PROTO_BUILD_SHA256_CHECKSUM: f269fbcb30e17b03caa1decd231ce826e59d7651c0f71c3b28eb5140b4bb5412
+-- ARROW_ORC_BUILD_VERSION: 1.9.0
+-- ARROW_ORC_BUILD_SHA256_CHECKSUM: 0dca8bbccdb2ee87e59ba964933436beebd02ea78c4134424828a8127fbc4faa
+-- ARROW_PROTOBUF_BUILD_VERSION: v21.3
+-- ARROW_PROTOBUF_BUILD_SHA256_CHECKSUM: 2f723218f6cb709ae4cdc4fb5ed56a5951fc5d466f0128ce4c946b8c78c8c49f
+-- ARROW_RAPIDJSON_BUILD_VERSION: 232389d4f1012dddec4ef84861face2d2ba85709
+-- ARROW_RAPIDJSON_BUILD_SHA256_CHECKSUM: b9290a9a6d444c8e049bd589ab804e0ccf2b05dc5984a19ed5ae75d090064806
+-- ARROW_RE2_BUILD_VERSION: 2022-06-01
+-- ARROW_RE2_BUILD_SHA256_CHECKSUM: f89c61410a072e5cbcf8c27e3a778da7d6fd2f2b5b1445cd4f4508bee946ab0f
+-- ARROW_SNAPPY_BUILD_VERSION: 1.1.9
+-- ARROW_SNAPPY_BUILD_SHA256_CHECKSUM: 75c1fbb3d618dd3a0483bff0e26d0a92b495bbe5059c8b4f1c962b478b6e06e7
+-- ARROW_SUBSTRAIT_BUILD_VERSION: v0.20.0
+-- ARROW_SUBSTRAIT_BUILD_SHA256_CHECKSUM: 5ceaa559ccef29a7825b5e5d4b5e7eed384830294f08bec913feecdd903a94cf
+-- ARROW_S2N_TLS_BUILD_VERSION: v1.3.35
+-- ARROW_S2N_TLS_BUILD_SHA256_CHECKSUM: 9d32b26e6bfcc058d98248bf8fc231537e347395dd89cf62bb432b55c5da990d
+-- ARROW_THRIFT_BUILD_VERSION: 0.16.0
+-- ARROW_THRIFT_BUILD_SHA256_CHECKSUM: f460b5c1ca30d8918ff95ea3eb6291b3951cf518553566088f3f2be8981f6209
+-- ARROW_UCX_BUILD_VERSION: 1.12.1
+-- ARROW_UCX_BUILD_SHA256_CHECKSUM: 9bef31aed0e28bf1973d28d74d9ac4f8926c43ca3b7010bd22a084e164e31b71
+-- ARROW_UTF8PROC_BUILD_VERSION: v2.7.0
+-- ARROW_UTF8PROC_BUILD_SHA256_CHECKSUM: 4bb121e297293c0fd55f08f83afab6d35d48f0af4ecc07523ad8ec99aa2b12a1
+-- ARROW_XSIMD_BUILD_VERSION: 9.0.1
+-- ARROW_XSIMD_BUILD_SHA256_CHECKSUM: b1bb5f92167fd3a4f25749db0be7e61ed37e0a5d943490f3accdcd2cd2918cc0
+-- ARROW_ZLIB_BUILD_VERSION: 1.2.13
+-- ARROW_ZLIB_BUILD_SHA256_CHECKSUM: b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30
+-- ARROW_ZSTD_BUILD_VERSION: 1.5.5
+-- ARROW_ZSTD_BUILD_SHA256_CHECKSUM: 9c4396cc829cfae319a6e2615202e82aad41372073482fce286fac78646d3ee4
+gmake[2]: Entering directory '/home/smrc/lzh/3fs-main/build'
+gmake[2]: Nothing to be done for 'third_party/folly/CMakeFiles/folly_base.dir/build'.
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+-- Boost include dir: 
+-- Building without OpenSSL support. Minimum OpenSSL version 1.0.2 required.
+-- Building Apache Thrift from source
+[ 53%] Built target folly_base
+-- Building jemalloc from source
+-- Building xsimd from source
+-- Building ZLIB from source
+-- Building LZ4 from source
+-- Building Zstandard from source
+-- Found hdfs.h at: /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/thirdparty/hadoop/include/hdfs.h
+-- All bundled static libraries: thrift::thrift;jemalloc::jemalloc;ZLIB::ZLIB;LZ4::lz4;zstd::libzstd_static
+-- CMAKE_C_FLAGS:   -Wall -fno-semantic-interposition -msse4.2 
+-- CMAKE_CXX_FLAGS:  -Wno-noexcept-type  -fdiagnostics-color=always  -Wall -fno-semantic-interposition -msse4.2 
+-- CMAKE_C_FLAGS_RELEASE: -O3 -DNDEBUG -O2 -ftree-vectorize 
+-- CMAKE_CXX_FLAGS_RELEASE: -O3 -DNDEBUG -O2 -ftree-vectorize 
+-- Creating bundled static library target arrow_bundled_dependencies at /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/build/release/libarrow_bundled_dependencies.a
+-- ---------------------------------------------------------------------
+-- Arrow version:                                 13.0.0
+-- 
+-- Build configuration summary:
+--   Generator: Unix Makefiles
+--   Build type: RELEASE
+--   Source directory: /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp
+--   Install prefix: /usr/local
+--   Compile commands: /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/compile_commands.json
+-- 
+-- Compile and link options:
+-- 
+--   ARROW_CXXFLAGS="" [default=""]
+--       Compiler flags to append when compiling Arrow
+--   ARROW_BUILD_STATIC=ON [default=ON]
+--       Build static libraries
+--   ARROW_BUILD_SHARED=ON [default=ON]
+--       Build shared libraries
+--   ARROW_PACKAGE_KIND="" [default=""]
+--       Arbitrary string that identifies the kind of package
+--       (for informational purposes)
+--   ARROW_GIT_ID=b7d2f7ffca66c868bd2fce5b3749c6caa002a7f0 [default=""]
+--       The Arrow git commit id (if any)
+--   ARROW_GIT_DESCRIPTION=apache-arrow-13.0.0 [default=""]
+--       The Arrow git commit description (if any)
+--   ARROW_NO_DEPRECATED_API=OFF [default=OFF]
+--       Exclude deprecated APIs from build
+--   ARROW_POSITION_INDEPENDENT_CODE=ON [default=ON]
+--       Whether to create position-independent target
+--   ARROW_USE_CCACHE=OFF [default=ON]
+--       Use ccache when compiling (if available)
+--   ARROW_USE_SCCACHE=OFF [default=ON]
+--       Use sccache when compiling (if available),
+--       takes precedence over ccache if a storage backend is configured
+--   ARROW_USE_LD_GOLD=OFF [default=OFF]
+--       Use ld.gold for linking on Linux (if available)
+--   ARROW_USE_PRECOMPILED_HEADERS=OFF [default=OFF]
+--       Use precompiled headers when compiling
+--   ARROW_SIMD_LEVEL=SSE4_2 [default=NONE|SSE4_2|AVX2|AVX512|NEON|SVE|SVE128|SVE256|SVE512|DEFAULT]
+--       Compile-time SIMD optimization level
+--   ARROW_RUNTIME_SIMD_LEVEL=MAX [default=NONE|SSE4_2|AVX2|AVX512|MAX]
+--       Max runtime SIMD optimization level
+--   ARROW_ALTIVEC=ON [default=ON]
+--       Build with Altivec if compiler has support
+--   ARROW_RPATH_ORIGIN=OFF [default=OFF]
+--       Build Arrow libraries with RATH set to $ORIGIN
+--   ARROW_INSTALL_NAME_RPATH=ON [default=ON]
+--       Build Arrow libraries with install_name set to @rpath
+--   ARROW_GGDB_DEBUG=ON [default=ON]
+--       Pass -ggdb flag to debug builds
+--   ARROW_WITH_MUSL=OFF [default=OFF]
+--       Whether the system libc is musl or not
+-- 
+-- Test and benchmark options:
+-- 
+--   ARROW_BUILD_EXAMPLES=OFF [default=OFF]
+--       Build the Arrow examples
+--   ARROW_BUILD_TESTS=OFF [default=OFF]
+--       Build the Arrow googletest unit tests
+--   ARROW_ENABLE_TIMING_TESTS=ON [default=ON]
+--       Enable timing-sensitive tests
+--   ARROW_BUILD_INTEGRATION=OFF [default=OFF]
+--       Build the Arrow integration test executables
+--   ARROW_BUILD_BENCHMARKS=OFF [default=OFF]
+--       Build the Arrow micro benchmarks
+--   ARROW_BUILD_BENCHMARKS_REFERENCE=OFF [default=OFF]
+--       Build the Arrow micro reference benchmarks
+--   ARROW_BUILD_OPENMP_BENCHMARKS=OFF [default=OFF]
+--       Build the Arrow benchmarks that rely on OpenMP
+--   ARROW_BUILD_DETAILED_BENCHMARKS=OFF [default=OFF]
+--       Build benchmarks that do a longer exploration of performance
+--   ARROW_TEST_LINKAGE=shared [default=shared|static]
+--       Linkage of Arrow libraries with unit tests executables.
+--   ARROW_FUZZING=OFF [default=OFF]
+--       Build Arrow Fuzzing executables
+--   ARROW_LARGE_MEMORY_TESTS=OFF [default=OFF]
+--       Enable unit tests which use large memory
+-- 
+-- Lint options:
+-- 
+--   ARROW_ONLY_LINT=OFF [default=OFF]
+--       Only define the lint and check-format targets
+--   ARROW_VERBOSE_LINT=OFF [default=OFF]
+--       If off, 'quiet' flags will be passed to linting tools
+--   ARROW_GENERATE_COVERAGE=OFF [default=OFF]
+--       Build with C++ code coverage enabled
+-- 
+-- Checks options:
+-- 
+--   ARROW_TEST_MEMCHECK=OFF [default=OFF]
+--       Run the test suite using valgrind --tool=memcheck
+--   ARROW_USE_ASAN=OFF [default=OFF]
+--       Enable Address Sanitizer checks
+--   ARROW_USE_TSAN=OFF [default=OFF]
+--       Enable Thread Sanitizer checks
+--   ARROW_USE_UBSAN=OFF [default=OFF]
+--       Enable Undefined Behavior sanitizer checks
+-- 
+-- Project component options:
+-- 
+--   ARROW_ACERO=OFF [default=OFF]
+--       Build the Arrow Acero Engine Module
+--   ARROW_BUILD_UTILITIES=OFF [default=OFF]
+--       Build Arrow commandline utilities
+--   ARROW_COMPUTE=OFF [default=OFF]
+--       Build all Arrow Compute kernels
+--   ARROW_CSV=ON [default=OFF]
+--       Build the Arrow CSV Parser Module
+--   ARROW_CUDA=OFF [default=OFF]
+--       Build the Arrow CUDA extensions (requires CUDA toolkit)
+--   ARROW_DATASET=OFF [default=OFF]
+--       Build the Arrow Dataset Modules
+--   ARROW_FILESYSTEM=OFF [default=OFF]
+--       Build the Arrow Filesystem Layer
+--   ARROW_FLIGHT=OFF [default=OFF]
+--       Build the Arrow Flight RPC System (requires GRPC, Protocol Buffers)
+--   ARROW_FLIGHT_SQL=OFF [default=OFF]
+--       Build the Arrow Flight SQL extension
+--   ARROW_GANDIVA=OFF [default=OFF]
+--       Build the Gandiva libraries
+--   ARROW_GCS=OFF [default=OFF]
+--       Build Arrow with GCS support (requires the GCloud SDK for C++)
+--   ARROW_HDFS=OFF [default=OFF]
+--       Build the Arrow HDFS bridge
+--   ARROW_IPC=ON [default=ON]
+--       Build the Arrow IPC extensions
+--   ARROW_JEMALLOC=ON [default=ON]
+--       Build the Arrow jemalloc-based allocator
+--   ARROW_JSON=OFF [default=OFF]
+--       Build Arrow with JSON support (requires RapidJSON)
+--   ARROW_MIMALLOC=OFF [default=OFF]
+--       Build the Arrow mimalloc-based allocator
+--   ARROW_PARQUET=ON [default=OFF]
+--       Build the Parquet libraries
+--   ARROW_ORC=OFF [default=OFF]
+--       Build the Arrow ORC adapter
+--   ARROW_PYTHON=OFF [default=OFF]
+--       Build some components needed by PyArrow.
+--       (This is a deprecated option. Use CMake presets instead.)
+--   ARROW_S3=OFF [default=OFF]
+--       Build Arrow with S3 support (requires the AWS SDK for C++)
+--   ARROW_SKYHOOK=OFF [default=OFF]
+--       Build the Skyhook libraries
+--   ARROW_SUBSTRAIT=OFF [default=OFF]
+--       Build the Arrow Substrait Consumer Module
+--   ARROW_TENSORFLOW=OFF [default=OFF]
+--       Build Arrow with TensorFlow support enabled
+--   ARROW_TESTING=OFF [default=OFF]
+--       Build the Arrow testing libraries
+-- 
+-- Thirdparty toolchain options:
+-- 
+--   ARROW_DEPENDENCY_SOURCE=BUNDLED [default=AUTO|BUNDLED|SYSTEM|CONDA|VCPKG|BREW]
+--       Method to use for acquiring arrow's build dependencies
+--   ARROW_VERBOSE_THIRDPARTY_BUILD=OFF [default=OFF]
+--       Show output from ExternalProjects rather than just logging to files
+--   ARROW_DEPENDENCY_USE_SHARED=ON [default=ON]
+--       Link to shared libraries
+--   ARROW_BOOST_USE_SHARED=ON [default=ON]
+--       Rely on Boost shared libraries where relevant
+--   ARROW_BROTLI_USE_SHARED=ON [default=ON]
+--       Rely on Brotli shared libraries where relevant
+--   ARROW_BZ2_USE_SHARED=ON [default=ON]
+--       Rely on Bz2 shared libraries where relevant
+--   ARROW_GFLAGS_USE_SHARED=ON [default=ON]
+--       Rely on GFlags shared libraries where relevant
+--   ARROW_GRPC_USE_SHARED=ON [default=ON]
+--       Rely on gRPC shared libraries where relevant
+--   ARROW_JEMALLOC_USE_SHARED=OFF [default=ON]
+--       Rely on jemalloc shared libraries where relevant
+--   ARROW_LZ4_USE_SHARED=ON [default=ON]
+--       Rely on lz4 shared libraries where relevant
+--   ARROW_OPENSSL_USE_SHARED=ON [default=ON]
+--       Rely on OpenSSL shared libraries where relevant
+--   ARROW_PROTOBUF_USE_SHARED=ON [default=ON]
+--       Rely on Protocol Buffers shared libraries where relevant
+--   ARROW_SNAPPY_USE_SHARED=ON [default=ON]
+--       Rely on snappy shared libraries where relevant
+--   ARROW_THRIFT_USE_SHARED=ON [default=ON]
+--       Rely on thrift shared libraries where relevant
+--   ARROW_UTF8PROC_USE_SHARED=ON [default=ON]
+--       Rely on utf8proc shared libraries where relevant
+--   ARROW_ZSTD_USE_SHARED=ON [default=ON]
+--       Rely on zstd shared libraries where relevant
+--   ARROW_USE_GLOG=OFF [default=OFF]
+--       Build libraries with glog support for pluggable logging
+--   ARROW_WITH_BACKTRACE=ON [default=ON]
+--       Build with backtrace support
+--   ARROW_WITH_OPENTELEMETRY=OFF [default=OFF]
+--       Build libraries with OpenTelemetry support for distributed tracing
+--   ARROW_WITH_BROTLI=OFF [default=OFF]
+--       Build with Brotli compression
+--   ARROW_WITH_BZ2=OFF [default=OFF]
+--       Build with BZ2 compression
+--   ARROW_WITH_LZ4=ON [default=OFF]
+--       Build with lz4 compression
+--   ARROW_WITH_SNAPPY=OFF [default=OFF]
+--       Build with Snappy compression
+--   ARROW_WITH_ZLIB=ON [default=OFF]
+--       Build with zlib compression
+--   ARROW_WITH_ZSTD=ON [default=OFF]
+--       Build with zstd compression
+--   ARROW_WITH_UCX=OFF [default=OFF]
+--       Build with UCX transport for Arrow Flight
+--       (only used if ARROW_FLIGHT is ON)
+--   ARROW_WITH_UTF8PROC=OFF [default=ON]
+--       Build with support for Unicode properties using the utf8proc library
+--       (only used if ARROW_COMPUTE is ON or ARROW_GANDIVA is ON)
+--   ARROW_WITH_RE2=OFF [default=ON]
+--       Build with support for regular expressions using the re2 library
+--       (only used if ARROW_COMPUTE or ARROW_GANDIVA is ON)
+-- 
+-- Parquet options:
+-- 
+--   PARQUET_MINIMAL_DEPENDENCY=OFF [default=OFF]
+--       Depend only on Thirdparty headers to build libparquet.
+--       Always OFF if building binaries
+--   PARQUET_BUILD_EXECUTABLES=OFF [default=OFF]
+--       Build the Parquet executable CLI tools. Requires static libraries to be built.
+--   PARQUET_BUILD_EXAMPLES=OFF [default=OFF]
+--       Build the Parquet examples. Requires static libraries to be built.
+--   PARQUET_REQUIRE_ENCRYPTION=OFF [default=OFF]
+--       Build support for encryption. Fail if OpenSSL is not found
+-- 
+-- Gandiva options:
+-- 
+--   ARROW_GANDIVA_STATIC_LIBSTDCPP=OFF [default=OFF]
+--       Include -static-libstdc++ -static-libgcc when linking with
+--       Gandiva static libraries
+--   ARROW_GANDIVA_PC_CXX_FLAGS="" [default=""]
+--       Compiler flags to append when pre-compiling Gandiva operations
+-- 
+-- Advanced developer options:
+-- 
+--   ARROW_EXTRA_ERROR_CONTEXT=OFF [default=OFF]
+--       Compile with extra error context (line numbers, code)
+--   ARROW_OPTIONAL_INSTALL=OFF [default=OFF]
+--       If enabled install ONLY targets that have already been built. Please be
+--       advised that if this is enabled 'install' will fail silently on components
+--       that have not been built
+--   ARROW_GDB_INSTALL_DIR="" [default=""]
+--       Use a custom install directory for GDB plugin.
+--       In general, you don't need to specify this because the default
+--       (CMAKE_INSTALL_FULL_BINDIR on Windows, CMAKE_INSTALL_FULL_LIBDIR otherwise)
+--       is reasonable.
+--   Outputting build configuration summary to /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/cmake_summary.json
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E touch /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp-stamp/apache-arrow-cpp-configure
+[ 53%] Performing build step for 'apache-arrow-cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && bash -x -c "source thirdparty/export.sh && cmake --build . -j8" BUILD_JOB_SERVER_AWARE 1
+gmake[3]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/cmake -S/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp -B/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/CMakeFiles /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp//CMakeFiles/progress.marks
+/usr/bin/gmake  -f CMakeFiles/Makefile2 all
+gmake[4]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f CMakeFiles/boost_ep.dir/build.make CMakeFiles/boost_ep.dir/depend
+/usr/bin/gmake  -f CMakeFiles/jemalloc_ep.dir/build.make CMakeFiles/jemalloc_ep.dir/depend
+/usr/bin/gmake  -f CMakeFiles/xsimd_ep.dir/build.make CMakeFiles/xsimd_ep.dir/depend
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/CMakeFiles/boost_ep.dir/DependInfo.cmake --color=
+/usr/bin/gmake  -f CMakeFiles/zlib_ep.dir/build.make CMakeFiles/zlib_ep.dir/depend
+/usr/bin/gmake  -f CMakeFiles/lz4_ep.dir/build.make CMakeFiles/lz4_ep.dir/depend
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/CMakeFiles/jemalloc_ep.dir/DependInfo.cmake --color=
+/usr/bin/gmake  -f CMakeFiles/zstd_ep.dir/build.make CMakeFiles/zstd_ep.dir/depend
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/CMakeFiles/xsimd_ep.dir/DependInfo.cmake --color=
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/CMakeFiles/zlib_ep.dir/DependInfo.cmake --color=
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/CMakeFiles/lz4_ep.dir/DependInfo.cmake --color=
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/CMakeFiles/zstd_ep.dir/DependInfo.cmake --color=
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f CMakeFiles/jemalloc_ep.dir/build.make CMakeFiles/jemalloc_ep.dir/build
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f CMakeFiles/boost_ep.dir/build.make CMakeFiles/boost_ep.dir/build
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'CMakeFiles/jemalloc_ep.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'CMakeFiles/boost_ep.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f CMakeFiles/xsimd_ep.dir/build.make CMakeFiles/xsimd_ep.dir/build
+/usr/bin/gmake  -f CMakeFiles/lz4_ep.dir/build.make CMakeFiles/lz4_ep.dir/build
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f CMakeFiles/zlib_ep.dir/build.make CMakeFiles/zlib_ep.dir/build
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'CMakeFiles/xsimd_ep.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f CMakeFiles/zstd_ep.dir/build.make CMakeFiles/zstd_ep.dir/build
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'CMakeFiles/lz4_ep.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'CMakeFiles/zlib_ep.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'CMakeFiles/zstd_ep.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+[  3%] Built target jemalloc_ep
+[  5%] Built target boost_ep
+[  8%] Built target xsimd_ep
+/usr/bin/gmake  -f CMakeFiles/thrift_ep.dir/build.make CMakeFiles/thrift_ep.dir/depend
+[ 11%] Built target zlib_ep
+[ 14%] Built target zstd_ep
+[ 17%] Built target lz4_ep
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/CMakeFiles/thrift_ep.dir/DependInfo.cmake --color=
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f CMakeFiles/thrift_ep.dir/build.make CMakeFiles/thrift_ep.dir/build
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'CMakeFiles/thrift_ep.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+[ 20%] Built target thrift_ep
+/usr/bin/gmake  -f src/arrow/CMakeFiles/arrow_bundled_dependencies_merge.dir/build.make src/arrow/CMakeFiles/arrow_bundled_dependencies_merge.dir/depend
+/usr/bin/gmake  -f CMakeFiles/toolchain.dir/build.make CMakeFiles/toolchain.dir/depend
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_bundled_dependencies_merge.dir/DependInfo.cmake --color=
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/CMakeFiles/toolchain.dir/DependInfo.cmake --color=
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f src/arrow/CMakeFiles/arrow_bundled_dependencies_merge.dir/build.make src/arrow/CMakeFiles/arrow_bundled_dependencies_merge.dir/build
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f CMakeFiles/toolchain.dir/build.make CMakeFiles/toolchain.dir/build
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'CMakeFiles/toolchain.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+[ 20%] Bundling /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/build/release/libarrow_bundled_dependencies.a
+[ 20%] Built target toolchain
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow && /usr/bin/ar -M < /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/arrow_bundled_dependencies.ar
+/usr/bin/gmake  -f CMakeFiles/arrow_dependencies.dir/build.make CMakeFiles/arrow_dependencies.dir/depend
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/CMakeFiles/arrow_dependencies.dir/DependInfo.cmake --color=
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f CMakeFiles/arrow_dependencies.dir/build.make CMakeFiles/arrow_dependencies.dir/build
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'CMakeFiles/arrow_dependencies.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+[ 20%] Built target arrow_dependencies
+/usr/bin/gmake  -f src/arrow/CMakeFiles/arrow_objlib.dir/build.make src/arrow/CMakeFiles/arrow_objlib.dir/depend
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/DependInfo.cmake --color=
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/musl/strptime.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriCommon.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriCompare.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriEscape.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriFile.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriIp4.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriIp4Base.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriMemory.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriNormalize.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriNormalizeBase.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriParse.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriParseBase.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriQuery.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriRecompose.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriResolve.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/uriparser/UriShorten.c.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/array_base.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/array_binary.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/array_decimal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/array_dict.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/array_nested.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/array_primitive.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/array_run_end.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/builder_adaptive.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/builder_base.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/builder_binary.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/builder_decimal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/builder_dict.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/builder_nested.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/builder_primitive.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/builder_run_end.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/builder_union.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/concatenate.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/data.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/diff.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/util.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/array/validate.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/buffer.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/builder.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/c/bridge.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/chunk_resolver.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/chunked_array.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compare.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/api_aggregate.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/api_scalar.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/api_vector.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/cast.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/exec.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/expression.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/function.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/function_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernel.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/codegen_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/ree_util_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/row_encoder.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/scalar_cast_boolean.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/scalar_cast_dictionary.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/scalar_cast_extension.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/scalar_cast_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/scalar_cast_nested.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/scalar_cast_numeric.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/scalar_cast_string.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/scalar_cast_temporal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/util_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/vector_hash.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/vector_selection.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/vector_selection_filter_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/vector_selection_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/kernels/vector_selection_take_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/key_hash.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/key_hash_avx2.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/key_map.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/key_map_avx2.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/light_array.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/ordering.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/registry.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/row/compare_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/row/compare_internal_avx2.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/row/encode_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/row/encode_internal_avx2.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/row/grouper.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/row/row_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/util.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/compute/util_avx2.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/config.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/csv/chunker.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/csv/column_builder.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/csv/column_decoder.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/csv/converter.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/csv/options.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/csv/parser.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/csv/reader.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/csv/writer.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/datum.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/device.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/extension_type.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/io/buffered.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/io/caching.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/io/compressed.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/io/file.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/io/hdfs.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/io/hdfs_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/io/interfaces.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/io/memory.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/io/slow.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/io/stdio.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/io/transform.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/ipc/dictionary.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/ipc/feather.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/ipc/message.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/ipc/metadata_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/ipc/options.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/ipc/reader.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/ipc/writer.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/memory_pool.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/memory_pool_jemalloc.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/pretty_print.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/record_batch.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/result.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/scalar.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/sparse_tensor.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/status.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/table.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/table_builder.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/tensor.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/tensor/coo_converter.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/tensor/csf_converter.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/tensor/csx_converter.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/type.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/type_traits.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/align_util.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/async_util.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/atfork_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/basic_decimal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/bit_block_counter.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/bit_run_reader.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/bit_util.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/bitmap.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/bitmap_builders.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/bitmap_ops.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/bpacking.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/bpacking_avx2.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/bpacking_avx512.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/byte_size.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/cancel.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/compression.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/compression_lz4.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/compression_zlib.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/compression_zstd.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/counting_semaphore.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/cpu_info.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/crc32.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/debug.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/decimal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/delimiting.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/formatting.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/future.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/hashing.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/int_util.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/io_util.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/key_value_metadata.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/logging.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/memory.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/mutex.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/ree_util.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/string.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/string_builder.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/task_group.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/tdigest.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/thread_pool.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/time.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/tracing.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/trie.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/union_util.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/unreachable.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/uri.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/utf8.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/util/value_parsing.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/base64.cpp.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/datetime/tz.cpp.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/double-conversion/bignum-dtoa.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/double-conversion/bignum.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/double-conversion/cached-powers.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/double-conversion/double-to-string.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/double-conversion/fast-dtoa.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/double-conversion/fixed-dtoa.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/double-conversion/string-to-double.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/vendored/double-conversion/strtod.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Dependencies file "src/arrow/CMakeFiles/arrow_objlib.dir/visitor.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_objlib.dir/compiler_depend.internal".
+Consolidate compiler generated dependencies of target arrow_objlib
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f src/arrow/CMakeFiles/arrow_objlib.dir/build.make src/arrow/CMakeFiles/arrow_objlib.dir/build
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+[ 20%] Built target arrow_bundled_dependencies_merge
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'src/arrow/CMakeFiles/arrow_objlib.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+[ 86%] Built target arrow_objlib
+/usr/bin/gmake  -f src/arrow/CMakeFiles/arrow_shared.dir/build.make src/arrow/CMakeFiles/arrow_shared.dir/depend
+/usr/bin/gmake  -f src/arrow/CMakeFiles/arrow_static.dir/build.make src/arrow/CMakeFiles/arrow_static.dir/depend
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_shared.dir/DependInfo.cmake --color=
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/arrow/CMakeFiles/arrow_static.dir/DependInfo.cmake --color=
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f src/arrow/CMakeFiles/arrow_shared.dir/build.make src/arrow/CMakeFiles/arrow_shared.dir/build
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f src/arrow/CMakeFiles/arrow_static.dir/build.make src/arrow/CMakeFiles/arrow_static.dir/build
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'src/arrow/CMakeFiles/arrow_shared.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'src/arrow/CMakeFiles/arrow_static.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+[ 86%] Built target arrow_shared
+[ 87%] Built target arrow_static
+/usr/bin/gmake  -f src/parquet/CMakeFiles/parquet_objlib.dir/build.make src/parquet/CMakeFiles/parquet_objlib.dir/depend
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/DependInfo.cmake --color=
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/__/generated/parquet_constants.cpp.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/__/generated/parquet_types.cpp.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/arrow/path_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/arrow/reader.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/arrow/reader_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/arrow/schema.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/arrow/schema_internal.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/arrow/writer.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/bloom_filter.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/bloom_filter_reader.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/column_reader.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/column_scanner.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/column_writer.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/encoding.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/encryption/encryption.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/encryption/encryption_internal_nossl.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/encryption/internal_file_decryptor.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/encryption/internal_file_encryptor.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/exception.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/file_reader.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/file_writer.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/level_comparison.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/level_comparison_avx2.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/level_conversion.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/level_conversion_bmi2.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/metadata.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/page_index.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/platform.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/printer.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/properties.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/schema.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/statistics.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/stream_reader.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/stream_writer.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/types.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Dependencies file "src/parquet/CMakeFiles/parquet_objlib.dir/xxhasher.cc.o.d" is newer than depends file "/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_objlib.dir/compiler_depend.internal".
+Consolidate compiler generated dependencies of target parquet_objlib
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f src/parquet/CMakeFiles/parquet_objlib.dir/build.make src/parquet/CMakeFiles/parquet_objlib.dir/build
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'src/parquet/CMakeFiles/parquet_objlib.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+[100%] Built target parquet_objlib
+/usr/bin/gmake  -f src/parquet/CMakeFiles/parquet_shared.dir/build.make src/parquet/CMakeFiles/parquet_shared.dir/depend
+/usr/bin/gmake  -f src/parquet/CMakeFiles/parquet_static.dir/build.make src/parquet/CMakeFiles/parquet_static.dir/depend
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_shared.dir/DependInfo.cmake --color=
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/src/parquet/CMakeFiles/parquet_static.dir/DependInfo.cmake --color=
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f src/parquet/CMakeFiles/parquet_static.dir/build.make src/parquet/CMakeFiles/parquet_static.dir/build
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'src/parquet/CMakeFiles/parquet_static.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/gmake  -f src/parquet/CMakeFiles/parquet_shared.dir/build.make src/parquet/CMakeFiles/parquet_shared.dir/build
+gmake[5]: Entering directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+gmake[5]: Nothing to be done for 'src/parquet/CMakeFiles/parquet_shared.dir/build'.
+gmake[5]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+[100%] Built target parquet_static
+[100%] Built target parquet_shared
+gmake[4]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+/usr/bin/cmake -E cmake_progress_start /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp/CMakeFiles 0
+gmake[3]: Leaving directory '/home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E touch /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp-stamp/apache-arrow-cpp-build
+[ 53%] Performing install step for 'apache-arrow-cpp'
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && cmake --install . --prefix /home/smrc/lzh/3fs-main/build
+-- Install configuration: "RELEASE"
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/config.h
+-- Installing: /home/smrc/lzh/3fs-main/build/lib/libarrow_bundled_dependencies.a
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/libarrow.so.1300.0.0
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/libarrow.so.1300
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/libarrow.so
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/libarrow.a
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/cmake/Arrow/ArrowConfig.cmake
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/cmake/Arrow/ArrowConfigVersion.cmake
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/cmake/Arrow/ArrowTargets.cmake
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/cmake/Arrow/ArrowTargets-release.cmake
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/pkgconfig/arrow.pc
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/share/gdb/auto-load/usr/local/lib/libarrow.so.1300.0.0-gdb.py
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/api.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/buffer.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/buffer_builder.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/builder.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/chunk_resolver.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/chunked_array.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compare.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/config.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/datum.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/device.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/extension_type.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/memory_pool.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/memory_pool_test.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/pch.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/pretty_print.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/record_batch.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/result.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/scalar.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/sparse_tensor.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/status.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/stl.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/stl_allocator.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/stl_iterator.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/table.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/table_builder.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/tensor.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/type.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/type_fwd.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/type_traits.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/visit_array_inline.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/visit_data_inline.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/visit_scalar_inline.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/visit_type_inline.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/visitor.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/visitor_generate.h
+-- Installing: /home/smrc/lzh/3fs-main/build/lib/cmake/Arrow/ArrowOptions.cmake
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/cmake/Arrow/arrow-config.cmake
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/async_test_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/builder.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/executor_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/extension_type.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/future_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/generator.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/gtest_compat.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/gtest_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/json_integration.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/matchers.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/pch.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/random.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/uniform_real.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/testing/visibility.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/array_base.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/array_binary.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/array_decimal.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/array_dict.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/array_nested.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/array_primitive.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/array_run_end.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/builder_adaptive.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/builder_base.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/builder_binary.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/builder_decimal.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/builder_dict.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/builder_nested.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/builder_primitive.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/builder_run_end.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/builder_time.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/builder_union.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/concatenate.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/data.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/diff.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/array/validate.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/c/abi.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/c/bridge.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/c/helpers.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/api.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/api_aggregate.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/api_scalar.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/api_vector.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/cast.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/exec.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/expression.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/function.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/kernel.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/key_hash.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/key_map.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/light_array.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/ordering.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/registry.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/type_fwd.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/pkgconfig/arrow-compute.pc
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/compute/row/grouper.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/api.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/buffered.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/caching.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/compressed.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/concurrency.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/file.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/hdfs.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/interfaces.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/memory.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/mman.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/slow.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/stdio.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/test_common.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/transform.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/io/type_fwd.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/tensor/converter.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/algorithm.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/align_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/aligned_storage.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/async_generator.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/async_generator_fwd.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/async_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/base64.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/basic_decimal.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/benchmark_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bit_block_counter.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bit_run_reader.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bit_stream_utils.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bit_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bitmap.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bitmap_builders.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bitmap_generate.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bitmap_ops.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bitmap_reader.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bitmap_visit.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bitmap_writer.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bitset_stack.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bpacking.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bpacking64_default.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bpacking_avx2.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bpacking_avx512.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bpacking_default.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bpacking_neon.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bpacking_simd128_generated.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bpacking_simd256_generated.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bpacking_simd512_generated.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/byte_size.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/byte_stream_split.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/bytes_view.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/cancel.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/checked_cast.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/compare.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/compression.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/concurrent_map.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/config.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/converter.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/counting_semaphore.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/cpu_info.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/crc32.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/debug.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/decimal.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/delimiting.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/dispatch.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/double_conversion.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/endian.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/formatting.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/functional.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/future.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/hash_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/hashing.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/int_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/int_util_overflow.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/io_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/iterator.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/key_value_metadata.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/launder.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/logging.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/macros.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/map.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/math_constants.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/memory.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/mutex.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/parallel.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/pcg_random.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/print.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/queue.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/range.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/ree_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/regex.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/rle_encoding.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/rows_to_batches.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/simd.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/small_vector.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/sort.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/spaced.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/stopwatch.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/string.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/string_builder.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/task_group.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/tdigest.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/test_common.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/thread_pool.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/time.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/tracing.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/trie.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/type_fwd.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/type_traits.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/ubsan.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/union_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/unreachable.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/uri.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/utf8.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/value_parsing.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/vector.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/visibility.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/windows_compatibility.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/util/windows_fixup.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/ProducerConsumerQueue.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/datetime.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/strptime.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/xxhash.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/datetime/date.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/datetime/ios.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/datetime/tz.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/datetime/tz_private.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/datetime/visibility.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/double-conversion/bignum-dtoa.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/double-conversion/bignum.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/double-conversion/cached-powers.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/double-conversion/diy-fp.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/double-conversion/double-conversion.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/double-conversion/double-to-string.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/double-conversion/fast-dtoa.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/double-conversion/fixed-dtoa.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/double-conversion/ieee.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/double-conversion/string-to-double.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/double-conversion/strtod.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/double-conversion/utils.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/pcg/pcg_extras.hpp
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/pcg/pcg_random.hpp
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/pcg/pcg_uint128.hpp
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/portable-snippets/debug-trap.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/portable-snippets/safe-math.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/vendored/xxhash/xxhash.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/csv/api.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/csv/chunker.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/csv/column_builder.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/csv/column_decoder.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/csv/converter.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/csv/invalid_row.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/csv/options.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/csv/parser.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/csv/reader.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/csv/test_common.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/csv/type_fwd.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/csv/writer.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/pkgconfig/arrow-csv.pc
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/ipc/api.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/ipc/dictionary.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/ipc/feather.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/ipc/json_simple.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/ipc/message.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/ipc/options.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/ipc/reader.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/ipc/test_common.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/ipc/type_fwd.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/ipc/util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/arrow/ipc/writer.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/libparquet.so.1300.0.0
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/libparquet.so.1300
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/libparquet.so
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/libparquet.a
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/cmake/Parquet/ParquetConfig.cmake
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/cmake/Parquet/ParquetConfigVersion.cmake
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/cmake/Parquet/ParquetTargets.cmake
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/cmake/Parquet/ParquetTargets-release.cmake
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/lib/pkgconfig/parquet.pc
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/api/io.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/api/reader.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/api/schema.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/api/writer.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/arrow/reader.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/arrow/schema.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/arrow/test_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/arrow/writer.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/crypto_factory.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/encryption.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/file_key_material_store.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/file_key_unwrapper.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/file_key_wrapper.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/file_system_key_material_store.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/key_encryption_key.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/key_material.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/key_metadata.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/key_toolkit.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/kms_client.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/kms_client_factory.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/local_wrap_kms_client.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/test_encryption_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/test_in_memory_kms.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encryption/two_level_cache_with_expiration.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/bloom_filter.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/bloom_filter_reader.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/column_page.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/column_reader.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/column_scanner.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/column_writer.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/encoding.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/exception.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/file_reader.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/file_writer.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/hasher.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/level_comparison.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/level_comparison_inc.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/level_conversion.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/level_conversion_inc.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/metadata.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/page_index.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/parquet_version.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/pch.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/platform.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/printer.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/properties.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/schema.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/statistics.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/stream_reader.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/stream_writer.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/test_util.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/type_fwd.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/types.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/windows_compatibility.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/windows_fixup.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/xxhasher.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/include/parquet/parquet_version.h
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/share/doc/arrow/LICENSE.txt
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/share/doc/arrow/NOTICE.txt
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/share/doc/arrow/README.md
+-- Up-to-date: /home/smrc/lzh/3fs-main/build/share/arrow/gdb/gdb_arrow.py
+cd /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp/cpp && /usr/bin/cmake -E touch /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp-stamp/apache-arrow-cpp-install
+[ 54%] Completed 'apache-arrow-cpp'
+/usr/bin/cmake -E make_directory /home/smrc/lzh/3fs-main/build/CMakeFiles
+/usr/bin/cmake -E touch /home/smrc/lzh/3fs-main/build/CMakeFiles/apache-arrow-cpp-complete
+/usr/bin/cmake -E touch /home/smrc/lzh/3fs-main/build/src/apache-arrow-cpp-stamp/apache-arrow-cpp-done
+gmake[2]: Leaving directory '/home/smrc/lzh/3fs-main/build'
+[ 54%] Built target apache-arrow-cpp
+gmake[1]: Leaving directory '/home/smrc/lzh/3fs-main/build'
