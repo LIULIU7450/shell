@@ -59,3 +59,5 @@ total 2176652
 
 source "$HOME/.cargo/env"
 . "$HOME/.cargo/env"
+
+cmake --build build -j 32
