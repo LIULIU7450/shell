@@ -60,4 +60,4 @@ total 2176652
 source "$HOME/.cargo/env"
 . "$HOME/.cargo/env"
 
-cmake --build build -j 32
+cmake --build build -j 32 2>&1 | tee build-$(hostname -s)-$(date +%Y%m%d-%H%M%S).log
