@@ -56,3 +56,6 @@ total 2176652
 -rwxr-xr-x 1 root root 272112176 Aug 13 16:31 meta_main
 -rwxr-xr-x 1 root root 387283328 Aug 13 16:31 storage_bench
 -rwxr-xr-x 1 root root 351948624 Aug 13 16:32 admin_cli
+
+source "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
