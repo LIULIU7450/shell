@@ -25,31 +25,46 @@
 - **cluster_id = `stage`**（按官方惯例），FUSE 挂载点 `/3fs/stage`。
 - 所有服务间通信地址统一使用 **IPoIB 地址**（InfiniBand 200Gb/s，`RDMA://10.10.44.210:8000` 等）。
 - 管理网（172.16.x.x）仅用于 ssh / rsync 分发。
-- 每台存储节点 3 块 Samsung PM1763（MZ3LD15THELC-00AGG，15.36TB，FDP 已启用，
-  15 个 placement ID / `max_write_streams=16`），已整盘 XFS 挂载于 `/storage/data{2,3,4}`。
+- 每台存储节点 3 块 Samsung PM1763（MZ3LD15THELC-00AGG，15.36TB，FDP 已启用），
+  已整盘 XFS 挂载于 `/storage/data{2,3,4}`。**当前 `/dev/nvme2n1`（data2）不可用**，
+  3FS 仅使用 `/dev/nvme3n1`（data3）与 `/dev/nvme4n1`（data4）两块盘。
   ZFS 盘（nvme1n1）与 OS 盘（nvme0n1）**不纳入** 3FS。
 
 ### 0.2 已确认的关键设计决策
 
 | 决策项 | 结论 |
 |---|---|
-| 数据放置 | **每盘 1 个 target、每节点 3 targets、共 9 targets / 3 条链、RF=3**；`--use-new-chunk-engine`（FDP compaction 分流仅存在于新 chunk engine） |
+| 数据放置 | **每盘 1 个 target、每节点 2 targets（data3/data4）、共 6 targets / 2 条链、RF=3**；`--use-new-chunk-engine`（FDP compaction 分流仅存在于新 chunk engine） |
 | 链结构 | 每条链横跨 3 个节点各 1 块同编号盘（3 节点 RF=3 下的唯一形态；放置模型已求解 optimal，对等恢复流量完全平衡） |
 | init-cluster | `1 1048576 16`（链表 ID 1、chunk 1MB、strip 16，官方默认） |
 | Compaction 分流 | `[server.targets] fdp_compaction_stream_id = 2` |
-| LMCache 数据流（后续） | `start_fdp_stream_id = 3, fdp_stream_number = 13`（stream 3–15） |
-| 监控 | **部署** ClickHouse + monitor_collector（按官方 README Step 1/2），位于 dskna004 |
+| LMCache 数据流（后续） | `start_fdp_stream_id = 3, fdp_stream_number = GET_MAX − 2`（GET_MAX=16 时为 14，即 stream 3–16） |
+| 监控 | **部署** ClickHouse + monitor_collector（按官方 README Step 1/2），位于 dskna004；ClickHouse 已安装（user=default，密码 samsung） |
 
-### 0.3 FDP write stream 规划（PM1763：15 PID = PLID 0–14，GET_MAX = 16）
+### 0.3 FDP write stream 规划与 stream→PLID 映射（内核源码核实）
 
-XFS 对 `stream_id >= 2` 的映射为 **PLID = stream_id − 1**（见 `tests/fuse/test_fdp_write_stream.py:321` 注释，与 `storage_main.toml:457` 的说明一致）。
+**映射规则**（已对照服务器内核源码 `/home/lzh/max_lab/linux/` 逐行核实）：
+
+1. **stream N → PLID N−1**：NVMe 层 `drivers/nvme/host/core.c:1012`
+   `dsmgmt |= ns->head->plids[write_stream - 1] << 16` —— 写入 stream N 时取设备
+   RUHS PID 列表的第 N−1 项作为 placement identifier。PM1763 的 PID 列表从 0 连续编号，
+   因此 **stream 2 → PLID 1**（`fdp_compaction_stream_id = 2` 对应 PLID 1，确认无误）。
+2. **XFS 保留最高 2 条流**：`fs/xfs/xfs_mount.c:848-852`（内部 log 时 `meta = hw`、
+   `log = hw − 1`，保留 `XFS_RSVD_WRITE_STREAMS = 2` 条）；`fs/xfs/xfs_inode.c:67-70`：
+   **`GET_MAX = hw_streams − 2`**。你实测 GET_MAX = 16 → 设备实际暴露 18 个 PID，
+   用户可 SET 的合法范围为 **1..16**。XFS 的 meta/log 保留流在用户范围**之上**，
+   用户流**不需要**额外给 log 空位。
+3. stream 0 = 不携带 placement directive（默认放置）；stream 1（→ PLID 0）按规划空置，
+   使默认放置桶保持干净——即 compaction 前**恰好预留一个 stream**。
+
+**规划表**（以实测 GET_MAX = 16 为基准，预检 1.2 会现场复核）：
 
 | stream id | 用途 | 落到的 PLID | 配置处 |
 |---|---|---|---|
-| 0 | 默认放置（未标注写入） | 默认 RU | —（回退值） |
-| 1 | 空置 | — | — |
-| **2** | **chunk engine compaction 写入** | PLID 1 | 3FS `fdp_compaction_stream_id = 2` |
-| **3–15** | **LMCache KV-cache 数据写入**（后续阶段） | PLID 2–14 | LMCache `start_fdp_stream_id=3, fdp_stream_number=13` |
+| 0 | 默认放置（未标注写入） | 默认 RU（无 directive） | —（回退值） |
+| 1 | **空置**（预留，使默认桶干净） | PLID 0 | — |
+| **2** | **chunk engine compaction 写入** | **PLID 1** | 3FS `fdp_compaction_stream_id = 2` |
+| **3–16** | **LMCache KV-cache 数据写入**（后续阶段） | PLID 2–15 | LMCache `start_fdp_stream_id=3, fdp_stream_number=14` |
 
 > 验证物理放置的方法：`nvme fdp status` 的 **RUAMW（可写余量）差值**——写入发生后
 > 对应 PLID 的 RUAMW 下降最多。这是本 fork 自带测试采用的标准手段。
@@ -81,14 +96,18 @@ sudo grub-set-default "$(sudo awk -F\' '/menuentry / {print $2}' /boot/grub/grub
 ### 1.2 FDP 设备与 XFS ioctl 预检（仅 3 台存储节点）
 
 ```bash
-# (a) 盘与 FDP 状态：3 块 PM1763 各应有 15 个 PID（0–14），RUAMW 约 10543104
-for d in /dev/nvme2n1 /dev/nvme3n1 /dev/nvme4n1; do
-  sudo nvme fdp status $d -o json | head -5
+# (a) 盘与 FDP 状态: 仅 nvme3n1/nvme4n1 两块可用盘 (nvme2n1 已确认不可用, 不检查)
+for d in /dev/nvme3n1 /dev/nvme4n1; do
+  sudo nvme fdp status $d -o json | python3 -c "
+import json,sys
+s=json.load(sys.stdin)
+pids=[r['pid'] for r in s.get('ruhss',[])]
+print('$d: nruhsd={} pids={}'.format(s.get('nruhsd'), pids))"
 done
-cat /sys/block/nvme2n1/queue/max_write_streams   # 期望 16
+# 记录 PID 列表: 应从 0 连续编号 (stream→PLID 映射 PLID = stream-1 依赖此连续性)
 
-# (b) XFS ioctl GET_MAX：在每块 3FS 数据盘上探测，期望 max_streams=16
-python3 - /storage/data2 <<'EOF'
+# (b) XFS ioctl GET_MAX: 在两块 3FS 数据盘上探测
+python3 - /storage/data3 <<'EOF'
 import fcntl, os, struct, sys
 FS_IOC_WRITE_STREAM = 0xC010662B   # _IOWR('f', 43, struct fs_write_stream)
 OP_GET_MAX = 1
@@ -97,14 +116,17 @@ ws = struct.pack("IIII", OP_GET_MAX, 0, 0, 0)
 fcntl.ioctl(fd, FS_IOC_WRITE_STREAM, ws)
 op, sid, mx, rsvd = struct.unpack("IIII", ws)
 print(f"GET_MAX: op={op} max_streams={mx}")
-assert mx == 16, f"期望 16, 实际 {mx} — XFS 未暴露 FDP 流, 停止部署!"
+# 期望 mx = 16 (你已确认); 内核关系: GET_MAX = hw_streams - 2 (XFS 保留 meta/log 各一条)
+# 若 mx != nvme fdp status 的 PID 数 - 2, 说明盘的 FDP 配置与预期不符, 停止部署核查
+assert mx >= 3, f"GET_MAX={mx} 过小, compaction(2)+LMCache(3..) 无法分流, 停止部署!"
 os.close(fd)
 EOF
-# 对 /storage/data3、/storage/data4 重复
+# 对 /storage/data4 重复
 ```
 
 > 历史基线：11/17 环境采集时 GET_MAX 曾返回 0；你已确认修复并返回 16。
-> 此步骤是防止环境回退的硬闸门。
+> 此步骤是防止环境回退的硬闸门。**LMCache 的 `fdp_stream_number` 按
+> `GET_MAX − 2` 现场确定**（GET_MAX=16 → 14）。
 
 ### 1.3 RDMA（IPoIB）连通性检查（官方 README 要求）
 
@@ -153,24 +175,20 @@ sysctl fs.aio-max-nr    # 确认 67108864 (默认 65536 不够)
 
 按官方 Step 1/2。ClickHouse 与 monitor 都部署在 meta 节点 dskna004。
 
-### 3.1 安装 ClickHouse（Ubuntu 22.04，需互联网，已确认可达）
+### 3.1 ClickHouse（已安装完成）
+
+ClickHouse 已在 dskna004 安装完毕：**user = `default`，密码 = `samsung`**。仅需确认服务在运行：
 
 ```bash
-curl -fsSL https://packages.clickhouse.com/deb/lts/CLICKHOUSE-KEY.GPG | \
-  sudo gpg --dearmor -o /usr/share/keyrings/clickhouse-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/clickhouse-keyring.gpg] https://packages.clickhouse.com/deb/lts main/" | \
-  sudo tee /etc/apt/sources.list.d/clickhouse.list
-sudo apt update
-sudo apt install -y clickhouse-server clickhouse-client
-# 安装过程中提示设置 default 用户密码; 测试集群可留空
 sudo systemctl enable --now clickhouse-server
+clickhouse-client --password 'samsung' -q "SELECT version()"
 ```
 
 ### 3.2 建监控表
 
 ```bash
-clickhouse-client -n < /home/smrc/lzh/3fs-main/deploy/sql/3fs-monitor.sql
-clickhouse-client -q "SHOW TABLES FROM \`3fs\`"   # 应看到 counters / distributions
+clickhouse-client --password 'samsung' -n < /home/smrc/lzh/3fs-main/deploy/sql/3fs-monitor.sql
+clickhouse-client --password 'samsung' -q "SHOW TABLES FROM \`3fs\`"   # 应看到 counters / distributions
 ```
 
 ### 3.3 部署 monitor_collector
@@ -190,7 +208,7 @@ type = 'clickhouse'
 [server.monitor_collector.reporter.clickhouse]
 db = '3fs'
 host = '127.0.0.1'
-passwd = ''            # 与安装时设置的密码一致
+passwd = 'samsung'
 port = '9000'
 user = 'default'
 ```
@@ -374,11 +392,11 @@ sudo systemctl daemon-reload && sudo systemctl enable --now meta_main
 
 ### 8.1 数据目录
 
-盘已 XFS 格式化并挂载在 `/storage/data{2,3,4}`（挂载参数已含 `noatime,nodiratime`，
-扇区 4K，符合官方要求）。每台只需创建 engine 子目录：
+盘已 XFS 格式化并挂载（挂载参数已含 `noatime,nodiratime`，扇区 4K，符合官方要求）。
+**`/dev/nvme2n1`（data2）不可用，本集群只使用 data3/data4 两块盘。** 每台只需创建 engine 子目录：
 
 ```bash
-mkdir -p /storage/data2/3fs /storage/data3/3fs /storage/data4/3fs
+mkdir -p /storage/data3/3fs /storage/data4/3fs
 ```
 
 ### 8.2 安装与配置（三台相同，仅 node_id 不同）
@@ -399,7 +417,7 @@ mgmtd_server_addresses = ["RDMA://10.10.44.210:8000"]
 ```
 
 - `storage_main.toml`（**注意：`target_paths` 数组顺序 = create-target 的 `--disk-index` 下标**，
-  `--disk-index 0/1/2` 分别对应数组第 1/2/3 个路径）：
+  `--disk-index 0/1` 分别对应数组第 1/2 个路径，即 data3/data4）：
 
 ```toml
 [server.mgmtd]
@@ -409,11 +427,11 @@ mgmtd_server_addresses = ["RDMA://10.10.44.210:8000"]
 remote_ip = "10.10.44.210:10000"
 
 [server.targets]
-# FDP: compaction 写入走 stream 2 (→ PLID 1), 与 LMCache 数据流 (3-15) 隔离。
-# 设备不支持或超范围时自动回退 0 (默认放置), 不会报错。
+# FDP: compaction 写入走 stream 2 (→ PLID 1), 与 LMCache 数据流 (3..GET_MAX) 隔离;
+#      stream 1 (→ PLID 0) 预留空置。设备不支持或超范围时自动回退 0 (默认放置), 不会报错。
 # 仅启动时加载: 修改后需 set-config + systemctl restart storage_main。
 fdp_compaction_stream_id = 2
-target_paths = ["/storage/data2/3fs","/storage/data3/3fs","/storage/data4/3fs"]
+target_paths = ["/storage/data3/3fs","/storage/data4/3fs"]
 ```
 
 上传配置（mgmtd 统一管理）并启动：
@@ -447,14 +465,15 @@ sudo systemctl daemon-reload && sudo systemctl enable --now storage_main
 # 输出的 token 保存到 /opt/3fs/etc/token.txt
 ```
 
-### 9.2 创建 9 个 storage targets（每盘 1 个，新 chunk engine）
+### 9.2 创建 6 个 storage targets（每盘 1 个，新 chunk engine）
 
 链表由官方 data_placement 工具生成，并已实际验证（放置模型 3 节点/RF=3/每盘 1 target
-求解 optimal；生成命令含 `--use-new-chunk-engine`——FDP compaction 分流依赖新 chunk
-engine，**不可省略**）。命令全文如下：
+求解 optimal；`--num_disks_per_node 2` 对应可用的 data3/data4 两块盘；生成命令含
+`--use-new-chunk-engine`——FDP compaction 分流依赖新 chunk engine，**不可省略**）。
+命令全文如下：
 
 ```bash
-# 注意: 先给 target 建目录数据所在盘对应关系见 8.2 (disk-index 0→data2, 1→data3, 2→data4)
+# disk-index 0 → /storage/data3 (nvme3n1), disk-index 1 → /storage/data4 (nvme4n1)
 /opt/3fs/bin/admin_cli -cfg /opt/3fs/etc/admin_cli.toml \
   --config.mgmtd_client.mgmtd_server_addresses '["RDMA://10.10.44.210:8000"]' \
   --config.user_info.token $(<"/opt/3fs/etc/token.txt") <<'EOF'
@@ -464,25 +483,21 @@ create-target --node-id 10003 --disk-index 0 --target-id 101000300101 --chain-id
 create-target --node-id 10001 --disk-index 1 --target-id 101000100201 --chain-id 900200001  --use-new-chunk-engine
 create-target --node-id 10002 --disk-index 1 --target-id 101000200201 --chain-id 900200001  --use-new-chunk-engine
 create-target --node-id 10003 --disk-index 1 --target-id 101000300201 --chain-id 900200001  --use-new-chunk-engine
-create-target --node-id 10001 --disk-index 2 --target-id 101000100301 --chain-id 900300001  --use-new-chunk-engine
-create-target --node-id 10002 --disk-index 2 --target-id 101000200301 --chain-id 900300001  --use-new-chunk-engine
-create-target --node-id 10003 --disk-index 2 --target-id 101000300301 --chain-id 900300001  --use-new-chunk-engine
 EOF
 ```
 
-结构（3 条链，每链跨 3 节点各一块盘）：
+结构（2 条链，每链跨 3 节点各一块盘）：
 
 ```
-链 900100001:  dsksa304·data2 → dsksa305·data2 → dsksa348·data2
-链 900200001:  dsksa304·data3 → dsksa305·data3 → dsksa348·data3
-链 900300001:  dsksa304·data4 → dsksa305·data4 → dsksa348·data4
+链 900100001:  dsksa304·data3 → dsksa305·data3 → dsksa348·data3   (nvme3n1)
+链 900200001:  dsksa304·data4 → dsksa305·data4 → dsksa348·data4   (nvme4n1)
 ```
 
 > 如需重新生成/复核，命令为（在任一台有 python3 + pip 的机器上）：
 > `pip install -r 3fs/deploy/data_placement/requirements.txt`（highspy==1.8.0 若无
 > 源可放宽到 ≥1.9），然后
 > `python src/model/data_placement.py -ql -relax -type CR --num_nodes 3 --replication_factor 3 --min_targets_per_disk 1`
-> + `python src/setup/gen_chain_table.py --chain_table_type CR --node_id_begin 10001 --node_id_end 10003 --num_disks_per_node 3 --num_targets_per_disk 1 --target_id_prefix 1 --chain_id_prefix 9 --incidence_matrix_path output/<解目录>/incidence_matrix.pickle`
+> + `python src/setup/gen_chain_table.py --chain_table_type CR --node_id_begin 10001 --node_id_end 10003 --num_disks_per_node 2 --num_targets_per_disk 1 --target_id_prefix 1 --chain_id_prefix 9 --incidence_matrix_path output/<解目录>/incidence_matrix.pickle`
 
 ### 9.3 上传链与链表
 
@@ -499,8 +514,8 @@ EOF
   "upload-chain-table --desc stage 1 /path/to/generated_chain_table.csv"
 
 # 验证:
-... "list-chains"          # 3 条链
-... "list-chain-tables"    # 表 1, version 1, 含 3 条链
+... "list-chains"          # 2 条链
+... "list-chain-tables"    # 表 1, version 1, 含 2 条链
 ```
 
 `generated_chains.csv` 内容（可直接手工保存使用）：
@@ -509,7 +524,6 @@ EOF
 ChainId,TargetId,TargetId,TargetId
 900100001,101000100101,101000200101,101000300101
 900200001,101000100201,101000200201,101000300201
-900300001,101000100301,101000200301,101000300301
 ```
 
 `generated_chain_table.csv` 内容：
@@ -518,7 +532,6 @@ ChainId,TargetId,TargetId,TargetId
 ChainId
 900100001
 900200001
-900300001
 ```
 
 ---
@@ -625,11 +638,11 @@ EOF
 **层 3 — 物理放置：RUAMW 差值。**（本 fork 测试 `test_fdp_write_stream.py:280` 的标准手段）
 
 ```bash
-# (任一存储节点, 例: nvme2n1)
-sudo nvme fdp status /dev/nvme2n1 -o json > /tmp/before.json
+# (任一存储节点, 例: nvme3n1)
+sudo nvme fdp status /dev/nvme3n1 -o json > /tmp/before.json
 # (dskna004) 经 FUSE ioctl SET stream 3 写入 ~1GB:
 #   用上面脚本改 OP_SET(=4), stream_id=3, 循环 os.write
-sudo nvme fdp status /dev/nvme2n1 -o json > /tmp/after.json
+sudo nvme fdp status /dev/nvme3n1 -o json > /tmp/after.json
 # 对比 RUAMW: PLID 2 (= stream 3 - 1) 的下降量应显著大于其他 PLID
 ```
 
@@ -650,15 +663,17 @@ sudo nvme fdp status /dev/nvme2n1 -o json > /tmp/after.json
 
 ## 12. WAF 观测手段（为后续 LMCache 实验准备）
 
-部署完成后，测量写入放大的基准手段（3 台存储节点）：
+部署完成后，测量写入放大的基准手段（3 台存储节点，仅 nvme3n1/nvme4n1）：
 
 ```bash
 # 总写入量 (host 视角 → NAND 视角): smart-log 的 Data Units Written
 # 1 unit = 512KB; WAF = NAND 写入 / host 写入
-sudo nvme smart-log /dev/nvme2n1 | grep -i "data_units_written"
+sudo nvme smart-log /dev/nvme3n1 | grep -i "data_units_written"
 
-# 分流观测: 各 PLID 的 RUAMW 变化 (stream 2→PLID1 为 compaction, stream 3-15→PLID2-14 为数据)
-sudo nvme fdp status /dev/nvme2n1 -o json
+# 分流观测: 各 PLID 的 RUAMW 变化
+#   stream 2  → PLID 1  = compaction
+#   stream 3-16 → PLID 2-15 = LMCache 数据
+sudo nvme fdp status /dev/nvme3n1 -o json
 ```
 
 实验对比维度建议：
@@ -684,7 +699,7 @@ sudo nvme fdp status /dev/nvme2n1 -o json
 | 8 | dskna004 | meta 安装、set-config META、启动、list-nodes | 7 |
 | 9 | 存储×3 | 目录、storage 安装（node_id 唯一）、set-config STORAGE、启动 | 8 |
 | 10 | dskna004 | user-add 存 token | 9.1 |
-| 11 | dskna004 | create-target ×9（--use-new-chunk-engine） | 9.2 |
+| 11 | dskna004 | create-target ×6（--use-new-chunk-engine） | 9.2 |
 | 12 | dskna004 | upload-chains + upload-chain-table + list 验证 | 9.3 |
 | 13 | dskna004 | FUSE 安装、set-config FUSE、启动、mount 验证 | 10 |
 | 14 | 全部 | 11.1 功能冒烟 → 11.2 FDP 三层验证 | 11 |
@@ -692,7 +707,7 @@ sudo nvme fdp status /dev/nvme2n1 -o json
 ### 13.2 重建/回滚
 
 - **完全重建**：停全部服务 → 清 FDB（`rm -rf /var/lib/foundationdb/data/*` 后重启
-  foundationdb 并重新 `configure new`）→ rm 目标引擎目录 `/storage/data{2,3,4}/3fs/*`
+  foundationdb 并重新 `configure new`）→ rm 目标引擎目录 `/storage/data{3,4}/3fs/*`
   → 从第 5 步重跑（`init-cluster` 会生成全新集群状态）。
 - **仅重建 targets**：`admin_cli` 依次 `offline-target`/`remove-target`（生成脚本见
   `deploy/data_placement` 的 `remove_target_cmd.txt` 输出），清引擎目录后重跑 9.2。
@@ -704,8 +719,9 @@ sudo nvme fdp status /dev/nvme2n1 -o json
 3FS 就绪后，LMCache HF3FS 后端（后续部署）需与本集群对齐的参数：
 
 - 挂载点：`/3fs/stage`（`hf3fs://` / L2 adapter 配置）
-- FDP：`use_fdp=true, start_fdp_stream_id=3, fdp_stream_number=13`（stream 3–15 → PLID 2–14，
-  与 compaction 的 stream 2 / PLID 1 隔离；0–1 空置）
+- FDP：`use_fdp=true, start_fdp_stream_id=3, fdp_stream_number = GET_MAX − 2`
+  （GET_MAX=16 时为 **14**，即 stream 3–16 → PLID 2–15；compaction 走 stream 2 →
+  PLID 1；stream 1 → PLID 0 预留空置。以预检 1.2 的实测 GET_MAX 为准）
 - token：`/opt/3fs/etc/token.txt`（root 用户）
 - 客户端 python 包：`lmcache_hf3fs` 原生扩展需链接本集群同版 3FS 客户端库
   （`libhf3fs_api_shared.so`，构建方式见 LMCache 仓库 `setup.py` 的
@@ -716,9 +732,15 @@ sudo nvme fdp status /dev/nvme2n1 -o json
 - 部署主线：`3fs/deploy/README.md`（官方 Setup Guide，Step 0–8 全部保留，含 monitor）
 - FDP 配置：`3fs/configs/storage_main.toml:451-462`、
   `3fs/docs/openspec/specs/storage-internal-fdp-stream/spec.md`（回退语义：不报错、不影响写入）
-- FDP 验证手段：`3fs/tests/fuse/test_fdp_write_stream.py`（RUAMW 差值法、XFS PLID 映射、
-  FUSE ioctl 常量）
+- **stream→PLID 映射（内核源码 `/home/lzh/max_lab/linux/`，即服务器所跑 FDP 内核）**：
+  `drivers/nvme/host/core.c:1005-1013`（`dsmgmt |= plids[write_stream − 1]`，stream N → PLID N−1）、
+  `fs/xfs/xfs_mount.c:827-862`（XFS 保留最高 2 条流给 meta/log）、
+  `fs/xfs/xfs_inode.c:67-70`（`GET_MAX = hw_streams − 2`）
+- FDP 验证手段：`3fs/tests/fuse/test_fdp_write_stream.py`（RUAMW 差值法、`nvme fdp status`
+  JSON 键 `ruhss[].pid/ruamw`、FUSE ioctl 常量）
 - 放置方案：`3fs/deploy/data_placement`（3 节点/RF=3/每盘 1 target 求解 optimal，
-  9 targets/3 chains 生成命令已验证）
+  6 targets/2 chains 生成命令已验证）
 - 环境事实：`shell/*_envinfo_*.txt`（4 台环境采集报告）+ 用户确认
-  （编译完成、FDB 依赖已装、GET_MAX=16、盘可清空、ZFS 盘排除）
+  （编译完成、FDB 依赖已装、GET_MAX=16、nvme2n1 不可用、ClickHouse 已装密码 samsung）
+- 交叉参考：`基于eRDMA实测DeepSeek开源的3FS.html`（阿里云 5 节点 eRDMA 复现帖，
+  部署流程与官方指南一致，无冲突做法）
