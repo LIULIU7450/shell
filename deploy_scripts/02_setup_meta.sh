@@ -52,15 +52,11 @@ info "monitor_collector 已运行 (监听 10000)"
 
 # ---------- 3. FoundationDB (指南 §4, 幂等) ----------
 step "3/9 FoundationDB"
-if systemctl is-active foundationdb >/dev/null 2>&1 \
-   && fdbcli --exec "status minimal" 2>/dev/null | grep -q "healthy"; then
-    info "foundationdb 已运行且健康, 跳过初始化"
+if [[ -f /etc/foundationdb/foundationdb.conf ]] && grep -q "datadir = /var/lib/foundationdb/data" /etc/foundationdb/foundationdb.conf; then
+    info "foundationdb.conf 已存在, 保留不动"
 else
-    if [[ -f /etc/foundationdb/foundationdb.conf ]] && grep -q "datadir = /var/lib/foundationdb/data" /etc/foundationdb/foundationdb.conf; then
-        info "foundationdb.conf 已存在, 保留不动"
-    else
-        mkdir -p /var/lib/foundationdb/data /etc/foundationdb /var/log/foundationdb
-        cat > /etc/foundationdb/foundationdb.conf <<'EOF'
+    mkdir -p /var/lib/foundationdb/data /etc/foundationdb /var/log/foundationdb
+    cat > /etc/foundationdb/foundationdb.conf <<'EOF'
 ## foundationdb.conf — 3FS 测试集群 (单节点 ssd), 部署脚本生成
 [general]
 restart-check-batches = 60
@@ -75,11 +71,29 @@ listen-address = public
 datadir = /var/lib/foundationdb/data
 logdir = /var/log/foundationdb
 EOF
-    fi
-    systemctl enable foundationdb >/dev/null 2>&1
-    systemctl start foundationdb
-    sleep 5
-    systemctl is-active foundationdb || { journalctl -u foundationdb -n 30 --no-pager; exit 1; }
+fi
+systemctl enable foundationdb >/dev/null 2>&1
+systemctl is-active foundationdb >/dev/null 2>&1 || systemctl start foundationdb
+sleep 5
+systemctl is-active foundationdb || { journalctl -u foundationdb -n 30 --no-pager; exit 1; }
+
+# 判断数据库是否已配置过: "Redundancy mode" 行只在已 configure 的库的 status 里出现。
+# (不能用 "healthy" 做判据 — 已配置但恢复中/瞬时不健康的库会误判为未配置,
+#  对已存在的库执行 configure new 会报 "Database already exists")
+st=$(fdbcli --exec "status minimal" 2>&1 || true)
+if grep -q "Redundancy mode" <<<"${st}"; then
+    info "FDB 数据库已配置, 跳过 configure new ($(grep -E 'Redundancy mode|Storage engine' <<<"${st}" | tr -s ' ' | tr '\n' ';'))"
+    grep -q "Storage engine .*memory" <<<"${st}" \
+        && warn "FDB 引擎是 memory (进程重启即丢数据); 需要持久化可执行: fdbcli --exec 'configure single ssd'"
+    # 已配置但可能仍在恢复, 最多等 60s 至 healthy
+    healthy=""
+    for _ in $(seq 1 12); do
+        if fdbcli --exec "status minimal" 2>/dev/null | grep -q "healthy"; then healthy=1; break; fi
+        sleep 5
+    done
+    [[ -n "${healthy}" ]] || warn "FDB 已配置但 60s 内未达 healthy, 请手动 fdbcli status 检查 (脚本继续)"
+else
+    info "FDB 未配置, 执行 configure new single ssd"
     fdbcli --exec "configure new single ssd"
     sleep 3
 fi
