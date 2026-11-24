@@ -85,9 +85,18 @@ pgrep -x fdbserver >/dev/null \
 
 # status json 是版本稳定的机器可读输出 (client.database_status.available / cluster.database_configuration)。
 # 所有 fdbcli 调用一律加 timeout — 对不可达集群 fdbcli 会阻塞数十秒, 不加就是"卡几分钟"。
+# 注意: 未配置的全新库, fdbcli 会在 JSON 前输出 "WARNING..." / "Don't have a valid database
+# configuration" 等说明文字 (走 stdout), 必须截取首个 '{' 到最后一个 '}' 之间再解析。
 FDB_JSON=""
 fdb_fetch_status() {
-    FDB_JSON=$(timeout 10 fdbcli --exec "status json" 2>/dev/null || true)
+    local out
+    out=$(timeout 15 fdbcli --exec "status json" 2>/dev/null || true)
+    FDB_JSON=$(python3 -c '
+import sys
+s = sys.stdin.read()
+i, j = s.find("{"), s.rfind("}")
+print(s[i:j+1] if i >= 0 and j > i else "")
+' <<<"${out}")
     python3 -c 'import json,sys; json.loads(sys.stdin.read())' <<<"${FDB_JSON}" 2>/dev/null
 }
 fdb_check() {  # $1 = python 布尔表达式, 对 FDB_JSON 求值 (d = 解析后的 dict)
@@ -102,10 +111,12 @@ fdb_wait_available() {  # 最多 ~90s
 }
 
 if ! fdb_fetch_status; then
-    # status json 不可解析: 未配置的全新库也会这样; 数据目录非空则说明 FDB 损坏
-    if ls /var/lib/foundationdb/data/* >/dev/null 2>&1; then
-        die "FDB status 不可解析且数据目录非空 — FDB 处于损坏/不可达状态 (mgmtd 依赖 FDB, 不能继续)。全新集群恢复: systemctl stop foundationdb && rm -rf /var/lib/foundationdb/data/* && rm -f ${OPT_ETC}/.cluster_inited && systemctl start foundationdb 后重跑本脚本"
+    # status json 不可解析且数据目录有实际存储文件 → FDB 损坏。
+    # 注意不能只看目录是否存在: fdbserver 启动即重建 data/4500 目录, 空目录是正常现象。
+    if find /var/lib/foundationdb/data -type f 2>/dev/null | grep -q .; then
+        die "FDB status 不可解析且数据目录有存储文件 — FDB 处于损坏/不可达状态 (mgmtd 依赖 FDB, 不能继续)。全新集群恢复: systemctl stop foundationdb && rm -rf /var/lib/foundationdb/data/* && rm -f ${OPT_ETC}/.cluster_inited && systemctl start foundationdb 后重跑本脚本"
     fi
+    # 无存储文件且 status 不可解析 → 全新库, 走下方 configure new 分支
 fi
 
 if fdb_check 'd.get("cluster",{}).get("database_configuration",{})'; then
