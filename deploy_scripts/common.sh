@@ -97,6 +97,13 @@ check_exists() {
     [[ -e "$1" ]] || { echo "  [FAIL] $1 不存在"; return 1; }
 }
 
+# 安装二进制到 /opt/3fs/bin: 先 rm 再 cp — 目标二进制可能正在运行,
+# 直接 cp 覆盖会报 "Text file busy" (ETXTBSY); unlink+新建对运行中进程安全。
+install_bin() {  # $1 = 源 (BIN_DIR 下), $2 = 目标
+    rm -f "$2"
+    cp "$1" "$2"
+}
+
 # ======== admin_cli 封装 (02 安装后可用) ========
 admin_cli() {
     "${OPT_BIN}/admin_cli" -cfg "${OPT_ETC}/admin_cli.toml" \
