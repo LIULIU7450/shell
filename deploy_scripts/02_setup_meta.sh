@@ -1,7 +1,7 @@
 #!/bin/bash
 # 02_setup_meta.sh — dskna004 一体化部署 (meta 节点全部工作, 无中途暂停)
 # 执行 (仅 dskna004):  sudo bash 02_setup_meta.sh
-#       非 root ssh 登录存储节点时:  SSH_USER=xxx sudo bash 02_setup_meta.sh
+#       ssh 账户/密码在 common.sh 定义 (SSHPASS/SSH_USER 环境变量可覆盖)
 #
 # 内容 (对应指南 §3–§8):
 #   ClickHouse 监控表 → monitor_collector → FoundationDB 初始化 → 推送 fdb.cluster
@@ -13,8 +13,6 @@ SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 source "${SCRIPT_DIR}/common.sh"
 require_root
 require_role meta
-SSH_USER="${SSH_USER:-root}"
-[[ "${SSH_USER}" == "root" ]] && REMOTE_SUDO="" || REMOTE_SUDO="sudo"
 
 # ---------- 1. ClickHouse 监控表 (指南 §3.2) ----------
 step "1/9 ClickHouse 监控表"
@@ -31,6 +29,10 @@ check_exists "${BIN_DIR}/monitor_collector_main" || die "缺少二进制"
 cp "${BIN_DIR}/monitor_collector_main" "${OPT_BIN}/"
 cat > "${OPT_ETC}/monitor_collector_main.toml" <<EOF
 # monitor_collector runtime config — 部署脚本生成 (指南 §3.3)
+# dskna004 有 8 个活动 HCA > kMaxDeviceCnt(4), 必须 device_filter (IBDevice.h:119)
+[common.ib_devices]
+device_filter = ${IB_DEVICE_FILTER_META}
+
 [server.monitor_collector.reporter]
 type = 'clickhouse'
 
@@ -86,9 +88,13 @@ info "fdb.cluster: $(cat "${FDB_CLUSTER_FILE}")"
 
 # ---------- 4. 推送 fdb.cluster 到存储节点 (指南 §5) ----------
 step "4/9 推送 fdb.cluster → 3 台存储节点"
+command -v sshpass >/dev/null || die "缺少 sshpass (apt install sshpass)"
+[[ "${SSH_USER}" == "root" ]] && REMOTE_SUDO="" || REMOTE_SUDO="sudo"
 for ip in "${STORAGE_HOSTS[@]}"; do
-    scp -q "${FDB_CLUSTER_FILE}" "${SSH_USER}@${ip}:/tmp/fdb.cluster"
-    ssh "${SSH_USER}@${ip}" "${REMOTE_SUDO} mkdir -p ${OPT_ETC} && ${REMOTE_SUDO} install -m 644 /tmp/fdb.cluster ${FDB_CLUSTER_FILE} && rm -f /tmp/fdb.cluster"
+    scp_push "${FDB_CLUSTER_FILE}" "${ip}" "/tmp/fdb.cluster" \
+        || die "scp 到 ${ip} 失败 (检查 sshpass/密码/网络)"
+    ssh_exec "${ip}" "${REMOTE_SUDO} mkdir -p ${OPT_ETC} && ${REMOTE_SUDO} install -m 644 /tmp/fdb.cluster ${FDB_CLUSTER_FILE} && rm -f /tmp/fdb.cluster" \
+        || die "ssh ${ip} 远端安装 fdb.cluster 失败"
     info "${ip} — OK"
 done
 
@@ -99,6 +105,11 @@ cp "${BIN_DIR}/admin_cli" "${OPT_BIN}/"
 cat > "${OPT_ETC}/admin_cli.toml" <<EOF
 # admin_cli config — 部署脚本生成 (指南 §5)
 cluster_id = '${CLUSTER_ID}'
+
+# dskna004: 8 活动 HCA > kMaxDeviceCnt(4), 必须过滤 (admin_cli.cc:106 IBManager::start)
+# 存储节点: 设备数 ≤4, 空 filter 即可
+[ib_devices]
+device_filter = ${IB_DEVICE_FILTER_META:-[]}
 
 [fdb]
 clusterFile = '${FDB_CLUSTER_FILE}'
@@ -117,11 +128,18 @@ EOF
 cat > "${OPT_ETC}/mgmtd_main_launcher.toml" <<EOF
 cluster_id = '${CLUSTER_ID}'
 
+# launcher 进程也独立初始化 IB (ServerLauncher.h:41), 8 HCA 必须过滤
+[ib_devices]
+device_filter = ${IB_DEVICE_FILTER_META}
+
 [fdb]
 clusterFile = '${FDB_CLUSTER_FILE}'
 EOF
 cat > "${OPT_ETC}/mgmtd_main.toml" <<EOF
 # mgmtd runtime config — init-cluster 时上传 (指南 §6)
+[common.ib_devices]
+device_filter = ${IB_DEVICE_FILTER_META}
+
 [[common.monitor.reporters]]
 type = 'monitor_collector'
 
@@ -154,6 +172,10 @@ EOF
 cat > "${OPT_ETC}/meta_main_launcher.toml" <<EOF
 cluster_id = '${CLUSTER_ID}'
 
+# launcher 进程也独立初始化 IB (ServerLauncher.h:41), 8 HCA 必须过滤
+[ib_devices]
+device_filter = ${IB_DEVICE_FILTER_META}
+
 [mgmtd_client]
 mgmtd_server_addresses = ["${MGMTD_ADDR}"]
 EOF
@@ -161,6 +183,9 @@ cat > "${OPT_ETC}/meta_main.toml" <<EOF
 # meta runtime config — 上传给 mgmtd (指南 §7)
 [server.mgmtd_client]
 mgmtd_server_addresses = ["${MGMTD_ADDR}"]
+
+[common.ib_devices]
+device_filter = ${IB_DEVICE_FILTER_META}
 
 [[common.monitor.reporters]]
 type = 'monitor_collector'
