@@ -1,2 +1,37 @@
+root@dskna004:/home/smrc/lzh/shell/deploy_scripts# bash 02_setup_meta.sh
 
 ### 1/9 ClickHouse 监控表
+  [INFO] counters / distributions 就绪
+
+### 2/9 monitor_collector
+failed
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: [2026-11-24T07:52:30.668956348+00:00 monitor_collect:303415 IBDevice.cc:340 INFO] IBDevice skip mlx5_8 because it doesn't have available ports.
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: [2026-11-24T07:52:30.677125267+00:00 monitor_collect:303415 IBDevice.cc:428 WARNING] IBDevice mlx5_9 port 1 is not active, state IBV_PORT_DOWN, skip true
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: [2026-11-24T07:52:30.677132862+00:00 monitor_collect:303415 IBDevice.cc:340 INFO] IBDevice skip mlx5_9 because it doesn't have available ports.
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: [2026-11-24T07:52:30.677428645+00:00 monitor_collect:303415 IBDevice.cc:351 CRITICAL] too many ibdevices 8 > kMaxDeviceCnt 4, please specify device_filter
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: [2026-11-24T07:52:30.680174689+00:00 monitor_collect:303415 IBDevice.cc:775 ERROR] Failed to open all IBDevices, error InvalidArg(3)
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: [2026-11-24T07:52:30.680191000+00:00 monitor_collect:303415 OnePhaseApplication.h:84 FATAL] Failed to start IBManager: InvalidArg(3)
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: *** Aborted at 1795506750 (Unix time, try 'date -d @1795506750') ***
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: *** Signal 6 (SIGABRT) (0x4a137) received by PID 303415 (pthread TID 0x7fd07effd640) (linux TID 303415) (maybe from PID 303415, UID 0) (code: -6), stack trace: ***
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 0000000000413f5f _ZN5folly10symbolizer12_GLOBAL__N_113signalHandlerEiP9siginfo_tPv
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        /home/smrc/lzh/3fs-main/third_party/folly/folly/experimental/symbolizer/SignalHandler.cpp:449
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 000000000004251f (unknown)
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 00000000000969fc pthread_kill
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 0000000000042475 raise
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 00000000000287f2 abort
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 000000000047b840 _ZNK5folly11LogCategory12admitMessageERKNS_10LogMessageE
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        /home/smrc/lzh/3fs-main/third_party/folly/folly/logging/LogCategory.cpp:71
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 000000000047ad36 _ZN5folly18LogStreamProcessor6logNowEv
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        /home/smrc/lzh/3fs-main/third_party/folly/folly/logging/LogStreamProcessor.cpp:190
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 000000000047af59 _ZN5folly16LogStreamVoidifyILb1EEanERSo
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        /home/smrc/lzh/3fs-main/third_party/folly/folly/logging/LogStreamProcessor.cpp:222
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 0000000000604c37 _ZN5hf3fs19OnePhaseApplicationINS_7monitor22MonitorCollectorServerEE15initApplicationEv
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        /home/smrc/lzh/3fs-main/src/common/app/OnePhaseApplication.h:84
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        -> /home/smrc/lzh/3fs-main/src/monitor_collector/monitor_collector.cpp
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 00000000001974e6 _ZN5hf3fs15ApplicationBase3runEiPPc
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        /home/smrc/lzh/3fs-main/src/common/app/ApplicationBase.cc:65
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 0000000000029d8f (unknown)
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 0000000000029e3f __libc_start_main
+Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 0000000000176614 _start
+Nov 24 07:52:30 dskna004 systemd[1]: monitor_collector_main.service: Main process exited, code=dumped, status=6/ABRT
+Nov 24 07:52:30 dskna004 systemd[1]: monitor_collector_main.service: Failed with result 'core-dump'.
