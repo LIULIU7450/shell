@@ -74,39 +74,55 @@ EOF
 fi
 systemctl enable foundationdb >/dev/null 2>&1
 systemctl is-active foundationdb >/dev/null 2>&1 || systemctl start foundationdb
-sleep 5
+sleep 3
 systemctl is-active foundationdb || { journalctl -u foundationdb -n 30 --no-pager; exit 1; }
 
-# 判断数据库是否已配置过 (两个判据, 任一命中即视为已配置):
-#   1) 数据目录非空 — 单节点 ssd 引擎, 已 configure 的库必有存储文件
-#   2) 完整 status 含 "Redundancy mode" — 注意 status minimal 不打印该行!
-# (不可用 "healthy" 做唯一判据 — status minimal 里是大写 "Healthy", 且恢复中会瞬时不匹配;
-#  对已存在的库执行 configure new 会报 "Database already exists")
-fdb_configured=0
-if ls /var/lib/foundationdb/data/* >/dev/null 2>&1; then
-    fdb_configured=1
-    info "FDB 数据目录非空 ($(ls /var/lib/foundationdb/data/ | wc -l) 项) — 已配置过"
-else
-    st_full=$(fdbcli --exec "status" 2>&1 || true)
-    if grep -q "Redundancy mode" <<<"${st_full}"; then
-        fdb_configured=1
-        info "FDB status 含 Redundancy mode — 已配置过 ($(grep -E 'Redundancy mode|Storage engine' <<<"${st_full}" | tr -s ' ' | tr '\n' ';'))"
-        { grep -qE "Storage engine.*memory" <<<"${st_full}" \
-            && warn "FDB 引擎是 memory (进程重启即丢数据); 需要持久化可执行: fdbcli --exec 'configure single ssd'"; } || true
-    fi
-fi
-if [[ ${fdb_configured} -eq 1 ]]; then
-    # 已配置但可能仍在恢复, 最多等 60s 至 healthy (status minimal 中是大写 "Healthy")
-    healthy=""
-    for _ in $(seq 1 12); do
-        if fdbcli --exec "status minimal" 2>/dev/null | grep -qi healthy; then healthy=1; break; fi
+# fdbmonitor "active" 不代表 fdbserver 活着: fdbmonitor 会自动重启 crash 的 fdbserver,
+# 数据损坏时 fdbserver 无限 crash 循环, 此时 fdbcli 每次调用都会长时间阻塞。
+pgrep -x fdbserver >/dev/null \
+    || { journalctl -u foundationdb -n 30 --no-pager; \
+         die "fdbserver 进程不存在 (fdbmonitor 在运行但 fdbserver 起不来, 多为数据目录损坏)。全新集群可执行: systemctl stop foundationdb && rm -rf /var/lib/foundationdb/data/* && rm -f ${OPT_ETC}/.cluster_inited && systemctl start foundationdb 后重跑本脚本"; }
+
+# status json 是版本稳定的机器可读输出 (client.database_status.available / cluster.database_configuration)。
+# 所有 fdbcli 调用一律加 timeout — 对不可达集群 fdbcli 会阻塞数十秒, 不加就是"卡几分钟"。
+FDB_JSON=""
+fdb_fetch_status() {
+    FDB_JSON=$(timeout 10 fdbcli --exec "status json" 2>/dev/null || true)
+    python3 -c 'import json,sys; json.loads(sys.stdin.read())' <<<"${FDB_JSON}" 2>/dev/null
+}
+fdb_check() {  # $1 = python 布尔表达式, 对 FDB_JSON 求值 (d = 解析后的 dict)
+    python3 -c "import json,sys; d=json.loads(sys.stdin.read()); sys.exit(0 if ($1) else 1)" <<<"${FDB_JSON}" 2>/dev/null
+}
+fdb_wait_available() {  # 最多 ~90s
+    for _ in $(seq 1 6); do
+        fdb_fetch_status && fdb_check 'd.get("client",{}).get("database_status",{}).get("available")' && return 0
         sleep 5
     done
-    [[ -n "${healthy}" ]] || warn "FDB 已配置但 60s 内未达 healthy, 请手动 fdbcli status 检查 (脚本继续)"
+    return 1
+}
+
+if ! fdb_fetch_status; then
+    # status json 不可解析: 未配置的全新库也会这样; 数据目录非空则说明 FDB 损坏
+    if ls /var/lib/foundationdb/data/* >/dev/null 2>&1; then
+        die "FDB status 不可解析且数据目录非空 — FDB 处于损坏/不可达状态 (mgmtd 依赖 FDB, 不能继续)。全新集群恢复: systemctl stop foundationdb && rm -rf /var/lib/foundationdb/data/* && rm -f ${OPT_ETC}/.cluster_inited && systemctl start foundationdb 后重跑本脚本"
+    fi
+fi
+
+if fdb_check 'd.get("cluster",{}).get("database_configuration",{})'; then
+    info "FDB 已配置: $(python3 -c 'import json,sys; print(json.loads(sys.stdin.read())["cluster"]["database_configuration"])' <<<"${FDB_JSON}")"
+    if fdb_wait_available; then
+        info "FDB 数据库可用"
+    else
+        die "FDB 已配置但 ~90s 内不可用 (mgmtd 依赖 FDB, 不能继续)。全新集群恢复: systemctl stop foundationdb && rm -rf /var/lib/foundationdb/data/* && rm -f ${OPT_ETC}/.cluster_inited && systemctl start foundationdb 后重跑本脚本"
+    fi
 else
-    info "FDB 未配置 (数据目录空且 status 无配置信息), 执行 configure new single ssd"
-    fdbcli --exec "configure new single ssd"
-    sleep 3
+    info "FDB 未配置, 执行 configure new single ssd"
+    # 关键: FDB 全新 ⇒ 上次的 init-cluster 状态已全部失效, 必须删标记让 6/9 重新 init-cluster
+    # (否则 marker 残留会跳过 init-cluster, mgmtd 从空 FDB 加载配置 → 卡死不绑端口)
+    rm -f "${OPT_ETC}/.cluster_inited"
+    timeout 30 fdbcli --exec "configure new single ssd" || die "configure new single ssd 失败"
+    fdb_wait_available || die "configure new 后 FDB 仍不可用, 请手动 fdbcli status 检查"
+    info "FDB configure 完成"
 fi
 cp /etc/foundationdb/fdb.cluster "${FDB_CLUSTER_FILE}"
 info "fdb.cluster: $(cat "${FDB_CLUSTER_FILE}")"
