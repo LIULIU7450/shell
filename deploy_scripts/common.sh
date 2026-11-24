@@ -22,9 +22,34 @@ CH_PASSWD="samsung"                    # ClickHouse default 用户密码
 FDB_CLUSTER_FILE="${OPT_ETC}/fdb.cluster"
 TOKEN_FILE="${OPT_ETC}/token.txt"
 
+# 3FS 限制最多 4 个 IB 设备 (IBDevice.h kMaxDeviceCnt=4), 超过会在启动时 CRITICAL abort。
+# dskna004 有 8 个活动 HCA (mlx5_0..7, ConnectX-7 200G IPoIB), 必须过滤到 4 个以内。
+# device_filter 按 IB 设备名或其 netdev 名匹配 (IBDevice.cc:389)。
+IB_DEVICE_FILTER_META='["mlx5_0","mlx5_1","mlx5_2","mlx5_3"]'   # dskna004 (004 上 IPoIB .210-.213)
+IB_DEVICE_FILTER_STORAGE=''                                    # 存储节点活动 HCA ≤2, 无需过滤
+
 # 存储数据盘 (仅 nvme3n1/nvme4n1 可用; nvme2n1 不可用, 不使用)
 STORAGE_DATA_DIRS=(/storage/data3/3fs /storage/data4/3fs)
 STORAGE_HOSTS=(172.16.18.64 172.16.18.65 172.16.18.169)   # dsksa304/305/348 管理网
+
+# ======== SSH 访问 (root + 密码登录; 可用 SSHPASS 环境变量覆盖) ========
+SSH_USER="${SSH_USER:-root}"
+# root 密码 (含特殊字符 !; 非交互脚本中 ! 无 history expansion, 无需转义)。
+# 环境变量 SSHPASS / SSH_USER 可覆盖。
+SSHPASS="${SSHPASS:-!@345Qwert}"
+
+# 远程执行: ssh_exec <ip> <命令>
+ssh_exec() {
+    sshpass -p "${SSHPASS}" ssh -o StrictHostKeyChecking=no -o ConnectTimeout=10 "${SSH_USER}@$1" "$2"
+}
+
+# 推送文件: scp_push <本地文件> <ip> <远端路径>
+scp_push() {
+    sshpass -p "${SSHPASS}" scp -o StrictHostKeyChecking=no -o ConnectTimeout=10 "$1" "${SSH_USER}@$2:$3"
+}
+
+# 注意: common.sh 内嵌了到存储节点的 root 密码, 部署完成后请将本目录权限收紧
+# (chmod 600), 或改用 ssh-key 登录后清空 SSHPASS 变量。
 
 # ======== 节点映射 (按 hostname 自动识别角色) ========
 detect_node() {
@@ -83,6 +108,16 @@ admin_cli_token() {
 }
 
 # ======== 共享配置生成器 (02 与 03 写出的 storage_main.toml 完全一致) ========
+# ib_devices_filter_block <filter_json> → 输出 [ib_devices] 段 (空 filter 则输出空 filter,
+# 保持配置结构一致; 存储节点设备数 ≤4 本不需要, 但统一带上无副作用)
+ib_devices_filter_block() {  # $1 = device_filter JSON 数组字符串 (可空)
+    cat <<EOF
+
+[ib_devices]
+device_filter = $1
+EOF
+}
+
 write_storage_main_toml() {  # $1 = 输出路径
     cat > "$1" <<'EOF'
 # storage runtime config — 由部署脚本生成 (指南 §8), 上传到 mgmtd 统一管理
@@ -102,6 +137,7 @@ remote_ip = "10.10.44.210:10000"
 fdp_compaction_stream_id = 2
 target_paths = ["/storage/data3/3fs","/storage/data4/3fs"]
 EOF
+    ib_devices_filter_block "${IB_DEVICE_FILTER_STORAGE:-[]}" >> "$1"
 }
 
 # 安装一个 systemd 单元并 daemon-reload
