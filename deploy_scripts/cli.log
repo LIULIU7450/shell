@@ -1,0 +1,357 @@
+[2026-11-24T09:53:23.178939792+00:00 admin_cli:444590 SysResource.cc:69 INFO] Set rlimit for number of files successfully. soft 524288, hard 1048576
+[2026-11-24T09:53:23.183119589+00:00 admin_cli:444590 admin_cli.cc:210 INFO] cli start cmd = "help" verbose = false profile = false
+[2026-11-24T09:53:23.397132247+00:00 admin_cli:444600 SysResource.cc:69 INFO] Set rlimit for number of files successfully. soft 524288, hard 1048576
+[2026-11-24T09:53:23.401309919+00:00 admin_cli:444600 admin_cli.cc:210 INFO] cli start cmd = "init-cluster --mgmtd /opt/3fs/etc/mgmtd_main.toml 1 1048576 16" verbose = false profile = false
+[2026-11-24T09:53:23.405912681+00:00 admin_cli:444600 MetaStore.cc:32 INFO] MetaStore::initFs
+[2026-11-24T09:53:23.409491882+00:00 admin_cli:444600 Inode.cc:139 DEBUG] Store inode 0x0000000000000000
+[2026-11-24T09:53:23.409499567+00:00 admin_cli:444600 Inode.cc:139 DEBUG] Store inode 0x0000000000000001
+[2026-11-24T10:34:37.812649294+00:00 admin_cli:485748 SysResource.cc:69 INFO] Set rlimit for number of files successfully. soft 524288, hard 1048576
+[2026-11-24T10:34:37.817264610+00:00 admin_cli:485748 admin_cli.cc:210 INFO] cli start cmd = "help" verbose = false profile = false
+[2026-11-24T10:34:43.800126195+00:00 admin_cli:485986 SysResource.cc:69 INFO] Set rlimit for number of files successfully. soft 524288, hard 1048576
+[2026-11-24T10:34:43.804525990+00:00 admin_cli:485986 admin_cli.cc:210 INFO] cli start cmd = "list-nodes" verbose = false profile = false
+[2026-11-24T10:34:43.806362991+00:00 admin_cli:485986 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_2 port 1 => ibp75s0
+[2026-11-24T10:34:43.806455007+00:00 admin_cli:485986 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_0 port 1 => ibp12s0
+[2026-11-24T10:34:43.806529378+00:00 admin_cli:485986 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_9 port 1 => ibp225s0f1
+[2026-11-24T10:34:43.806616745+00:00 admin_cli:485986 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_7 port 1 => ibp204s0
+[2026-11-24T10:34:43.806704071+00:00 admin_cli:485986 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_5 port 1 => ibp148s0
+[2026-11-24T10:34:43.806791308+00:00 admin_cli:485986 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_3 port 1 => ibp84s0
+[2026-11-24T10:34:43.806879436+00:00 admin_cli:485986 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_1 port 1 => ibp18s0
+[2026-11-24T10:34:43.806951864+00:00 admin_cli:485986 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_8 port 1 => ibp225s0f0
+[2026-11-24T10:34:43.807038749+00:00 admin_cli:485986 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_6 port 1 => ibp186s0
+[2026-11-24T10:34:43.807126637+00:00 admin_cli:485986 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_4 port 1 => ibp141s0
+[2026-11-24T10:34:43.809393748+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of lo, ifa_addr 0x5557cfee4038 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809398647+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of enxde70d89330c7, ifa_addr 0x5557cfee40f0 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809400060+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of enp226s0, ifa_addr 0x5557cfee41a8 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809401182+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp12s0, ifa_addr 0x5557cfee4260 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809402304+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp18s0, ifa_addr 0x5557cfee4318 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809403526+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp75s0, ifa_addr 0x5557cfee43d0 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809404748+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp84s0, ifa_addr 0x5557cfee4488 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809406321+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp141s0, ifa_addr 0x5557cfee4540 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809407383+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp148s0, ifa_addr 0x5557cfee45f8 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809410469+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp186s0, ifa_addr 0x5557cfee46b0 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809411521+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp204s0, ifa_addr 0x5557cfee4768 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809412884+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp225s0f0, ifa_addr 0x5557cfee4820 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809413896+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp225s0f1, ifa_addr 0x5557cfee48d8 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809415990+00:00 admin_cli:485986 IfAddrs.h:56 DEBUG] Skip ifaddr of docker0, ifa_addr 0x5557cfee4990 or ifa_netmask 0x0 missing.
+[2026-11-24T10:34:43.809457629+00:00 admin_cli:485986 IfAddrs.h:102 INFO] Get ifaddr of enp226s0, addr 172.16.12.210/24, subnet 172.16.12.0/24, up true
+[2026-11-24T10:34:43.809468079+00:00 admin_cli:485986 IfAddrs.h:102 INFO] Get ifaddr of ibp12s0, addr 10.10.44.210/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:34:43.809478429+00:00 admin_cli:485986 IfAddrs.h:102 INFO] Get ifaddr of ibp18s0, addr 10.10.44.211/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:34:43.809488087+00:00 admin_cli:485986 IfAddrs.h:102 INFO] Get ifaddr of ibp75s0, addr 10.10.44.212/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:34:43.809498056+00:00 admin_cli:485986 IfAddrs.h:102 INFO] Get ifaddr of ibp84s0, addr 10.10.44.213/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:34:43.809506863+00:00 admin_cli:485986 IfAddrs.h:102 INFO] Get ifaddr of ibp141s0, addr 10.10.44.214/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:34:43.809517934+00:00 admin_cli:485986 IfAddrs.h:102 INFO] Get ifaddr of ibp148s0, addr 10.10.44.215/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:34:43.809527753+00:00 admin_cli:485986 IfAddrs.h:102 INFO] Get ifaddr of ibp186s0, addr 10.10.44.216/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:34:43.809537471+00:00 admin_cli:485986 IfAddrs.h:102 INFO] Get ifaddr of ibp204s0, addr 10.10.44.217/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:34:43.809547160+00:00 admin_cli:485986 IfAddrs.h:64 DEBUG] Skip ifaddr of lo, address family 17 10 != AF_INET
+[2026-11-24T10:34:43.809550857+00:00 admin_cli:485986 IfAddrs.h:64 DEBUG] Skip ifaddr of enp226s0, address family 17 10 != AF_INET
+[2026-11-24T10:34:43.809552009+00:00 admin_cli:485986 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp12s0, address family 17 10 != AF_INET
+[2026-11-24T10:34:43.809553091+00:00 admin_cli:485986 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp18s0, address family 17 10 != AF_INET
+[2026-11-24T10:34:43.809554424+00:00 admin_cli:485986 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp75s0, address family 17 10 != AF_INET
+[2026-11-24T10:34:43.809555385+00:00 admin_cli:485986 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp84s0, address family 17 10 != AF_INET
+[2026-11-24T10:34:43.809556598+00:00 admin_cli:485986 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp141s0, address family 17 10 != AF_INET
+[2026-11-24T10:34:43.809557780+00:00 admin_cli:485986 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp148s0, address family 17 10 != AF_INET
+[2026-11-24T10:34:43.809558752+00:00 admin_cli:485986 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp186s0, address family 17 10 != AF_INET
+[2026-11-24T10:34:43.809559944+00:00 admin_cli:485986 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp204s0, address family 17 10 != AF_INET
+[2026-11-24T10:34:43.818538385+00:00 admin_cli:485986 IBDevice.cc:483 INFO] IBDevice mlx5_0:1 IP addrs 10.10.44.210/24
+[2026-11-24T10:34:43.818546361+00:00 admin_cli:485986 IBDevice.cc:528 CRITICAL] IBDevice mlx5_0:1 can't set zone by IP, fallback to UNKNOWN
+[2026-11-24T10:34:43.818567280+00:00 admin_cli:485986 IBDevice.cc:454 INFO] IBDevice mlx5_0 add active port 1, linklayer INFINIBAND, addrs 10.10.44.210/24, zones UNKNOWN, RoCE v2 GID std::nullopt
+[2026-11-24T10:34:43.818572671+00:00 admin_cli:485986 IBDevice.cc:343 INFO] IBDevice add mlx5_0, id 0, 1 available ports
+[2026-11-24T10:34:43.826665635+00:00 admin_cli:485986 IBDevice.cc:483 INFO] IBDevice mlx5_1:1 IP addrs 10.10.44.211/24
+[2026-11-24T10:34:43.826670985+00:00 admin_cli:485986 IBDevice.cc:528 CRITICAL] IBDevice mlx5_1:1 can't set zone by IP, fallback to UNKNOWN
+[2026-11-24T10:34:43.826691714+00:00 admin_cli:485986 IBDevice.cc:454 INFO] IBDevice mlx5_1 add active port 1, linklayer INFINIBAND, addrs 10.10.44.211/24, zones UNKNOWN, RoCE v2 GID std::nullopt
+[2026-11-24T10:34:43.826696293+00:00 admin_cli:485986 IBDevice.cc:343 INFO] IBDevice add mlx5_1, id 1, 1 available ports
+[2026-11-24T10:34:43.834813263+00:00 admin_cli:485986 IBDevice.cc:483 INFO] IBDevice mlx5_2:1 IP addrs 10.10.44.212/24
+[2026-11-24T10:34:43.834819064+00:00 admin_cli:485986 IBDevice.cc:528 CRITICAL] IBDevice mlx5_2:1 can't set zone by IP, fallback to UNKNOWN
+[2026-11-24T10:34:43.834831568+00:00 admin_cli:485986 IBDevice.cc:454 INFO] IBDevice mlx5_2 add active port 1, linklayer INFINIBAND, addrs 10.10.44.212/24, zones UNKNOWN, RoCE v2 GID std::nullopt
+[2026-11-24T10:34:43.834837328+00:00 admin_cli:485986 IBDevice.cc:343 INFO] IBDevice add mlx5_2, id 2, 1 available ports
+[2026-11-24T10:34:43.843059168+00:00 admin_cli:485986 IBDevice.cc:483 INFO] IBDevice mlx5_3:1 IP addrs 10.10.44.213/24
+[2026-11-24T10:34:43.843064658+00:00 admin_cli:485986 IBDevice.cc:528 CRITICAL] IBDevice mlx5_3:1 can't set zone by IP, fallback to UNKNOWN
+[2026-11-24T10:34:43.843087131+00:00 admin_cli:485986 IBDevice.cc:454 INFO] IBDevice mlx5_3 add active port 1, linklayer INFINIBAND, addrs 10.10.44.213/24, zones UNKNOWN, RoCE v2 GID std::nullopt
+[2026-11-24T10:34:43.843091009+00:00 admin_cli:485986 IBDevice.cc:343 INFO] IBDevice add mlx5_3, id 3, 1 available ports
+[2026-11-24T10:34:43.850857179+00:00 admin_cli:485986 IBDevice.cc:392 INFO] Skip device mlx5_4, port 1 because it's not in device filter.
+[2026-11-24T10:34:43.850864113+00:00 admin_cli:485986 IBDevice.cc:340 INFO] IBDevice skip mlx5_4 because it doesn't have available ports.
+[2026-11-24T10:34:43.858823081+00:00 admin_cli:485986 IBDevice.cc:392 INFO] Skip device mlx5_5, port 1 because it's not in device filter.
+[2026-11-24T10:34:43.858830325+00:00 admin_cli:485986 IBDevice.cc:340 INFO] IBDevice skip mlx5_5 because it doesn't have available ports.
+[2026-11-24T10:34:43.866726564+00:00 admin_cli:485986 IBDevice.cc:392 INFO] Skip device mlx5_6, port 1 because it's not in device filter.
+[2026-11-24T10:34:43.866732615+00:00 admin_cli:485986 IBDevice.cc:340 INFO] IBDevice skip mlx5_6 because it doesn't have available ports.
+[2026-11-24T10:34:43.874592505+00:00 admin_cli:485986 IBDevice.cc:392 INFO] Skip device mlx5_7, port 1 because it's not in device filter.
+[2026-11-24T10:34:43.874598576+00:00 admin_cli:485986 IBDevice.cc:340 INFO] IBDevice skip mlx5_7 because it doesn't have available ports.
+[2026-11-24T10:34:43.882434430+00:00 admin_cli:485986 IBDevice.cc:392 INFO] Skip device mlx5_8, port 1 because it's not in device filter.
+[2026-11-24T10:34:43.882440261+00:00 admin_cli:485986 IBDevice.cc:340 INFO] IBDevice skip mlx5_8 because it doesn't have available ports.
+[2026-11-24T10:34:43.890230097+00:00 admin_cli:485986 IBDevice.cc:392 INFO] Skip device mlx5_9, port 1 because it's not in device filter.
+[2026-11-24T10:34:43.890236860+00:00 admin_cli:485986 IBDevice.cc:340 INFO] IBDevice skip mlx5_9 because it doesn't have available ports.
+[2026-11-24T10:34:43.892744830+00:00 IBManager:485992 EventLoop.cc:116 INFO] EventLoop::loop() started.
+[2026-11-24T10:34:43.892810495+00:00 admin_cli:485986 ConstructLog.h:11 INFO] Construct serde::Services
+[2026-11-24T10:34:43.895921544+00:00 admin_cli:485986 ConstructLog.h:11 INFO] Construct net::ThreadPoolGroup
+[2026-11-24T10:34:43.900958965+00:00 admin_cli:485986 ConstructLog.h:11 INFO] Construct CPUExecutorGroup
+[2026-11-24T10:34:43.905162296+00:00 admin_cli:485986 ConstructLog.h:11 INFO] Construct CPUExecutorGroup
+[2026-11-24T10:34:43.909614631+00:00 admin_cli:485986 ConstructLog.h:11 INFO] Construct CPUExecutorGroup
+[2026-11-24T10:34:43.918318439+00:00 admin_cli:485986 Semaphore.h:27 INFO] usableTokens: 64, maxTokens: 4096, availableTokens: 64
+[2026-11-24T10:34:43.920403442+00:00 admin_cli:486001 EventLoop.cc:116 INFO] EventLoop::loop() started.
+[2026-11-24T10:34:43.920559931+00:00 admin_cli:485986 MgmtdClient.cc:222 INFO] MgmtdClient: started
+[2026-11-24T10:34:43.920582474+00:00 CliBG1:485998 BackgroundRunner.cc:83 INFO] BackgroundRunner: AutoRefresh start
+[2026-11-24T10:34:43.920609846+00:00 CliBG1:485998 BackgroundRunner.cc:85 DEBUG] BackgroundRunner: AutoRefresh round 1 start
+[2026-11-24T10:34:43.920612421+00:00 CliBG0:485997 MgmtdClient.cc:388 DEBUG] MgmtdClient: receive RefreshItem force=false
+[2026-11-24T10:34:43.920622660+00:00 CliBG0:485997 MgmtdClient.cc:390 INFO] [MgmtdClientOp RefreshRoutingInfo force=false No.1] start execution. from:
+[2026-11-24T10:34:43.920658939+00:00 CliBG0:485997 MgmtdClient.cc:424 INFO] MgmtdClient: start probe for connecting ...
+[2026-11-24T10:34:43.920665472+00:00 CliBG0:485997 MgmtdClient.cc:542 INFO] MgmtdClient: start probe from unknown address RDMA://10.10.44.210:8000
+[2026-11-24T10:34:43.920671914+00:00 CliBG0:485997 MgmtdClient.cc:504 INFO] MgmtdClient: probePrimary NodeId(0) via RDMA://10.10.44.210:8000 ...
+[2026-11-24T10:34:43.928275946+00:00 CliConn0:485999 TcpSocket.cc:34 ERROR] connect TCP://10.10.44.210:8000 failed: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:34:43.928342162+00:00 CliConn0:485999 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:34:44.032107190+00:00 CliConn0:485999 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:34:44.032176683+00:00 CliConn1:486000 IBConnect.cc:368 ERROR] IBSocket [connect RDMA://10.10.44.210:8000] failed to query, error RPC::SendFailed(2007), timeout 5s
+[2026-11-24T10:34:44.032226829+00:00 CliConn1:486000 IOWorker.cc:100 ERROR] error: RPC::SendFailed(2007)
+[2026-11-24T10:34:44.032286723+00:00 CliIO1:485996 IBSocket.cc:317 DEBUG] IBSocket destructor [connect RDMA://10.10.44.210:8000]
+[2026-11-24T10:34:44.092762309+00:00 IBManager:485992 IBSocket.cc:1244 DEBUG] IBSocketManager handleEvents running
+[2026-11-24T10:34:44.139052049+00:00 CliConn1:486000 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:34:44.240366627+00:00 CliConn1:486000 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:34:44.240430198+00:00 CliConn0:485999 IOWorker.cc:100 ERROR] error: RPC::SendFailed(2007)
+[2026-11-24T10:34:44.240525539+00:00 CliBG0:485997 IBSocket.cc:317 DEBUG] IBSocket destructor [connect RDMA://10.10.44.210:8000]
+[2026-11-24T10:34:44.240585063+00:00 CliBG0:485997 MgmtdClient.cc:509 ERROR] MgmtdClient: probePrimary NodeId(0) failed: RPC::SendFailed(2007)
+[2026-11-24T10:34:44.240653133+00:00 CliBG0:485997 MgmtdClient.cc:162 INFO] MgmtdClient: mark node as Skipped NodeId(0) ["RDMA://10.10.44.210:8000"]
+[2026-11-24T10:34:44.240664835+00:00 CliBG0:485997 MgmtdClient.cc:434 WARNING] MgmtdClient: primary not found
+[2026-11-24T10:34:44.240990576+00:00 CliBG0:485997 MgmtdClient.cc:390 ERROR] [MgmtdClientOp RefreshRoutingInfo force=false No.1] failed: MgmtdClient::PrimaryMgmtdNotFound(6000) ./src/client/mgmtd/MgmtdClient.cc:173, '_result' has error. latency: 0ns
+[2026-11-24T10:34:44.241047585+00:00 CliBG0:485997 MgmtdClient.cc:388 DEBUG] MgmtdClient: receive RefreshItem force=false
+[2026-11-24T10:34:44.241054588+00:00 CliBG0:485997 MgmtdClient.cc:390 INFO] [MgmtdClientOp RefreshRoutingInfo force=false No.2] start execution. from:
+[2026-11-24T10:34:44.241060169+00:00 CliBG0:485997 MgmtdClient.cc:424 INFO] MgmtdClient: start probe for connecting ...
+[2026-11-24T10:34:44.241064056+00:00 CliBG0:485997 MgmtdClient.cc:542 INFO] MgmtdClient: start probe from unknown address RDMA://10.10.44.210:8000
+[2026-11-24T10:34:44.241068745+00:00 CliBG0:485997 MgmtdClient.cc:504 INFO] MgmtdClient: probePrimary NodeId(0) via RDMA://10.10.44.210:8000 ...
+[2026-11-24T10:34:44.241169497+00:00 CliConn1:486000 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:34:44.241508112+00:00 admin_cli:485986 MgmtdClient.cc:271 INFO] MgmtdClient: wait for stop
+[2026-11-24T10:34:44.292752295+00:00 IBManager:485992 IBSocket.cc:1244 DEBUG] IBSocketManager handleEvents running
+[2026-11-24T10:34:44.344533992+00:00 CliConn1:486000 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:34:44.344575531+00:00 CliConn0:485999 IOWorker.cc:100 ERROR] error: RPC::SendFailed(2007)
+[2026-11-24T10:34:44.344624965+00:00 CliIO0:485995 IBSocket.cc:317 DEBUG] IBSocket destructor [connect RDMA://10.10.44.210:8000]
+[2026-11-24T10:34:44.444843945+00:00 CliConn0:485999 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:34:44.492739455+00:00 IBManager:485992 IBSocket.cc:1244 DEBUG] IBSocketManager handleEvents running
+[2026-11-24T10:34:44.548198361+00:00 CliConn0:485999 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:34:44.548251572+00:00 CliConn1:486000 IOWorker.cc:100 ERROR] error: RPC::SendFailed(2007)
+[2026-11-24T10:34:44.548304703+00:00 CliBG0:485997 IBSocket.cc:317 DEBUG] IBSocket destructor [connect RDMA://10.10.44.210:8000]
+[2026-11-24T10:34:44.548313630+00:00 CliBG0:485997 MgmtdClient.cc:509 ERROR] MgmtdClient: probePrimary NodeId(0) failed: RPC::SendFailed(2007)
+[2026-11-24T10:34:44.548474647+00:00 CliBG0:485997 MgmtdClient.cc:162 INFO] MgmtdClient: mark node as Skipped NodeId(0) ["RDMA://10.10.44.210:8000"]
+[2026-11-24T10:34:44.548481240+00:00 CliBG0:485997 MgmtdClient.cc:434 WARNING] MgmtdClient: primary not found
+[2026-11-24T10:34:44.548487742+00:00 CliBG0:485997 MgmtdClient.cc:390 ERROR] [MgmtdClientOp RefreshRoutingInfo force=false No.2] failed: MgmtdClient::PrimaryMgmtdNotFound(6000) ./src/client/mgmtd/MgmtdClient.cc:173, '_result' has error. latency: 0ns
+[2026-11-24T10:34:44.548522448+00:00 CliBG0:485997 MgmtdClient.cc:381 INFO] MgmtdClient: receive ExitItem
+[2026-11-24T10:34:44.548529261+00:00 CliBG1:485998 MgmtdClient.cc:286 ERROR] MgmtdClient: AutoRefresh failed: MgmtdClient::PrimaryMgmtdNotFound(6000) ./src/client/mgmtd/MgmtdClient.cc:173, '_result' has error
+[2026-11-24T10:34:44.548545903+00:00 admin_cli:485986 BackgroundRunner.cc:63 DEBUG] BackgroundRunner: start to execute stopAll
+[2026-11-24T10:34:44.548558677+00:00 CliBG1:485998 BackgroundRunner.cc:102 DEBUG] BackgroundRunner: AutoRefresh wait 372060us for next round
+[2026-11-24T10:34:44.548612460+00:00 CliBG1:485998 BackgroundRunner.cc:104 DEBUG] BackgroundRunner: AutoRefresh is cancelled.
+[2026-11-24T10:34:44.548616788+00:00 CliBG1:485998 BackgroundRunner.cc:111 INFO] BackgroundRunner: AutoRefresh stopped
+[2026-11-24T10:34:44.548625905+00:00 admin_cli:485986 BackgroundRunner.cc:70 DEBUG] BackgroundRunner: finish to execute stopAll
+[2026-11-24T10:34:44.548631426+00:00 admin_cli:485986 BackgroundRunner.cc:50 DEBUG] BackgroundRunner: destructed
+[2026-11-24T10:34:44.548632919+00:00 admin_cli:485986 MgmtdClient.cc:277 INFO] MgmtdClient: stopped
+[2026-11-24T10:34:44.548649701+00:00 admin_cli:486001 EventLoop.cc:159 INFO] EventLoop::loop() stopped.
+[2026-11-24T10:34:44.548723822+00:00 admin_cli:485986 ThreadPoolGroup.cc:30 WARNING] Stopping thread pool group 'Cli@0x7ffe88a9f618'
+[2026-11-24T10:34:44.548727459+00:00 admin_cli:485986 ThreadPoolGroup.cc:41 INFO] thread pool group Cli@0x7ffe88a9f618 join procThreadPool
+[2026-11-24T10:34:44.548730936+00:00 admin_cli:485986 CPUExecutorGroup.cc:111 DEBUG] CPUExecutorGroup 0x5557d05f40c8 start join
+[2026-11-24T10:34:44.548732719+00:00 admin_cli:485986 CPUExecutorGroup.cc:114 DEBUG] CPUExecutorGroup 0x5557d05f40c8 join executor 0x5557cfea3600 ...
+[2026-11-24T10:34:44.548805948+00:00 admin_cli:485986 CPUExecutorGroup.cc:116 DEBUG] CPUExecutorGroup 0x5557d05f40c8 join executor 0x5557cfea3600 done
+[2026-11-24T10:34:44.548808954+00:00 admin_cli:485986 CPUExecutorGroup.cc:118 DEBUG] CPUExecutorGroup 0x5557d05f40c8 join done
+[2026-11-24T10:34:44.548810437+00:00 admin_cli:485986 ThreadPoolGroup.cc:43 INFO] thread pool group Cli@0x7ffe88a9f618 join ioThreadPool
+[2026-11-24T10:34:44.548812821+00:00 admin_cli:485986 CPUExecutorGroup.cc:111 DEBUG] CPUExecutorGroup 0x5557d05f4110 start join
+[2026-11-24T10:34:44.548813944+00:00 admin_cli:485986 CPUExecutorGroup.cc:114 DEBUG] CPUExecutorGroup 0x5557d05f4110 join executor 0x5557cfea5700 ...
+[2026-11-24T10:34:44.549337171+00:00 admin_cli:485986 CPUExecutorGroup.cc:116 DEBUG] CPUExecutorGroup 0x5557d05f4110 join executor 0x5557cfea5700 done
+[2026-11-24T10:34:44.549340647+00:00 admin_cli:485986 CPUExecutorGroup.cc:118 DEBUG] CPUExecutorGroup 0x5557d05f4110 join done
+[2026-11-24T10:34:44.549342281+00:00 admin_cli:485986 ThreadPoolGroup.cc:45 INFO] thread pool group Cli@0x7ffe88a9f618 join bgThreadPool
+[2026-11-24T10:34:44.549343533+00:00 admin_cli:485986 CPUExecutorGroup.cc:111 DEBUG] CPUExecutorGroup 0x5557d05f4158 start join
+[2026-11-24T10:34:44.549344645+00:00 admin_cli:485986 CPUExecutorGroup.cc:114 DEBUG] CPUExecutorGroup 0x5557d05f4158 join executor 0x5557cfea6200 ...
+[2026-11-24T10:34:44.550349209+00:00 admin_cli:485986 CPUExecutorGroup.cc:116 DEBUG] CPUExecutorGroup 0x5557d05f4158 join executor 0x5557cfea6200 done
+[2026-11-24T10:34:44.550353127+00:00 admin_cli:485986 CPUExecutorGroup.cc:118 DEBUG] CPUExecutorGroup 0x5557d05f4158 join done
+[2026-11-24T10:34:44.550354490+00:00 admin_cli:485986 ThreadPoolGroup.cc:47 INFO] thread pool group Cli@0x7ffe88a9f618 join connThreadPool
+[2026-11-24T10:34:44.551489473+00:00 admin_cli:485986 ThreadPoolGroup.cc:49 WARNING] All thread pools of 'Cli@0x7ffe88a9f618' stopped
+[2026-11-24T10:34:44.552455424+00:00 admin_cli:485986 IBSocket.cc:1204 INFO] IBSocketManager::stopAndJoin
+[2026-11-24T10:34:44.552460283+00:00 admin_cli:485986 IBSocket.cc:1218 INFO] IBSocketManager stopped!
+[2026-11-24T10:34:44.552482205+00:00 IBManager:485992 EventLoop.cc:159 INFO] EventLoop::loop() stopped.
+[2026-11-24T10:34:44.552941861+00:00 admin_cli:485986 ThreadPoolGroup.cc:30 WARNING] Stopping thread pool group 'Cli@0x7ffe88a9f618'
+[2026-11-24T10:34:44.552959224+00:00 admin_cli:485986 CPUExecutorGroup.cc:111 DEBUG] CPUExecutorGroup 0x5557d05f4158 start join
+[2026-11-24T10:34:44.552962149+00:00 admin_cli:485986 CPUExecutorGroup.cc:114 DEBUG] CPUExecutorGroup 0x5557d05f4158 join executor 0x5557cfea6200 ...
+[2026-11-24T10:34:44.552963592+00:00 admin_cli:485986 CPUExecutorGroup.cc:116 DEBUG] CPUExecutorGroup 0x5557d05f4158 join executor 0x5557cfea6200 done
+[2026-11-24T10:34:44.552964794+00:00 admin_cli:485986 CPUExecutorGroup.cc:118 DEBUG] CPUExecutorGroup 0x5557d05f4158 join done
+[2026-11-24T10:34:44.552969804+00:00 admin_cli:485986 ConstructLog.h:12 INFO] Destruct CPUExecutorGroup
+[2026-11-24T10:34:44.552972188+00:00 admin_cli:485986 CPUExecutorGroup.cc:111 DEBUG] CPUExecutorGroup 0x5557d05f4110 start join
+[2026-11-24T10:34:44.552973210+00:00 admin_cli:485986 CPUExecutorGroup.cc:114 DEBUG] CPUExecutorGroup 0x5557d05f4110 join executor 0x5557cfea5700 ...
+[2026-11-24T10:34:44.552974573+00:00 admin_cli:485986 CPUExecutorGroup.cc:116 DEBUG] CPUExecutorGroup 0x5557d05f4110 join executor 0x5557cfea5700 done
+[2026-11-24T10:34:44.552975635+00:00 admin_cli:485986 CPUExecutorGroup.cc:118 DEBUG] CPUExecutorGroup 0x5557d05f4110 join done
+[2026-11-24T10:34:44.552978460+00:00 admin_cli:485986 ConstructLog.h:12 INFO] Destruct CPUExecutorGroup
+[2026-11-24T10:34:44.552979723+00:00 admin_cli:485986 CPUExecutorGroup.cc:111 DEBUG] CPUExecutorGroup 0x5557d05f40c8 start join
+[2026-11-24T10:34:44.552981446+00:00 admin_cli:485986 CPUExecutorGroup.cc:114 DEBUG] CPUExecutorGroup 0x5557d05f40c8 join executor 0x5557cfea3600 ...
+[2026-11-24T10:34:44.552983390+00:00 admin_cli:485986 CPUExecutorGroup.cc:116 DEBUG] CPUExecutorGroup 0x5557d05f40c8 join executor 0x5557cfea3600 done
+[2026-11-24T10:34:44.552984442+00:00 admin_cli:485986 CPUExecutorGroup.cc:118 DEBUG] CPUExecutorGroup 0x5557d05f40c8 join done
+[2026-11-24T10:34:44.552986686+00:00 admin_cli:485986 ConstructLog.h:12 INFO] Destruct CPUExecutorGroup
+[2026-11-24T10:34:44.552988500+00:00 admin_cli:485986 ConstructLog.h:12 INFO] Destruct net::ThreadPoolGroup
+[2026-11-24T10:34:44.553436584+00:00 admin_cli:485986 ConstructLog.h:12 INFO] Destruct serde::Services
+[2026-11-24T10:46:18.146371665+00:00 admin_cli:496304 SysResource.cc:69 INFO] Set rlimit for number of files successfully. soft 524288, hard 1048576
+[2026-11-24T10:46:18.150973986+00:00 admin_cli:496304 admin_cli.cc:210 INFO] cli start cmd = "help" verbose = false profile = false
+[2026-11-24T10:47:54.331619700+00:00 admin_cli:497676 SysResource.cc:69 INFO] Set rlimit for number of files successfully. soft 524288, hard 1048576
+[2026-11-24T10:47:54.336197625+00:00 admin_cli:497676 admin_cli.cc:210 INFO] cli start cmd = "list-nodes" verbose = false profile = false
+[2026-11-24T10:47:54.338033364+00:00 admin_cli:497676 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_2 port 1 => ibp75s0
+[2026-11-24T10:47:54.338125018+00:00 admin_cli:497676 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_0 port 1 => ibp12s0
+[2026-11-24T10:47:54.338197497+00:00 admin_cli:497676 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_9 port 1 => ibp225s0f1
+[2026-11-24T10:47:54.338283891+00:00 admin_cli:497676 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_7 port 1 => ibp204s0
+[2026-11-24T10:47:54.338376368+00:00 admin_cli:497676 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_5 port 1 => ibp148s0
+[2026-11-24T10:47:54.338463333+00:00 admin_cli:497676 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_3 port 1 => ibp84s0
+[2026-11-24T10:47:54.338550870+00:00 admin_cli:497676 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_1 port 1 => ibp18s0
+[2026-11-24T10:47:54.338623969+00:00 admin_cli:497676 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_8 port 1 => ibp225s0f0
+[2026-11-24T10:47:54.338709993+00:00 admin_cli:497676 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_6 port 1 => ibp186s0
+[2026-11-24T10:47:54.338797981+00:00 admin_cli:497676 IBDevice.cc:266 INFO] ibdev2netdev parsed from PCI map: mlx5_4 port 1 => ibp141s0
+[2026-11-24T10:47:54.341191232+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of lo, ifa_addr 0x55d8f35c4038 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341195961+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of enxde70d89330c7, ifa_addr 0x55d8f35c40f0 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341197434+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of enp226s0, ifa_addr 0x55d8f35c41a8 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341198616+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp12s0, ifa_addr 0x55d8f35c4260 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341199798+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp18s0, ifa_addr 0x55d8f35c4318 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341201051+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp75s0, ifa_addr 0x55d8f35c43d0 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341202143+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp84s0, ifa_addr 0x55d8f35c4488 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341203626+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp141s0, ifa_addr 0x55d8f35c4540 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341204688+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp148s0, ifa_addr 0x55d8f35c45f8 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341205920+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp186s0, ifa_addr 0x55d8f35c46b0 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341206942+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp204s0, ifa_addr 0x55d8f35c4768 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341208044+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp225s0f0, ifa_addr 0x55d8f35c4820 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341209056+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of ibp225s0f1, ifa_addr 0x55d8f35c48d8 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341210950+00:00 admin_cli:497676 IfAddrs.h:56 DEBUG] Skip ifaddr of docker0, ifa_addr 0x55d8f35c4990 or ifa_netmask 0x0 missing.
+[2026-11-24T10:47:54.341249704+00:00 admin_cli:497676 IfAddrs.h:102 INFO] Get ifaddr of enp226s0, addr 172.16.12.210/24, subnet 172.16.12.0/24, up true
+[2026-11-24T10:47:54.341260003+00:00 admin_cli:497676 IfAddrs.h:102 INFO] Get ifaddr of ibp12s0, addr 10.10.44.210/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:47:54.341269692+00:00 admin_cli:497676 IfAddrs.h:102 INFO] Get ifaddr of ibp18s0, addr 10.10.44.211/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:47:54.341280272+00:00 admin_cli:497676 IfAddrs.h:102 INFO] Get ifaddr of ibp75s0, addr 10.10.44.212/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:47:54.341289700+00:00 admin_cli:497676 IfAddrs.h:102 INFO] Get ifaddr of ibp84s0, addr 10.10.44.213/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:47:54.341299318+00:00 admin_cli:497676 IfAddrs.h:102 INFO] Get ifaddr of ibp141s0, addr 10.10.44.214/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:47:54.341309487+00:00 admin_cli:497676 IfAddrs.h:102 INFO] Get ifaddr of ibp148s0, addr 10.10.44.215/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:47:54.341318765+00:00 admin_cli:497676 IfAddrs.h:102 INFO] Get ifaddr of ibp186s0, addr 10.10.44.216/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:47:54.341328314+00:00 admin_cli:497676 IfAddrs.h:102 INFO] Get ifaddr of ibp204s0, addr 10.10.44.217/24, subnet 10.10.44.0/24, up true
+[2026-11-24T10:47:54.341338383+00:00 admin_cli:497676 IfAddrs.h:64 DEBUG] Skip ifaddr of lo, address family 17 10 != AF_INET
+[2026-11-24T10:47:54.341341168+00:00 admin_cli:497676 IfAddrs.h:64 DEBUG] Skip ifaddr of enp226s0, address family 17 10 != AF_INET
+[2026-11-24T10:47:54.341342250+00:00 admin_cli:497676 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp12s0, address family 17 10 != AF_INET
+[2026-11-24T10:47:54.341343362+00:00 admin_cli:497676 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp18s0, address family 17 10 != AF_INET
+[2026-11-24T10:47:54.341344344+00:00 admin_cli:497676 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp75s0, address family 17 10 != AF_INET
+[2026-11-24T10:47:54.341345827+00:00 admin_cli:497676 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp84s0, address family 17 10 != AF_INET
+[2026-11-24T10:47:54.341347390+00:00 admin_cli:497676 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp141s0, address family 17 10 != AF_INET
+[2026-11-24T10:47:54.341348482+00:00 admin_cli:497676 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp148s0, address family 17 10 != AF_INET
+[2026-11-24T10:47:54.341349654+00:00 admin_cli:497676 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp186s0, address family 17 10 != AF_INET
+[2026-11-24T10:47:54.341350616+00:00 admin_cli:497676 IfAddrs.h:64 DEBUG] Skip ifaddr of ibp204s0, address family 17 10 != AF_INET
+[2026-11-24T10:47:54.350387228+00:00 admin_cli:497676 IBDevice.cc:483 INFO] IBDevice mlx5_0:1 IP addrs 10.10.44.210/24
+[2026-11-24T10:47:54.350394782+00:00 admin_cli:497676 IBDevice.cc:528 CRITICAL] IBDevice mlx5_0:1 can't set zone by IP, fallback to UNKNOWN
+[2026-11-24T10:47:54.350423107+00:00 admin_cli:497676 IBDevice.cc:454 INFO] IBDevice mlx5_0 add active port 1, linklayer INFINIBAND, addrs 10.10.44.210/24, zones UNKNOWN, RoCE v2 GID std::nullopt
+[2026-11-24T10:47:54.350429058+00:00 admin_cli:497676 IBDevice.cc:343 INFO] IBDevice add mlx5_0, id 0, 1 available ports
+[2026-11-24T10:47:54.358563671+00:00 admin_cli:497676 IBDevice.cc:483 INFO] IBDevice mlx5_1:1 IP addrs 10.10.44.211/24
+[2026-11-24T10:47:54.358569061+00:00 admin_cli:497676 IBDevice.cc:528 CRITICAL] IBDevice mlx5_1:1 can't set zone by IP, fallback to UNKNOWN
+[2026-11-24T10:47:54.358584310+00:00 admin_cli:497676 IBDevice.cc:454 INFO] IBDevice mlx5_1 add active port 1, linklayer INFINIBAND, addrs 10.10.44.211/24, zones UNKNOWN, RoCE v2 GID std::nullopt
+[2026-11-24T10:47:54.358588799+00:00 admin_cli:497676 IBDevice.cc:343 INFO] IBDevice add mlx5_1, id 1, 1 available ports
+[2026-11-24T10:47:54.366686872+00:00 admin_cli:497676 IBDevice.cc:483 INFO] IBDevice mlx5_2:1 IP addrs 10.10.44.212/24
+[2026-11-24T10:47:54.366692723+00:00 admin_cli:497676 IBDevice.cc:528 CRITICAL] IBDevice mlx5_2:1 can't set zone by IP, fallback to UNKNOWN
+[2026-11-24T10:47:54.366715367+00:00 admin_cli:497676 IBDevice.cc:454 INFO] IBDevice mlx5_2 add active port 1, linklayer INFINIBAND, addrs 10.10.44.212/24, zones UNKNOWN, RoCE v2 GID std::nullopt
+[2026-11-24T10:47:54.366720687+00:00 admin_cli:497676 IBDevice.cc:343 INFO] IBDevice add mlx5_2, id 2, 1 available ports
+[2026-11-24T10:47:54.374974818+00:00 admin_cli:497676 IBDevice.cc:483 INFO] IBDevice mlx5_3:1 IP addrs 10.10.44.213/24
+[2026-11-24T10:47:54.374980709+00:00 admin_cli:497676 IBDevice.cc:528 CRITICAL] IBDevice mlx5_3:1 can't set zone by IP, fallback to UNKNOWN
+[2026-11-24T10:47:54.375008462+00:00 admin_cli:497676 IBDevice.cc:454 INFO] IBDevice mlx5_3 add active port 1, linklayer INFINIBAND, addrs 10.10.44.213/24, zones UNKNOWN, RoCE v2 GID std::nullopt
+[2026-11-24T10:47:54.375012600+00:00 admin_cli:497676 IBDevice.cc:343 INFO] IBDevice add mlx5_3, id 3, 1 available ports
+[2026-11-24T10:47:54.382772900+00:00 admin_cli:497676 IBDevice.cc:392 INFO] Skip device mlx5_4, port 1 because it's not in device filter.
+[2026-11-24T10:47:54.382780724+00:00 admin_cli:497676 IBDevice.cc:340 INFO] IBDevice skip mlx5_4 because it doesn't have available ports.
+[2026-11-24T10:47:54.390751165+00:00 admin_cli:497676 IBDevice.cc:392 INFO] Skip device mlx5_5, port 1 because it's not in device filter.
+[2026-11-24T10:47:54.390758259+00:00 admin_cli:497676 IBDevice.cc:340 INFO] IBDevice skip mlx5_5 because it doesn't have available ports.
+[2026-11-24T10:47:54.398725332+00:00 admin_cli:497676 IBDevice.cc:392 INFO] Skip device mlx5_6, port 1 because it's not in device filter.
+[2026-11-24T10:47:54.398732065+00:00 admin_cli:497676 IBDevice.cc:340 INFO] IBDevice skip mlx5_6 because it doesn't have available ports.
+[2026-11-24T10:47:54.406653251+00:00 admin_cli:497676 IBDevice.cc:392 INFO] Skip device mlx5_7, port 1 because it's not in device filter.
+[2026-11-24T10:47:54.406659513+00:00 admin_cli:497676 IBDevice.cc:340 INFO] IBDevice skip mlx5_7 because it doesn't have available ports.
+[2026-11-24T10:47:54.414544380+00:00 admin_cli:497676 IBDevice.cc:392 INFO] Skip device mlx5_8, port 1 because it's not in device filter.
+[2026-11-24T10:47:54.414550202+00:00 admin_cli:497676 IBDevice.cc:340 INFO] IBDevice skip mlx5_8 because it doesn't have available ports.
+[2026-11-24T10:47:54.422443906+00:00 admin_cli:497676 IBDevice.cc:392 INFO] Skip device mlx5_9, port 1 because it's not in device filter.
+[2026-11-24T10:47:54.422450067+00:00 admin_cli:497676 IBDevice.cc:340 INFO] IBDevice skip mlx5_9 because it doesn't have available ports.
+[2026-11-24T10:47:54.425009595+00:00 IBManager:497681 EventLoop.cc:116 INFO] EventLoop::loop() started.
+[2026-11-24T10:47:54.425051856+00:00 admin_cli:497676 ConstructLog.h:11 INFO] Construct serde::Services
+[2026-11-24T10:47:54.427889414+00:00 admin_cli:497676 ConstructLog.h:11 INFO] Construct net::ThreadPoolGroup
+[2026-11-24T10:47:54.433424623+00:00 admin_cli:497676 ConstructLog.h:11 INFO] Construct CPUExecutorGroup
+[2026-11-24T10:47:54.437598878+00:00 admin_cli:497676 ConstructLog.h:11 INFO] Construct CPUExecutorGroup
+[2026-11-24T10:47:54.442128170+00:00 admin_cli:497676 ConstructLog.h:11 INFO] Construct CPUExecutorGroup
+[2026-11-24T10:47:54.451004557+00:00 admin_cli:497676 Semaphore.h:27 INFO] usableTokens: 64, maxTokens: 4096, availableTokens: 64
+[2026-11-24T10:47:54.453099470+00:00 admin_cli:497691 EventLoop.cc:116 INFO] EventLoop::loop() started.
+[2026-11-24T10:47:54.453247822+00:00 admin_cli:497676 MgmtdClient.cc:222 INFO] MgmtdClient: started
+[2026-11-24T10:47:54.453278060+00:00 CliBG1:497688 BackgroundRunner.cc:83 INFO] BackgroundRunner: AutoRefresh start
+[2026-11-24T10:47:54.453307146+00:00 CliBG1:497688 BackgroundRunner.cc:85 DEBUG] BackgroundRunner: AutoRefresh round 1 start
+[2026-11-24T10:47:54.453321403+00:00 CliBG0:497686 MgmtdClient.cc:388 DEBUG] MgmtdClient: receive RefreshItem force=false
+[2026-11-24T10:47:54.453359886+00:00 CliBG0:497686 MgmtdClient.cc:390 INFO] [MgmtdClientOp RefreshRoutingInfo force=false No.1] start execution. from:
+[2026-11-24T10:47:54.453417656+00:00 CliBG0:497686 MgmtdClient.cc:424 INFO] MgmtdClient: start probe for connecting ...
+[2026-11-24T10:47:54.453426854+00:00 CliBG0:497686 MgmtdClient.cc:542 INFO] MgmtdClient: start probe from unknown address RDMA://10.10.44.210:8000
+[2026-11-24T10:47:54.453437965+00:00 CliBG0:497686 MgmtdClient.cc:504 INFO] MgmtdClient: probePrimary NodeId(0) via RDMA://10.10.44.210:8000 ...
+[2026-11-24T10:47:54.461031797+00:00 CliConn0:497689 TcpSocket.cc:34 ERROR] connect TCP://10.10.44.210:8000 failed: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:47:54.461089427+00:00 CliConn0:497689 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:47:54.565009391+00:00 CliConn0:497689 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:47:54.565173794+00:00 CliConn1:497690 IBConnect.cc:368 ERROR] IBSocket [connect RDMA://10.10.44.210:8000] failed to query, error RPC::SendFailed(2007), timeout 5s
+[2026-11-24T10:47:54.565278383+00:00 CliConn1:497690 IOWorker.cc:100 ERROR] error: RPC::SendFailed(2007)
+[2026-11-24T10:47:54.565358726+00:00 CliIO1:497685 IBSocket.cc:317 DEBUG] IBSocket destructor [connect RDMA://10.10.44.210:8000]
+[2026-11-24T10:47:54.625011033+00:00 IBManager:497681 IBSocket.cc:1244 DEBUG] IBSocketManager handleEvents running
+[2026-11-24T10:47:54.671291967+00:00 CliConn1:497690 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:47:54.772797679+00:00 CliConn1:497690 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:47:54.772866610+00:00 CliConn0:497689 IOWorker.cc:100 ERROR] error: RPC::SendFailed(2007)
+[2026-11-24T10:47:54.772938838+00:00 CliBG0:497686 IBSocket.cc:317 DEBUG] IBSocket destructor [connect RDMA://10.10.44.210:8000]
+[2026-11-24T10:47:54.772967823+00:00 CliBG0:497686 MgmtdClient.cc:509 ERROR] MgmtdClient: probePrimary NodeId(0) failed: RPC::SendFailed(2007)
+[2026-11-24T10:47:54.773026415+00:00 CliBG0:497686 MgmtdClient.cc:162 INFO] MgmtdClient: mark node as Skipped NodeId(0) ["RDMA://10.10.44.210:8000"]
+[2026-11-24T10:47:54.773038277+00:00 CliBG0:497686 MgmtdClient.cc:434 WARNING] MgmtdClient: primary not found
+[2026-11-24T10:47:54.773391120+00:00 CliBG0:497686 MgmtdClient.cc:390 ERROR] [MgmtdClientOp RefreshRoutingInfo force=false No.1] failed: MgmtdClient::PrimaryMgmtdNotFound(6000) ./src/client/mgmtd/MgmtdClient.cc:173, '_result' has error. latency: 0ns
+[2026-11-24T10:47:54.773443269+00:00 CliBG0:497686 MgmtdClient.cc:388 DEBUG] MgmtdClient: receive RefreshItem force=false
+[2026-11-24T10:47:54.773449531+00:00 CliBG0:497686 MgmtdClient.cc:390 INFO] [MgmtdClientOp RefreshRoutingInfo force=false No.2] start execution. from:
+[2026-11-24T10:47:54.773454100+00:00 CliBG0:497686 MgmtdClient.cc:424 INFO] MgmtdClient: start probe for connecting ...
+[2026-11-24T10:47:54.773457626+00:00 CliBG0:497686 MgmtdClient.cc:542 INFO] MgmtdClient: start probe from unknown address RDMA://10.10.44.210:8000
+[2026-11-24T10:47:54.773460532+00:00 CliBG0:497686 MgmtdClient.cc:504 INFO] MgmtdClient: probePrimary NodeId(0) via RDMA://10.10.44.210:8000 ...
+[2026-11-24T10:47:54.773567306+00:00 CliConn1:497690 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:47:54.773746808+00:00 admin_cli:497676 MgmtdClient.cc:271 INFO] MgmtdClient: wait for stop
+[2026-11-24T10:47:54.824999276+00:00 IBManager:497681 IBSocket.cc:1244 DEBUG] IBSocketManager handleEvents running
+[2026-11-24T10:47:54.876127097+00:00 CliConn1:497690 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:47:54.876199866+00:00 CliConn0:497689 IOWorker.cc:100 ERROR] error: RPC::SendFailed(2007)
+[2026-11-24T10:47:54.876260121+00:00 CliIO0:497684 IBSocket.cc:317 DEBUG] IBSocket destructor [connect RDMA://10.10.44.210:8000]
+[2026-11-24T10:47:54.980676039+00:00 CliConn0:497689 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:47:55.025010974+00:00 IBManager:497681 IBSocket.cc:1244 DEBUG] IBSocketManager handleEvents running
+[2026-11-24T10:47:55.084084928+00:00 CliConn0:497689 IOWorker.cc:102 ERROR] error: RPC::ConnectFailed(2014) error: folly::AsyncSocketException: AsyncSocketException: connect failed, type = Socket not open, errno = 111 (Connection refused)
+[2026-11-24T10:47:55.084175852+00:00 CliConn1:497690 IOWorker.cc:100 ERROR] error: RPC::SendFailed(2007)
+[2026-11-24T10:47:55.084244512+00:00 CliBG0:497686 IBSocket.cc:317 DEBUG] IBSocket destructor [connect RDMA://10.10.44.210:8000]
+[2026-11-24T10:47:55.084261355+00:00 CliBG0:497686 MgmtdClient.cc:509 ERROR] MgmtdClient: probePrimary NodeId(0) failed: RPC::SendFailed(2007)
+[2026-11-24T10:47:55.084306280+00:00 CliBG0:497686 MgmtdClient.cc:162 INFO] MgmtdClient: mark node as Skipped NodeId(0) ["RDMA://10.10.44.210:8000"]
+[2026-11-24T10:47:55.084313604+00:00 CliBG0:497686 MgmtdClient.cc:434 WARNING] MgmtdClient: primary not found
+[2026-11-24T10:47:55.084318864+00:00 CliBG0:497686 MgmtdClient.cc:390 ERROR] [MgmtdClientOp RefreshRoutingInfo force=false No.2] failed: MgmtdClient::PrimaryMgmtdNotFound(6000) ./src/client/mgmtd/MgmtdClient.cc:173, '_result' has error. latency: 0ns
+[2026-11-24T10:47:55.084361876+00:00 CliBG0:497686 MgmtdClient.cc:381 INFO] MgmtdClient: receive ExitItem
+[2026-11-24T10:47:55.084388827+00:00 admin_cli:497676 BackgroundRunner.cc:63 DEBUG] BackgroundRunner: start to execute stopAll
+[2026-11-24T10:47:55.084394809+00:00 CliBG1:497688 MgmtdClient.cc:286 ERROR] MgmtdClient: AutoRefresh failed: MgmtdClient::PrimaryMgmtdNotFound(6000) ./src/client/mgmtd/MgmtdClient.cc:173, '_result' has error
+[2026-11-24T10:47:55.084436198+00:00 CliBG1:497688 BackgroundRunner.cc:102 DEBUG] BackgroundRunner: AutoRefresh wait 368875us for next round
+[2026-11-24T10:47:55.084616361+00:00 CliBG1:497688 BackgroundRunner.cc:104 DEBUG] BackgroundRunner: AutoRefresh is cancelled.
+[2026-11-24T10:47:55.084620379+00:00 CliBG1:497688 BackgroundRunner.cc:111 INFO] BackgroundRunner: AutoRefresh stopped
+[2026-11-24T10:47:55.084634526+00:00 admin_cli:497676 BackgroundRunner.cc:70 DEBUG] BackgroundRunner: finish to execute stopAll
+[2026-11-24T10:47:55.084642561+00:00 admin_cli:497676 BackgroundRunner.cc:50 DEBUG] BackgroundRunner: destructed
+[2026-11-24T10:47:55.084644905+00:00 admin_cli:497676 MgmtdClient.cc:277 INFO] MgmtdClient: stopped
+[2026-11-24T10:47:55.084658131+00:00 admin_cli:497691 EventLoop.cc:159 INFO] EventLoop::loop() stopped.
+[2026-11-24T10:47:55.084717954+00:00 admin_cli:497676 ThreadPoolGroup.cc:30 WARNING] Stopping thread pool group 'Cli@0x7fffbe543488'
+[2026-11-24T10:47:55.084725199+00:00 admin_cli:497676 ThreadPoolGroup.cc:41 INFO] thread pool group Cli@0x7fffbe543488 join procThreadPool
+[2026-11-24T10:47:55.084730478+00:00 admin_cli:497676 CPUExecutorGroup.cc:111 DEBUG] CPUExecutorGroup 0x55d8f3cd40c8 start join
+[2026-11-24T10:47:55.084734596+00:00 admin_cli:497676 CPUExecutorGroup.cc:114 DEBUG] CPUExecutorGroup 0x55d8f3cd40c8 join executor 0x55d8f3583600 ...
+[2026-11-24T10:47:55.084820741+00:00 admin_cli:497676 CPUExecutorGroup.cc:116 DEBUG] CPUExecutorGroup 0x55d8f3cd40c8 join executor 0x55d8f3583600 done
+[2026-11-24T10:47:55.084829157+00:00 admin_cli:497676 CPUExecutorGroup.cc:118 DEBUG] CPUExecutorGroup 0x55d8f3cd40c8 join done
+[2026-11-24T10:47:55.084831180+00:00 admin_cli:497676 ThreadPoolGroup.cc:43 INFO] thread pool group Cli@0x7fffbe543488 join ioThreadPool
+[2026-11-24T10:47:55.084834517+00:00 admin_cli:497676 CPUExecutorGroup.cc:111 DEBUG] CPUExecutorGroup 0x55d8f3cd4110 start join
+[2026-11-24T10:47:55.084836150+00:00 admin_cli:497676 CPUExecutorGroup.cc:114 DEBUG] CPUExecutorGroup 0x55d8f3cd4110 join executor 0x55d8f3585700 ...
+[2026-11-24T10:47:55.085434520+00:00 admin_cli:497676 CPUExecutorGroup.cc:116 DEBUG] CPUExecutorGroup 0x55d8f3cd4110 join executor 0x55d8f3585700 done
+[2026-11-24T10:47:55.085440702+00:00 admin_cli:497676 CPUExecutorGroup.cc:118 DEBUG] CPUExecutorGroup 0x55d8f3cd4110 join done
+[2026-11-24T10:47:55.085442495+00:00 admin_cli:497676 ThreadPoolGroup.cc:45 INFO] thread pool group Cli@0x7fffbe543488 join bgThreadPool
+[2026-11-24T10:47:55.085444539+00:00 admin_cli:497676 CPUExecutorGroup.cc:111 DEBUG] CPUExecutorGroup 0x55d8f3cd4158 start join
+[2026-11-24T10:47:55.085446102+00:00 admin_cli:497676 CPUExecutorGroup.cc:114 DEBUG] CPUExecutorGroup 0x55d8f3cd4158 join executor 0x55d8f3586200 ...
+[2026-11-24T10:47:55.086788150+00:00 admin_cli:497676 CPUExecutorGroup.cc:116 DEBUG] CPUExecutorGroup 0x55d8f3cd4158 join executor 0x55d8f3586200 done
+[2026-11-24T10:47:55.086793350+00:00 admin_cli:497676 CPUExecutorGroup.cc:118 DEBUG] CPUExecutorGroup 0x55d8f3cd4158 join done
+[2026-11-24T10:47:55.086795153+00:00 admin_cli:497676 ThreadPoolGroup.cc:47 INFO] thread pool group Cli@0x7fffbe543488 join connThreadPool
+[2026-11-24T10:47:55.088075143+00:00 admin_cli:497676 ThreadPoolGroup.cc:49 WARNING] All thread pools of 'Cli@0x7fffbe543488' stopped
+[2026-11-24T10:47:55.089108282+00:00 admin_cli:497676 IBSocket.cc:1204 INFO] IBSocketManager::stopAndJoin
+[2026-11-24T10:47:55.089113762+00:00 admin_cli:497676 IBSocket.cc:1218 INFO] IBSocketManager stopped!
+[2026-11-24T10:47:55.089140162+00:00 IBManager:497681 EventLoop.cc:159 INFO] EventLoop::loop() stopped.
+[2026-11-24T10:47:55.089650846+00:00 admin_cli:497676 ThreadPoolGroup.cc:30 WARNING] Stopping thread pool group 'Cli@0x7fffbe543488'
+[2026-11-24T10:47:55.089672868+00:00 admin_cli:497676 CPUExecutorGroup.cc:111 DEBUG] CPUExecutorGroup 0x55d8f3cd4158 start join
+[2026-11-24T10:47:55.089675834+00:00 admin_cli:497676 CPUExecutorGroup.cc:114 DEBUG] CPUExecutorGroup 0x55d8f3cd4158 join executor 0x55d8f3586200 ...
+[2026-11-24T10:47:55.089677527+00:00 admin_cli:497676 CPUExecutorGroup.cc:116 DEBUG] CPUExecutorGroup 0x55d8f3cd4158 join executor 0x55d8f3586200 done
+[2026-11-24T10:47:55.089678719+00:00 admin_cli:497676 CPUExecutorGroup.cc:118 DEBUG] CPUExecutorGroup 0x55d8f3cd4158 join done
+[2026-11-24T10:47:55.089685802+00:00 admin_cli:497676 ConstructLog.h:12 INFO] Destruct CPUExecutorGroup
+[2026-11-24T10:47:55.089688047+00:00 admin_cli:497676 CPUExecutorGroup.cc:111 DEBUG] CPUExecutorGroup 0x55d8f3cd4110 start join
+[2026-11-24T10:47:55.089689309+00:00 admin_cli:497676 CPUExecutorGroup.cc:114 DEBUG] CPUExecutorGroup 0x55d8f3cd4110 join executor 0x55d8f3585700 ...
+[2026-11-24T10:47:55.089690752+00:00 admin_cli:497676 CPUExecutorGroup.cc:116 DEBUG] CPUExecutorGroup 0x55d8f3cd4110 join executor 0x55d8f3585700 done
+[2026-11-24T10:47:55.089691914+00:00 admin_cli:497676 CPUExecutorGroup.cc:118 DEBUG] CPUExecutorGroup 0x55d8f3cd4110 join done
+[2026-11-24T10:47:55.089696082+00:00 admin_cli:497676 ConstructLog.h:12 INFO] Destruct CPUExecutorGroup
+[2026-11-24T10:47:55.089697515+00:00 admin_cli:497676 CPUExecutorGroup.cc:111 DEBUG] CPUExecutorGroup 0x55d8f3cd40c8 start join
+[2026-11-24T10:47:55.089698637+00:00 admin_cli:497676 CPUExecutorGroup.cc:114 DEBUG] CPUExecutorGroup 0x55d8f3cd40c8 join executor 0x55d8f3583600 ...
+[2026-11-24T10:47:55.089700130+00:00 admin_cli:497676 CPUExecutorGroup.cc:116 DEBUG] CPUExecutorGroup 0x55d8f3cd40c8 join executor 0x55d8f3583600 done
+[2026-11-24T10:47:55.089701272+00:00 admin_cli:497676 CPUExecutorGroup.cc:118 DEBUG] CPUExecutorGroup 0x55d8f3cd40c8 join done
+[2026-11-24T10:47:55.089703987+00:00 admin_cli:497676 ConstructLog.h:12 INFO] Destruct CPUExecutorGroup
+[2026-11-24T10:47:55.089706041+00:00 admin_cli:497676 ConstructLog.h:12 INFO] Destruct net::ThreadPoolGroup
+[2026-11-24T10:47:55.090114219+00:00 admin_cli:497676 ConstructLog.h:12 INFO] Destruct serde::Services
