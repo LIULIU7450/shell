@@ -4,34 +4,57 @@ root@dskna004:/home/smrc/lzh/shell/deploy_scripts# bash 02_setup_meta.sh
   [INFO] counters / distributions 就绪
 
 ### 2/9 monitor_collector
+active
+  [INFO] monitor_collector 已运行 (监听 10000)
+
+### 3/9 FoundationDB
+  [INFO] foundationdb.conf 已存在, 保留不动
+active
+  [INFO] FDB 数据目录非空 (1 项) — 已配置过
+  [WARN] FDB 已配置但 60s 内未达 healthy, 请手动 fdbcli status 检查 (脚本继续)
+  [INFO] fdb.cluster: f3KvJjE8:tu7EIx9t@127.0.0.1:4500
+
+### 4/9 推送 fdb.cluster → 3 台存储节点
+  [INFO] 172.16.18.64 — OK
+  [INFO] 172.16.18.65 — OK
+  [INFO] 172.16.18.169 — OK
+
+### 5/9 admin_cli
+  [INFO] admin_cli 就绪
+
+### 6/9 mgmtd
+Init filesystem, root directory layout: chain table ChainTableId(1), chunksize 1048576, stripesize 16
+
+Init config for MGMTD version 1
+  [INFO] init-cluster 完成 (链表ID=1, chunk=1MB, strip=16)
 failed
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: [2026-11-24T07:52:30.668956348+00:00 monitor_collect:303415 IBDevice.cc:340 INFO] IBDevice skip mlx5_8 because it doesn't have available ports.
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: [2026-11-24T07:52:30.677125267+00:00 monitor_collect:303415 IBDevice.cc:428 WARNING] IBDevice mlx5_9 port 1 is not active, state IBV_PORT_DOWN, skip true
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: [2026-11-24T07:52:30.677132862+00:00 monitor_collect:303415 IBDevice.cc:340 INFO] IBDevice skip mlx5_9 because it doesn't have available ports.
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: [2026-11-24T07:52:30.677428645+00:00 monitor_collect:303415 IBDevice.cc:351 CRITICAL] too many ibdevices 8 > kMaxDeviceCnt 4, please specify device_filter
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: [2026-11-24T07:52:30.680174689+00:00 monitor_collect:303415 IBDevice.cc:775 ERROR] Failed to open all IBDevices, error InvalidArg(3)
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: [2026-11-24T07:52:30.680191000+00:00 monitor_collect:303415 OnePhaseApplication.h:84 FATAL] Failed to start IBManager: InvalidArg(3)
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: *** Aborted at 1795506750 (Unix time, try 'date -d @1795506750') ***
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]: *** Signal 6 (SIGABRT) (0x4a137) received by PID 303415 (pthread TID 0x7fd07effd640) (linux TID 303415) (maybe from PID 303415, UID 0) (code: -6), stack trace: ***
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 0000000000413f5f _ZN5folly10symbolizer12_GLOBAL__N_113signalHandlerEiP9siginfo_tPv
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        /home/smrc/lzh/3fs-main/third_party/folly/folly/experimental/symbolizer/SignalHandler.cpp:449
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 000000000004251f (unknown)
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 00000000000969fc pthread_kill
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 0000000000042475 raise
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 00000000000287f2 abort
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 000000000047b840 _ZNK5folly11LogCategory12admitMessageERKNS_10LogMessageE
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        /home/smrc/lzh/3fs-main/third_party/folly/folly/logging/LogCategory.cpp:71
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 000000000047ad36 _ZN5folly18LogStreamProcessor6logNowEv
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        /home/smrc/lzh/3fs-main/third_party/folly/folly/logging/LogStreamProcessor.cpp:190
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 000000000047af59 _ZN5folly16LogStreamVoidifyILb1EEanERSo
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        /home/smrc/lzh/3fs-main/third_party/folly/folly/logging/LogStreamProcessor.cpp:222
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 0000000000604c37 _ZN5hf3fs19OnePhaseApplicationINS_7monitor22MonitorCollectorServerEE15initApplicationEv
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        /home/smrc/lzh/3fs-main/src/common/app/OnePhaseApplication.h:84
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        -> /home/smrc/lzh/3fs-main/src/monitor_collector/monitor_collector.cpp
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 00000000001974e6 _ZN5hf3fs15ApplicationBase3runEiPPc
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:                        /home/smrc/lzh/3fs-main/src/common/app/ApplicationBase.cc:65
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 0000000000029d8f (unknown)
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 0000000000029e3f __libc_start_main
-Nov 24 07:52:30 dskna004 monitor_collector_main[303415]:     @ 0000000000176614 _start
-Nov 24 07:52:30 dskna004 systemd[1]: monitor_collector_main.service: Main process exited, code=dumped, status=6/ABRT
-Nov 24 07:52:30 dskna004 systemd[1]: monitor_collector_main.service: Failed with result 'core-dump'.
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]: [2026-11-24T09:53:24.414233017+00:00 mgmtd_main:444683 Utils.cc:285 INFO]
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]: [2026-11-24T09:53:24.414443829+00:00 mgmtd_main:444683 Utils.cc:290 FATAL] Init config failed: ConfigRedundantKey(19) Invalid key: common.ib_devices
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]: *** Aborted at 1795514004 (Unix time, try 'date -d @1795514004') ***
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]: *** Signal 6 (SIGABRT) (0x6c90b) received by PID 444683 (pthread TID 0x7f772ddfd600) (linux TID 444683) (maybe from PID 444683, UID 0) (code: -6), stack trace: ***
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 000000000072cd1f _ZN5folly10symbolizer12_GLOBAL__N_113signalHandlerEiP9siginfo_tPv
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:                        /home/smrc/lzh/3fs-main/third_party/folly/folly/experimental/symbolizer/SignalHandler.cpp:449
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 000000000004251f (unknown)
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 00000000000969fc pthread_kill
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 0000000000042475 raise
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 00000000000287f2 abort
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 0000000000794600 _ZNK5folly11LogCategory12admitMessageERKNS_10LogMessageE
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:                        /home/smrc/lzh/3fs-main/third_party/folly/folly/logging/LogCategory.cpp:71
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 0000000000793af6 _ZN5folly18LogStreamProcessor6logNowEv
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:                        /home/smrc/lzh/3fs-main/third_party/folly/folly/logging/LogStreamProcessor.cpp:190
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 0000000000793d19 _ZN5folly16LogStreamVoidifyILb1EEanERSo
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:                        /home/smrc/lzh/3fs-main/third_party/folly/folly/logging/LogStreamProcessor.cpp:222
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 00000000004bce70 _ZN5hf3fs10app_detail10initConfigERNS_6config7IConfigERKSt6vectorISt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESB_ESaISC_EERKNS_4flat7AppInfoESt8functionIFN5folly8ExpectedISC_NS_6StatusEEEvEE
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:                        /home/smrc/lzh/3fs-main/src/common/app/Utils.cc:290
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 000000000085fca5 _ZN5hf3fs19TwoPhaseApplicationINS_5mgmtd11MgmtdServerEE15initApplicationEv
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:                        /home/smrc/lzh/3fs-main/src/common/app/TwoPhaseApplication.h:46
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:                        -> /home/smrc/lzh/3fs-main/src/mgmtd/mgmtd.cpp
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 00000000004b3636 _ZN5hf3fs15ApplicationBase3runEiPPc
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:                        /home/smrc/lzh/3fs-main/src/common/app/ApplicationBase.cc:65
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 000000000085e92d main
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:                        /home/smrc/lzh/3fs-main/src/mgmtd/mgmtd.cpp:7
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 0000000000029d8f (unknown)
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 0000000000029e3f __libc_start_main
+Nov 24 09:53:24 dskna004 mgmtd_main[444683]:     @ 00000000002172e4 _start
+Nov 24 09:53:24 dskna004 systemd[1]: mgmtd_main.service: Main process exited, code=dumped, status=6/ABRT
+Nov 24 09:53:24 dskna004 systemd[1]: mgmtd_main.service: Failed with result 'core-dump'.
