@@ -26,7 +26,7 @@ info "counters / distributions 就绪"
 step "2/9 monitor_collector"
 mkdir -p "${OPT_BIN}" "${OPT_ETC}" "${LOG_DIR}"
 check_exists "${BIN_DIR}/monitor_collector_main" || die "缺少二进制"
-cp "${BIN_DIR}/monitor_collector_main" "${OPT_BIN}/"
+install_bin "${BIN_DIR}/monitor_collector_main" "${OPT_BIN}/monitor_collector_main"
 cat > "${OPT_ETC}/monitor_collector_main.toml" <<EOF
 # monitor_collector runtime config — 部署脚本生成 (指南 §3.3)
 # dskna004 有 8 个活动 HCA > kMaxDeviceCnt(4), 必须 device_filter (IBDevice.h:119)
@@ -77,23 +77,34 @@ systemctl is-active foundationdb >/dev/null 2>&1 || systemctl start foundationdb
 sleep 5
 systemctl is-active foundationdb || { journalctl -u foundationdb -n 30 --no-pager; exit 1; }
 
-# 判断数据库是否已配置过: "Redundancy mode" 行只在已 configure 的库的 status 里出现。
-# (不能用 "healthy" 做判据 — 已配置但恢复中/瞬时不健康的库会误判为未配置,
+# 判断数据库是否已配置过 (两个判据, 任一命中即视为已配置):
+#   1) 数据目录非空 — 单节点 ssd 引擎, 已 configure 的库必有存储文件
+#   2) 完整 status 含 "Redundancy mode" — 注意 status minimal 不打印该行!
+# (不可用 "healthy" 做唯一判据 — status minimal 里是大写 "Healthy", 且恢复中会瞬时不匹配;
 #  对已存在的库执行 configure new 会报 "Database already exists")
-st=$(fdbcli --exec "status minimal" 2>&1 || true)
-if grep -q "Redundancy mode" <<<"${st}"; then
-    info "FDB 数据库已配置, 跳过 configure new ($(grep -E 'Redundancy mode|Storage engine' <<<"${st}" | tr -s ' ' | tr '\n' ';'))"
-    grep -q "Storage engine .*memory" <<<"${st}" \
-        && warn "FDB 引擎是 memory (进程重启即丢数据); 需要持久化可执行: fdbcli --exec 'configure single ssd'"
-    # 已配置但可能仍在恢复, 最多等 60s 至 healthy
+fdb_configured=0
+if ls /var/lib/foundationdb/data/* >/dev/null 2>&1; then
+    fdb_configured=1
+    info "FDB 数据目录非空 ($(ls /var/lib/foundationdb/data/ | wc -l) 项) — 已配置过"
+else
+    st_full=$(fdbcli --exec "status" 2>&1 || true)
+    if grep -q "Redundancy mode" <<<"${st_full}"; then
+        fdb_configured=1
+        info "FDB status 含 Redundancy mode — 已配置过 ($(grep -E 'Redundancy mode|Storage engine' <<<"${st_full}" | tr -s ' ' | tr '\n' ';'))"
+        { grep -qE "Storage engine.*memory" <<<"${st_full}" \
+            && warn "FDB 引擎是 memory (进程重启即丢数据); 需要持久化可执行: fdbcli --exec 'configure single ssd'"; } || true
+    fi
+fi
+if [[ ${fdb_configured} -eq 1 ]]; then
+    # 已配置但可能仍在恢复, 最多等 60s 至 healthy (status minimal 中是大写 "Healthy")
     healthy=""
     for _ in $(seq 1 12); do
-        if fdbcli --exec "status minimal" 2>/dev/null | grep -q "healthy"; then healthy=1; break; fi
+        if fdbcli --exec "status minimal" 2>/dev/null | grep -qi healthy; then healthy=1; break; fi
         sleep 5
     done
     [[ -n "${healthy}" ]] || warn "FDB 已配置但 60s 内未达 healthy, 请手动 fdbcli status 检查 (脚本继续)"
 else
-    info "FDB 未配置, 执行 configure new single ssd"
+    info "FDB 未配置 (数据目录空且 status 无配置信息), 执行 configure new single ssd"
     fdbcli --exec "configure new single ssd"
     sleep 3
 fi
@@ -115,7 +126,7 @@ done
 # ---------- 5. admin_cli (指南 §5) ----------
 step "5/9 admin_cli"
 check_exists "${BIN_DIR}/admin_cli" || die "缺少二进制"
-cp "${BIN_DIR}/admin_cli" "${OPT_BIN}/"
+install_bin "${BIN_DIR}/admin_cli" "${OPT_BIN}/admin_cli"
 cat > "${OPT_ETC}/admin_cli.toml" <<EOF
 # admin_cli config — 部署脚本生成 (指南 §5)
 cluster_id = '${CLUSTER_ID}'
@@ -134,7 +145,7 @@ info "admin_cli 就绪"
 # ---------- 6. mgmtd + init-cluster (指南 §6) ----------
 step "6/9 mgmtd"
 check_exists "${BIN_DIR}/mgmtd_main" || die "缺少二进制"
-cp "${BIN_DIR}/mgmtd_main" "${OPT_BIN}/"
+install_bin "${BIN_DIR}/mgmtd_main" "${OPT_BIN}/mgmtd_main"
 cat > "${OPT_ETC}/mgmtd_main_app.toml" <<'EOF'
 allow_empty_node_id = false
 node_id = 1
@@ -178,7 +189,7 @@ admin_cli "list-nodes"
 # ---------- 7. meta (指南 §7) ----------
 step "7/9 meta"
 check_exists "${BIN_DIR}/meta_main" || die "缺少二进制"
-cp "${BIN_DIR}/meta_main" "${OPT_BIN}/"
+install_bin "${BIN_DIR}/meta_main" "${OPT_BIN}/meta_main"
 cat > "${OPT_ETC}/meta_main_app.toml" <<'EOF'
 allow_empty_node_id = false
 node_id = 100
