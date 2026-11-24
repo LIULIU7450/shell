@@ -124,12 +124,12 @@ if [[ "${ROLE}" == "meta" ]]; then
     fi
 
     step "到 3 台存储节点的 ssh 可达性 (02 需要推送 fdb.cluster)"
-    SSH_USER="${SSH_USER:-root}"
+    command -v sshpass >/dev/null || fail "缺少 sshpass (apt install sshpass)"
     for ip in "${STORAGE_HOSTS[@]}"; do
-        if ssh -o BatchMode=yes -o ConnectTimeout=5 "${SSH_USER}@${ip}" true 2>/dev/null; then
+        if ssh_exec "${ip}" "true" 2>/dev/null; then
             info "ssh ${SSH_USER}@${ip} — OK"
         else
-            fail "ssh ${SSH_USER}@${ip} 不可达 (02 推送会失败; 非 root 登录请: SSH_USER=xxx sudo bash 02_...)"
+            fail "ssh ${SSH_USER}@${ip} 不可达 (检查网络/密码; 可用 SSHPASS=xxx 覆盖)"
         fi
     done
 fi
