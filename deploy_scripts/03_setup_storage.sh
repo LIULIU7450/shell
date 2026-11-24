@@ -92,7 +92,7 @@ EOF
     summary_exit
 }
 
-[[ "${1:-}" == "verify" ]] && { do_verify "${2:-status}"; exit $?; }
+[[ "${1:-}" == "verify" ]] && { require_role storage; do_verify "${2:-status}"; exit $?; }
 [[ $# -gt 0 ]] && die "用法: $0 [verify status|snap|check]  (无参数 = 部署模式)"
 
 # ================= 部署模式 =================
@@ -121,6 +121,10 @@ cp "${BIN_DIR}/admin_cli" "${OPT_BIN}/"
 cat > "${OPT_ETC}/admin_cli.toml" <<EOF
 cluster_id = '${CLUSTER_ID}'
 
+# 存储节点活动 HCA ≤2, 空 filter 即可 (dskna004 才需要过滤)
+[ib_devices]
+device_filter = []
+
 [fdb]
 clusterFile = '${FDB_CLUSTER_FILE}'
 EOF
@@ -135,6 +139,10 @@ node_id = ${NODE_ID}
 EOF
 cat > "${OPT_ETC}/storage_main_launcher.toml" <<EOF
 cluster_id = '${CLUSTER_ID}'
+
+# launcher 进程独立初始化 IB (ServerLauncher.h:41); 存储节点活动 HCA ≤2, 空 filter 即可
+[ib_devices]
+device_filter = []
 
 [mgmtd_client]
 mgmtd_server_addresses = ["${MGMTD_ADDR}"]
