@@ -115,16 +115,9 @@ admin_cli_token() {
 }
 
 # ======== 共享配置生成器 (02 与 03 写出的 storage_main.toml 完全一致) ========
-# ib_devices_filter_block <filter_json> → 输出 [ib_devices] 段 (空 filter 则输出空 filter,
-# 保持配置结构一致; 存储节点设备数 ≤4 本不需要, 但统一带上无副作用)
-ib_devices_filter_block() {  # $1 = device_filter JSON 数组字符串 (可空)
-    cat <<EOF
-
-[ib_devices]
-device_filter = $1
-EOF
-}
-
+# 注意: mgmtd/meta/storage 的 runtime config (AppConfig) 没有 ib_devices 键,
+# IB 由 launcher 进程用 launcher config 初始化 (ServerLauncherConfig.h:11);
+# runtime config 校验严格, 加多余键会 ConfigRedundantKey FATAL。
 write_storage_main_toml() {  # $1 = 输出路径
     cat > "$1" <<'EOF'
 # storage runtime config — 由部署脚本生成 (指南 §8), 上传到 mgmtd 统一管理
@@ -144,7 +137,6 @@ remote_ip = "10.10.44.210:10000"
 fdp_compaction_stream_id = 2
 target_paths = ["/storage/data3/3fs","/storage/data4/3fs"]
 EOF
-    ib_devices_filter_block "${IB_DEVICE_FILTER_STORAGE:-[]}" >> "$1"
 }
 
 # 安装一个 systemd 单元并 daemon-reload
