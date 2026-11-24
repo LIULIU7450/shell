@@ -162,9 +162,7 @@ clusterFile = '${FDB_CLUSTER_FILE}'
 EOF
 cat > "${OPT_ETC}/mgmtd_main.toml" <<EOF
 # mgmtd runtime config — init-cluster 时上传 (指南 §6)
-[common.ib_devices]
-device_filter = ${IB_DEVICE_FILTER_META}
-
+# 注意: runtime config 无 ib_devices 键 (IB 由 launcher 初始化), 不可加 device_filter
 [[common.monitor.reporters]]
 type = 'monitor_collector'
 
@@ -172,6 +170,10 @@ type = 'monitor_collector'
 remote_ip = '${MONITOR_ADDR}'
 EOF
 MARKER="${OPT_ETC}/.cluster_inited"
+if [[ -f "${MARKER}" ]] && ! ls /var/lib/foundationdb/data/* >/dev/null 2>&1; then
+    warn "cluster_inited 标记存在但 FDB 数据目录为空 (FDB 已被重置) — 删除标记, 将重新 init-cluster"
+    rm -f "${MARKER}"
+fi
 if [[ -f "${MARKER}" ]]; then
     info "已初始化过, 跳过 init-cluster (重置集群见指南 §13.2)"
 else
@@ -206,11 +208,9 @@ mgmtd_server_addresses = ["${MGMTD_ADDR}"]
 EOF
 cat > "${OPT_ETC}/meta_main.toml" <<EOF
 # meta runtime config — 上传给 mgmtd (指南 §7)
+# 注意: runtime config 无 ib_devices 键 (IB 由 launcher 初始化), 不可加 device_filter
 [server.mgmtd_client]
 mgmtd_server_addresses = ["${MGMTD_ADDR}"]
-
-[common.ib_devices]
-device_filter = ${IB_DEVICE_FILTER_META}
 
 [[common.monitor.reporters]]
 type = 'monitor_collector'
