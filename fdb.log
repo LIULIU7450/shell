@@ -1,0 +1,102 @@
+root@dskna004:/home/smrc/lzh/shell/deploy_scripts# journalctl -u foundationdb -n 30
+Nov 24 11:14:08 dskna004 systemd[1]: Stopping LSB: start and stop foundationdb...
+Nov 24 11:14:08 dskna004 fdbmonitor[519702]: LogGroup="default" Process="fdbmonitor": Received signal 15 (Terminated), shutting down
+Nov 24 11:14:08 dskna004 systemd[1]: foundationdb.service: Deactivated successfully.
+Nov 24 11:14:08 dskna004 systemd[1]: Stopped LSB: start and stop foundationdb.
+Nov 24 11:14:08 dskna004 systemd[1]: Starting LSB: start and stop foundationdb...
+Nov 24 11:14:08 dskna004 fdbmonitor[520588]: LogGroup="default" Process="fdbmonitor": Started FoundationDB Process Monitor 7.3 (v7.3.63)
+Nov 24 11:14:08 dskna004 systemd[1]: Started LSB: start and stop foundationdb.
+Nov 24 11:14:08 dskna004 fdbmonitor[520589]: LogGroup="default" Process="fdbmonitor": Watching conf file /etc/foundationdb/foundationdb.conf
+Nov 24 11:14:08 dskna004 fdbmonitor[520589]: LogGroup="default" Process="fdbmonitor": Watching conf dir /etc/foundationdb/ (2)
+Nov 24 11:14:08 dskna004 fdbmonitor[520589]: LogGroup="default" Process="fdbmonitor": Loading configuration /etc/foundationdb/foundationdb.conf
+Nov 24 11:14:08 dskna004 fdbmonitor[520589]: LogGroup="default" Process="fdbmonitor": Starting backup_agent.1
+Nov 24 11:14:08 dskna004 fdbmonitor[520589]: LogGroup="default" Process="fdbmonitor": Starting fdbserver.4500
+Nov 24 11:14:08 dskna004 fdbmonitor[520589]: LogGroup="default" Process="backup_agent.1": Launching /usr/lib/foundationdb/backup_agent/backup_agent (520590) for backup_agent.1
+Nov 24 11:14:08 dskna004 fdbmonitor[520589]: LogGroup="default" Process="fdbserver.4500": Launching /usr/sbin/fdbserver (520591) for fdbserver.4500
+Nov 24 11:14:08 dskna004 fdbmonitor[520589]: LogGroup="default" Process="fdbserver.4500": FDBD joined cluster.
+Nov 24 11:14:33 dskna004 systemd[1]: Stopping LSB: start and stop foundationdb...
+Nov 24 11:14:33 dskna004 fdbmonitor[520589]: LogGroup="default" Process="fdbmonitor": Received signal 15 (Terminated), shutting down
+Nov 24 11:14:33 dskna004 systemd[1]: foundationdb.service: Deactivated successfully.
+Nov 24 11:14:33 dskna004 systemd[1]: Stopped LSB: start and stop foundationdb.
+Nov 24 11:14:33 dskna004 systemd[1]: Starting LSB: start and stop foundationdb...
+Nov 24 11:14:33 dskna004 fdbmonitor[520967]: LogGroup="default" Process="fdbmonitor": Started FoundationDB Process Monitor 7.3 (v7.3.63)
+Nov 24 11:14:33 dskna004 systemd[1]: Started LSB: start and stop foundationdb.
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbmonitor": Watching conf file /etc/foundationdb/foundationdb.conf
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbmonitor": Watching conf dir /etc/foundationdb/ (2)
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbmonitor": Loading configuration /etc/foundationdb/foundationdb.conf
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbmonitor": Starting backup_agent.1
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbmonitor": Starting fdbserver.4500
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="backup_agent.1": Launching /usr/lib/foundationdb/backup_agent/backup_agent (520969) for backup_agent.1
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbserver.4500": Launching /usr/sbin/fdbserver (520970) for fdbserver.4500
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbserver.4500": FDBD joined cluster.
+root@dskna004:/home/smrc/lzh/shell/deploy_scripts# sudo service foundationdb status
+бё foundationdb.service - LSB: start and stop foundationdb
+     Loaded: loaded (/etc/init.d/foundationdb; generated)
+     Active: active (running) since Tue 2026-11-24 11:14:33 UTC; 15min ago
+       Docs: man:systemd-sysv-generator(8)
+      Tasks: 10 (limit: 629145)
+     Memory: 20.8M
+        CPU: 7.481s
+     CGroup: /system.slice/foundationdb.service
+             й└йд520968 /usr/lib/foundationdb/fdbmonitor --conffile /etc/foundationdb/foundationdb.conf --lockfile /var/run/fdbmonitor.pid --daemonize
+             й└йд520969 /usr/lib/foundationdb/backup_agent/backup_agent --cluster-file /etc/foundationdb/fdb.cluster --logdir /var/log/foundationdb
+             й╕йд520970 /usr/sbin/fdbserver --cluster-file /etc/foundationdb/fdb.cluster --datadir /var/lib/foundationdb/data/4500 --listen-address public --logdir /var/log/foundat>
+
+Nov 24 11:14:33 dskna004 fdbmonitor[520967]: LogGroup="default" Process="fdbmonitor": Started FoundationDB Process Monitor 7.3 (v7.3.63)
+Nov 24 11:14:33 dskna004 systemd[1]: Started LSB: start and stop foundationdb.
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbmonitor": Watching conf file /etc/foundationdb/foundationdb.conf
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbmonitor": Watching conf dir /etc/foundationdb/ (2)
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbmonitor": Loading configuration /etc/foundationdb/foundationdb.conf
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbmonitor": Starting backup_agent.1
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbmonitor": Starting fdbserver.4500
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="backup_agent.1": Launching /usr/lib/foundationdb/backup_agent/backup_agent (520969) for backup_agent.1
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbserver.4500": Launching /usr/sbin/fdbserver (520970) for fdbserver.4500
+Nov 24 11:14:33 dskna004 fdbmonitor[520968]: LogGroup="default" Process="fdbserver.4500": FDBD joined cluster.
+root@dskna004:/home/smrc/lzh/shell/deploy_scripts# fdbcli status
+FoundationDB CLI 7.3 (v7.3.63)
+usage: fdbcli [OPTIONS]
+
+  -C CONNFILE    The path of a file containing the connection string for the
+                 FoundationDB cluster. The default is first the value of the
+                 FDB_CLUSTER_FILE environment variable, then `./fdb.cluster',
+                 then `/etc/foundationdb/fdb.cluster'.
+  --log          Enables trace file logging for the CLI session.
+  --log-dir PATH Specifes the output directory for trace files. If
+                 unspecified, defaults to the current directory. Has
+                 no effect unless --log is specified.
+  --log-group LOG_GROUP
+                 Sets the LogGroup field with the specified value for all
+                 events in the trace output (defaults to `default').
+  --trace-format FORMAT
+                 Select the format of the log files. xml (the default) and json
+                 are supported. Has no effect unless --log is specified.
+  --exec CMDS    Immediately executes the semicolon separated CLI commands
+                 and then exits.
+  --no-status    Disables the initial status check done when starting
+                 the CLI.
+  --api-version  APIVERSION
+                 Specifies the version of the API for the CLI to use.
+  --tls-certificate-file CERTFILE
+                 The path of a file containing the TLS certificate and CA
+                 chain.
+  --tls-ca-file CERTAUTHFILE
+                 The path of a file containing the CA certificates chain.
+  --tls-key-file KEYFILE
+                 The path of a file containing the private key corresponding
+                 to the TLS certificate.
+  --tls-password PASSCODE
+                 The passphrase of encrypted private key
+  --tls-verify-peers CONSTRAINTS
+                 The constraints by which to validate TLS peers. The contents
+                 and format of CONSTRAINTS are plugin-specific.
+  --knob-KNOBNAME KNOBVALUE
+                 Changes a knob option. KNOBNAME should be lowercase.
+  --debug-tls    Prints the TLS configuration and certificate chain, then exits.
+                 Useful in reporting and diagnosing TLS issues.
+  --build-flags  Print build information and exit.
+  --memory       Resident memory limit of the CLI (defaults to 8GiB).
+  --use-future-protocol-version
+                 Use the simulated future protocol version to connect to the cluster.
+                 This option can be used testing purposes only!
+  -v, --version  Print FoundationDB CLI version information and exit.
+  -h, --help     Display this help and exit.
