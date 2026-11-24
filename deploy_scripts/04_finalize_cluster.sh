@@ -66,7 +66,17 @@ admin_cli_token "upload-chains ${OPT_ETC}/generated_chains.csv"
 admin_cli_token "upload-chain-table --desc ${CLUSTER_ID} 1 ${OPT_ETC}/generated_chain_table.csv"
 admin_cli_token "list-chains"
 admin_cli_token "list-chain-tables"
-admin_cli_token "mkdir --perm 0777 test" || info "(test 目录已存在则忽略)"
+# mkdir 已存在时 admin_cli 会报错, 用 $? 区分 "已存在" 与其他失败
+if admin_cli_token "mkdir --perm 0777 test" 2>/tmp/3fs_mkdir_err; then
+    info "test/ 目录已创建 (perm 0777)"
+else
+    if grep -qi "exist" /tmp/3fs_mkdir_err; then
+        info "test/ 目录已存在, 跳过"
+    else
+        warn "mkdir test 失败: $(cat /tmp/3fs_mkdir_err)"
+    fi
+fi
+rm -f /tmp/3fs_mkdir_err
 
 # ---------- 5. FUSE 客户端 (指南 §10) ----------
 step "5/6 FUSE 客户端 + 挂载 ${MOUNT_POINT}"
@@ -78,6 +88,10 @@ cluster_id = '${CLUSTER_ID}'
 mountpoint = '${MOUNT_POINT}'
 token_file = '${TOKEN_FILE}'
 
+# dskna004: 8 活动 HCA > kMaxDeviceCnt(4), FUSE 启动即初始化 IB (hf3fs_fuse.cpp:44), 必须过滤
+[ib_devices]
+device_filter = ${IB_DEVICE_FILTER_META}
+
 [mgmtd_client]
 mgmtd_server_addresses = ["${MGMTD_ADDR}"]
 EOF
@@ -85,6 +99,9 @@ cat > "${OPT_ETC}/hf3fs_fuse_main.toml" <<EOF
 # fuse runtime config — 上传给 mgmtd (指南 §10)
 [mgmtd]
 mgmtd_server_addresses = ["${MGMTD_ADDR}"]
+
+[common.ib_devices]
+device_filter = ${IB_DEVICE_FILTER_META}
 
 [[common.monitor.reporters]]
 type = 'monitor_collector'
