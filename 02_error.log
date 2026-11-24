@@ -1,4 +1,4 @@
-root@dskna004:/home/smrc/lzh/shell/deploy_scripts# bash 02_setup_meta.sh
+root@dskna004:/home/smrc/lzh/shell/deploy_scripts# sudo bash 02_setup_meta.sh
 
 ### 1/9 ClickHouse 监控表
   [INFO] counters / distributions 就绪
@@ -10,19 +10,19 @@ active
 ### 3/9 FoundationDB
   [INFO] foundationdb.conf 已存在, 保留不动
 active
-  [INFO] FDB 数据目录非空 (1 项) — 已配置过
-  [WARN] FDB 已配置但 60s 内未达 healthy, 请手动 fdbcli status 检查 (脚本继续)
-  [INFO] fdb.cluster: f3KvJjE8:tu7EIx9t@127.0.0.1:4500
+  [FATAL] FDB status 不可解析且数据目录非空 — FDB 处于损坏/不可达状态 (mgmtd 依赖 FDB, 不能继续)。全新集群恢复: systemctl stop foundationdb && rm -rf /var/lib/foundationdb/data/* && rm -f /opt/3fs/etc/.cluster_inited && systemctl start foundationdb 后重跑本脚本
+root@dskna004:/home/smrc/lzh/shell/deploy_scripts# systemctl stop foundationdb && rm -rf /var/lib/foundationdb/data/* && rm -f /opt/3fs/etc/.cluster_inited && systemctl start foundationdb
+root@dskna004:/home/smrc/lzh/shell/deploy_scripts# systemctl stop foundationdb && rm -rf /var/lib/foundationdb/data/* && rm -f /opt/3fs/etc/.cluster_inited && systemctl start foundationdb
+root@dskna004:/home/smrc/lzh/shell/deploy_scripts# sudo bash 02_setup_meta.sh
 
-### 4/9 推送 fdb.cluster → 3 台存储节点
-  [INFO] 172.16.18.64 — OK
-  [INFO] 172.16.18.65 — OK
-  [INFO] 172.16.18.169 — OK
+### 1/9 ClickHouse 监控表
+  [INFO] counters / distributions 就绪
 
-### 5/9 admin_cli
-  [INFO] admin_cli 就绪
-
-### 6/9 mgmtd
-  [INFO] 已初始化过, 跳过 init-cluster (重置集群见指南 §13.2)
+### 2/9 monitor_collector
 active
-Encounter error: 6004(MgmtdClient::RoutingInfoNotReady)
+  [INFO] monitor_collector 已运行 (监听 10000)
+
+### 3/9 FoundationDB
+  [INFO] foundationdb.conf 已存在, 保留不动
+active
+  [FATAL] FDB status 不可解析且数据目录非空 — FDB 处于损坏/不可达状态 (mgmtd 依赖 FDB, 不能继续)。全新集群恢复: systemctl stop foundationdb && rm -rf /var/lib/foundationdb/data/* && rm -f /opt/3fs/etc/.cluster_inited && systemctl start foundationdb 后重跑本脚本
