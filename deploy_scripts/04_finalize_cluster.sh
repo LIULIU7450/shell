@@ -81,7 +81,7 @@ rm -f /tmp/3fs_mkdir_err
 # ---------- 5. FUSE 客户端 (指南 §10) ----------
 step "5/6 FUSE 客户端 + 挂载 ${MOUNT_POINT}"
 check_exists "${BIN_DIR}/hf3fs_fuse_main" || die "缺少二进制"
-cp "${BIN_DIR}/hf3fs_fuse_main" "${OPT_BIN}/"
+install_bin "${BIN_DIR}/hf3fs_fuse_main" "${OPT_BIN}/hf3fs_fuse_main"
 check_exists "${TOKEN_FILE}" || die "${TOKEN_FILE} 不存在"
 cat > "${OPT_ETC}/hf3fs_fuse_main_launcher.toml" <<EOF
 cluster_id = '${CLUSTER_ID}'
@@ -97,11 +97,10 @@ mgmtd_server_addresses = ["${MGMTD_ADDR}"]
 EOF
 cat > "${OPT_ETC}/hf3fs_fuse_main.toml" <<EOF
 # fuse runtime config — 上传给 mgmtd (指南 §10)
+# 注意: runtime config 无 ib_devices 键 (IB 由 FUSE launcher 初始化, hf3fs_fuse.cpp:44
+# 读的是 launcher config), 不可在 runtime config 加 device_filter
 [mgmtd]
 mgmtd_server_addresses = ["${MGMTD_ADDR}"]
-
-[common.ib_devices]
-device_filter = ${IB_DEVICE_FILTER_META}
 
 [[common.monitor.reporters]]
 type = 'monitor_collector'
