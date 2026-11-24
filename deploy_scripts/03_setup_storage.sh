@@ -117,7 +117,7 @@ step "2/4 admin_cli (指南 §5)"
 mkdir -p "${OPT_BIN}" "${OPT_ETC}" "${LOG_DIR}"
 check_exists "${FDB_CLUSTER_FILE}" || die "${FDB_CLUSTER_FILE} 不存在 — 请先在 dskna004 执行 02_setup_meta.sh"
 check_exists "${BIN_DIR}/admin_cli" || die "缺少二进制 ${BIN_DIR}/admin_cli"
-cp "${BIN_DIR}/admin_cli" "${OPT_BIN}/"
+install_bin "${BIN_DIR}/admin_cli" "${OPT_BIN}/admin_cli"
 cat > "${OPT_ETC}/admin_cli.toml" <<EOF
 cluster_id = '${CLUSTER_ID}'
 
@@ -132,7 +132,7 @@ info "admin_cli 就绪 (node_id=${NODE_ID})"
 
 step "3/4 storage 服务安装 (指南 §8)"
 check_exists "${BIN_DIR}/storage_main" || die "缺少二进制 ${BIN_DIR}/storage_main"
-cp "${BIN_DIR}/storage_main" "${OPT_BIN}/"
+install_bin "${BIN_DIR}/storage_main" "${OPT_BIN}/storage_main"
 cat > "${OPT_ETC}/storage_main_app.toml" <<EOF
 allow_empty_node_id = false
 node_id = ${NODE_ID}
