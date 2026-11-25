@@ -50,8 +50,8 @@ done
 [[ ${FAIL_COUNT} -eq 0 ]] && info "二进制齐全"
 
 if [[ "${ROLE}" == "storage" ]]; then
-    step "FDP 设备状态 (nvme3n1 / nvme4n1)"
-    for dev in /dev/nvme3n1 /dev/nvme4n1; do
+    step "FDP 设备状态 (${STORAGE_DEVS[*]})"
+    for dev in "${STORAGE_DEVS[@]}"; do
         if [[ ! -e "${dev}" ]]; then
             fail "${dev} 不存在"
             continue
@@ -74,25 +74,36 @@ print('  [INFO] PID 从 0 连续编号 — OK')
             fail "${m} 未挂载"
             continue
         fi
+        # GET_MAX 反映"设备向 XFS 暴露了多少硬件写流"（本环境 = 14：hw 16 − 保留 2）:
+        #   >= 3 → FDP 放置可分流 (compaction 走 stream 2 → PLID 1, 数据走 3.. → PLID 2..)
+        #   == 0 → 设备侧未暴露, 3FS 自动回退默认放置 (不报错, 仅能力降级)
+        # ⚠ fcntl.ioctl 的 bytes 入参不可变: 必须读“返回值”, 读 ws 会永远得到 0。
         python3 - "${m}" <<'EOF' || FAIL_COUNT=$((FAIL_COUNT + 1))
 import fcntl, os, struct, sys
 FS_IOC_WRITE_STREAM = 0xC010662B
 OP_GET_MAX = 1
-fd = os.open(sys.argv[1], os.O_RDONLY)
-ws = struct.pack("IIII", OP_GET_MAX, 0, 0, 0)
+mnt = sys.argv[1]
+p = os.path.join(mnt, ".getmax_probe")
+fd = os.open(p, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o644)
 try:
-    fcntl.ioctl(fd, FS_IOC_WRITE_STREAM, ws)
-    op, sid, mx, rsvd = struct.unpack("IIII", ws)
-    print(f"  [INFO] {sys.argv[1]}: GET_MAX = {mx}")
-    assert mx >= 3, f"GET_MAX={mx} 过小, 无法同时容纳 compaction(2)+LMCache(3..)"
+    ret = fcntl.ioctl(fd, FS_IOC_WRITE_STREAM, struct.pack("IIII", OP_GET_MAX, 0, 0, 0))
+    mx = struct.unpack("IIII", ret)[2]
+    if mx >= 3:
+        print(f"  [INFO] {mnt}: GET_MAX = {mx} — FDP 分流可用 (compaction=2, 数据=3..{mx})")
+    else:
+        print(f"  [WARN] {mnt}: GET_MAX = {mx} — 设备未向 XFS 暴露硬件写流,"
+              " 写入将回退默认放置 (3FS 不报错; 如需真实放置需在设备侧启用 FDP)")
 except OSError as e:
-    print(f"  [FAIL] {sys.argv[1]}: ioctl 失败 errno={e.errno} {e.strerror}")
+    print(f"  [FAIL] {mnt}: ioctl 失败 errno={e.errno} {e.strerror} (内核缺 FS_IOC_WRITE_STREAM?)")
     raise SystemExit(1)
 finally:
     os.close(fd)
+    os.unlink(p)
 EOF
     done
-    info "注: LMCache fdp_stream_number = GET_MAX − 2 (GET_MAX=16 时为 14)"
+    grep -q "storage/data3" /etc/fstab \
+        && info "数据盘已在 /etc/fstab 中 (重启后自动挂载)" \
+        || warn "数据盘未写入 /etc/fstab — 若将来重启需手工 mount -o noatime,nodiratime /dev/nvmeXn1 /storage/dataX"
 
     step "RDMA HCA"
     n_active=$(ibstat 2>/dev/null | grep -c "State:.*Active" || true)
